@@ -1464,9 +1464,9 @@
 				DEVELOPMENT_TEAM = 33P3VUARHV;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)..",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ui-lib/lib/ios/reactnativeuilib/**",
-					"$(SRCROOT)..\node_modules\neact-native-linear-gradientBVLinearGradient",
+					"\"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj\"",
 				);
 				INFOPLIST_FILE = RNFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1493,9 +1493,9 @@
 				DEVELOPMENT_TEAM = 33P3VUARHV;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
+					"$(SRCROOT)..",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
-					"$(SRCROOT)/../node_modules/react-native-ui-lib/lib/ios/reactnativeuilib/**",
-					"$(SRCROOT)..\node_modules\neact-native-linear-gradientBVLinearGradient",
+					"\"$(SRCROOT)/../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj\"",
 				);
 				INFOPLIST_FILE = RNFramework/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
