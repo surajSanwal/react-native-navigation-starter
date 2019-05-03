@@ -28,10 +28,18 @@ const Header = props => {
   return (
     <View style={{ backgroundColor: color || Constants.Colors.transparent }}>
       <SafeView />
-      <View style={[Styles.container, { backgroundColor: color }]}>
+      <View
+        style={[
+          Styles.container,
+          {
+            backgroundColor: color,
+            flexDirection: !hideDrawer ? "row-reverse" : "row"
+          }
+        ]}
+      >
         {!hideDrawer ? (
           <TouchableOpacity style={Styles.iconBtn} onPress={onDrawerPress}>
-            <Icon name="bars" color={Constants.Colors.Secondary}  size={25} />
+            <Icon name="bars" color={Constants.Colors.Secondary} size={25} />
           </TouchableOpacity>
         ) : !hideBack ? (
           <TouchableOpacity
@@ -106,7 +114,7 @@ const Styles = StyleSheet.create({
   header: {
     justifyContent: "center",
     alignItems: "center",
-    fontWeight:"bold",
+    fontWeight: "bold",
     height: moderateScale(40),
     width: Constants.BaseStyle.DEVICE_WIDTH - moderateScale(110)
   },

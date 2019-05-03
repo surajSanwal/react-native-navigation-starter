@@ -52,7 +52,12 @@ class SignIn extends React.Component {
       "ForgotPassword"
     );
   }
-
+  signUp=()=> {
+    this.props.AppAction.pushToParticularScreen(
+      this.props.componentId,
+      "SignUp"
+    );
+  }
   render() {
     console.log("proppsss", this.props);
     return (
@@ -65,18 +70,19 @@ class SignIn extends React.Component {
         <View style={styles.container}>
           <View style={{ flex: 0.1 }} />
           <View
-            style={{
-              flex: 0.1,
-              justifyContent: "center",
-              alignItems: "center"
-            }}
+           style={{
+            flex: 0.1,
+            justifyContent: "center",
+            alignItems: "center",
+            paddingVertical:moderateScale(10)
+          }}
           >
             <Image
               style={{
                 height: moderateScale(80),
-                width: constants.BaseStyle.DEVICE_WIDTH * 0.8
+              width:moderateScale(80),
               }}
-              source={{ uri: constants.Images.Common.logoBase64 }}
+              source={ constants.Images.Common.logoBase64 }
             />
           </View>
           <KeyboardAwareScrollView

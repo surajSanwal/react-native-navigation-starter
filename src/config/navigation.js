@@ -74,7 +74,7 @@ export const goHome = () =>
                   children: [
                     {
                       component: {
-                        name: "HistoryAll",
+                        name: "SignIn",
                         options: {
                           bottomTab: {
                             text: "History",
@@ -111,7 +111,7 @@ export const goHome = () =>
                   children: [
                     {
                       component: {
-                        name: "Notifications",
+                        name: "ForgotPassword",
                         options: {
                           bottomTab: {
                             text: "Notifications",

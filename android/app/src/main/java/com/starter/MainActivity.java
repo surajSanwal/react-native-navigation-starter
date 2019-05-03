@@ -1,4 +1,4 @@
-package com.strater;
+package com.starter;
 
 
 import com.reactnativenavigation.NavigationActivity;

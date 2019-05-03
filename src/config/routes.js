@@ -17,7 +17,7 @@ var background = require("../assets/img/Screen.jpg");
 const WrapScreen = (ReduxScreen, store, headerProps) => props => (
   <Provider store={store}>
     <View style={{ flex: 1 }}>
-      <View
+      {/* <View
         style={{
           flex: 1,
           position: "absolute",
@@ -27,7 +27,7 @@ const WrapScreen = (ReduxScreen, store, headerProps) => props => (
         }}
       >
         <Image source={background} />
-      </View>
+      </View> */}
       <View style={{ flex: 1, zIndex: 99 }}>
         {!headerProps.disableHeader ? (
           <Header
@@ -106,5 +106,11 @@ export const registerScreens = (store, Provider) => {
       WrapScreen(GeneralDetails, store, { title: "Home", hideDrawer: true }),
 
     () => GeneralDetails
+  );
+  Navigation.registerComponentWithRedux(
+    "SideMenu",
+    () => SideMenu,
+    Provider,
+    store
   );
 };

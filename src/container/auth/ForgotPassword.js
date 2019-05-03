@@ -35,15 +35,16 @@ class ForgotPassword extends React.Component {
           style={{
             flex: 0.1,
             justifyContent: "center",
-            alignItems: "center"
+            alignItems: "center",
+            paddingVertical: moderateScale(10)
           }}
         >
           <Image
             style={{
               height: moderateScale(80),
-              width: constants.BaseStyle.DEVICE_WIDTH * 0.8
+              width: moderateScale(80)
             }}
-            source={{ uri: constants.Images.Common.logoBase64 }}
+            source={constants.Images.Common.logoBase64}
           />
         </View>
         <KeyboardAwareScrollView

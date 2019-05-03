@@ -92,58 +92,53 @@ class Home extends React.Component {
     let data = [
       {
         title: "GENERAL",
-        by: "Ushma",
+        by: "Suraj",
         date: "06 March 2019",
-        message: `Conference on SDG 7 for SDG 8: Sustainable Energy and Livelihood
-      Nexus @ IIM Bangalore [April 26-27]`,
+        message: `Basic Message to Display`,
         detailedMessage:
-          "SELCO Foundation is hosting a conference on SDG 7 for SDG 8 on the theme ‘Replicable Solutions for Sustainable Energy and Income Generating Applications’ at IIM Bangalore on April 26-27.",
+          "Detailed Message to Display : To cut down on idle conversation that can waste time, she says, return a phone call when you know that the other person isn't in, leaving a detailed message on voice mail. ... She said she had later left a detailed message on Ms. Strelitz voice mail, urging",
         about:
-          "he two-day event will bring together stakeholders to discuss replicable models and processes that can scale sustainable energy, livelihood solutions and transform under-served communities.The conference would bring forward the importance of sustainable energy in developing livelihood interventions at the grassroots level, leading to inclusivity and democratization of wealth distribution. It hopes to bring to light some of the much-needed livelihood relatedopportunities, that are primarily poor centric, and the related challenges with appropriate solutions"
+          "A website or Web site is a collection of related network web resources, such as web pages, multimedia content, which are typically identified with a common domain name, and published on at least one web server. Notable examples are wikipedia.org, google.com, and amazon.com."
       },
       {
         title: "GENERAL",
-        by: "Ushma",
+        by: "Suraj",
         date: "06 March 2019",
-        message: `Conference on SDG 7 for SDG 8: Sustainable Energy and Livelihood
-      Nexus @ IIM Bangalore [April 26-27]`,
+        message: `Basic Message to Display`,
         detailedMessage:
-          "SELCO Foundation is hosting a conference on SDG 7 for SDG 8 on the theme ‘Replicable Solutions for Sustainable Energy and Income Generating Applications’ at IIM Bangalore on April 26-27.",
+          "Detailed Message to Display : To cut down on idle conversation that can waste time, she says, return a phone call when you know that the other person isn't in, leaving a detailed message on voice mail. ... She said she had later left a detailed message on Ms. Strelitz voice mail, urging",
         about:
-          "he two-day event will bring together stakeholders to discuss replicable models and processes that can scale sustainable energy, livelihood solutions and transform under-served communities.The conference would bring forward the importance of sustainable energy in developing livelihood interventions at the grassroots level, leading to inclusivity and democratization of wealth distribution. It hopes to bring to light some of the much-needed livelihood relatedopportunities, that are primarily poor centric, and the related challenges with appropriate solutions"
+          "A website or Web site is a collection of related network web resources, such as web pages, multimedia content, which are typically identified with a common domain name, and published on at least one web server. Notable examples are wikipedia.org, google.com, and amazon.com."
       },
       {
         title: "GENERAL",
-        by: "Ushma",
+        by: "Suraj",
         date: "06 March 2019",
-        message: `Conference on SDG 7 for SDG 8: Sustainable Energy and Livelihood
-      Nexus @ IIM Bangalore [April 26-27]`,
+        message: `Basic Message to Display`,
         detailedMessage:
-          "SELCO Foundation is hosting a conference on SDG 7 for SDG 8 on the theme ‘Replicable Solutions for Sustainable Energy and Income Generating Applications’ at IIM Bangalore on April 26-27.",
+          "Detailed Message to Display : To cut down on idle conversation that can waste time, she says, return a phone call when you know that the other person isn't in, leaving a detailed message on voice mail. ... She said she had later left a detailed message on Ms. Strelitz voice mail, urging",
         about:
-          "he two-day event will bring together stakeholders to discuss replicable models and processes that can scale sustainable energy, livelihood solutions and transform under-served communities.The conference would bring forward the importance of sustainable energy in developing livelihood interventions at the grassroots level, leading to inclusivity and democratization of wealth distribution. It hopes to bring to light some of the much-needed livelihood relatedopportunities, that are primarily poor centric, and the related challenges with appropriate solutions"
+          "A website or Web site is a collection of related network web resources, such as web pages, multimedia content, which are typically identified with a common domain name, and published on at least one web server. Notable examples are wikipedia.org, google.com, and amazon.com."
       },
       {
         title: "GENERAL",
-        by: "Ushma",
+        by: "Suraj",
         date: "06 March 2019",
-        message: `Conference on SDG 7 for SDG 8: Sustainable Energy and Livelihood
-      Nexus @ IIM Bangalore [April 26-27]`,
+        message: `Basic Message to Display`,
         detailedMessage:
-          "SELCO Foundation is hosting a conference on SDG 7 for SDG 8 on the theme ‘Replicable Solutions for Sustainable Energy and Income Generating Applications’ at IIM Bangalore on April 26-27.",
+          "Detailed Message to Display : To cut down on idle conversation that can waste time, she says, return a phone call when you know that the other person isn't in, leaving a detailed message on voice mail. ... She said she had later left a detailed message on Ms. Strelitz voice mail, urging",
         about:
-          "he two-day event will bring together stakeholders to discuss replicable models and processes that can scale sustainable energy, livelihood solutions and transform under-served communities.The conference would bring forward the importance of sustainable energy in developing livelihood interventions at the grassroots level, leading to inclusivity and democratization of wealth distribution. It hopes to bring to light some of the much-needed livelihood relatedopportunities, that are primarily poor centric, and the related challenges with appropriate solutions"
+          "A website or Web site is a collection of related network web resources, such as web pages, multimedia content, which are typically identified with a common domain name, and published on at least one web server. Notable examples are wikipedia.org, google.com, and amazon.com."
       },
       {
         title: "GENERAL",
-        by: "Ushma",
+        by: "Suraj",
         date: "06 March 2019",
-        message:
-          "Conference on SDG 7 for SDG 8: Sustainable Energy and Livelihood Nexus @ IIM Bangalore [April 26-27]",
+        message: `Basic Message to Display`,
         detailedMessage:
-          "SELCO Foundation is hosting a conference on SDG 7 for SDG 8 on the theme ‘Replicable Solutions for Sustainable Energy and Income Generating Applications’ at IIM Bangalore on April 26-27.",
+          "Detailed Message to Display : To cut down on idle conversation that can waste time, she says, return a phone call when you know that the other person isn't in, leaving a detailed message on voice mail. ... She said she had later left a detailed message on Ms. Strelitz voice mail, urging",
         about:
-          "he two-day event will bring together stakeholders to discuss replicable models and processes that can scale sustainable energy, livelihood solutions and transform under-served communities.The conference would bring forward the importance of sustainable energy in developing livelihood interventions at the grassroots level, leading to inclusivity and democratization of wealth distribution. It hopes to bring to light some of the much-needed livelihood relatedopportunities, that are primarily poor centric, and the related challenges with appropriate solutions"
+          "A website or Web site is a collection of related network web resources, such as web pages, multimedia content, which are typically identified with a common domain name, and published on at least one web server. Notable examples are wikipedia.org, google.com, and amazon.com."
       }
     ];
     if (false) {
