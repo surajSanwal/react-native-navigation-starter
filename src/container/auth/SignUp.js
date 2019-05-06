@@ -23,9 +23,9 @@ class SignUp extends React.Component {
   signUp = async () => {
     // const { username, password, email, phone_number } = this.state;
     try {
-      console.log("user successfully signed up!: ", success);
+      // console.log("user successfully signed up!: ", success);
     } catch (err) {
-      console.log("error signing up: ", err);
+      // console.log("error signing up: ", err);
     }
   };
   render() {
