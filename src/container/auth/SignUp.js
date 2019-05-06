@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet, Image } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 
@@ -21,7 +21,7 @@ class SignUp extends React.Component {
     this.setState({ [key]: val });
   };
   signUp = async () => {
-    const { username, password, email, phone_number } = this.state;
+    // const { username, password, email, phone_number } = this.state;
     try {
       console.log("user successfully signed up!: ", success);
     } catch (err) {

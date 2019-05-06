@@ -5,12 +5,15 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "test": "jest",
+    "rp": "prettier --write \"**/*.json\" \"**/*.js\" \"!dist/**/*.js\"",
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "preinstall": "node preinstall.js",
     "android-build": "watchman watch-del-all && cd android && ./gradlew --stop && ./gradlew clean && ./gradlew assembleRelease"
   },
   "dependencies": {
+    "babel-eslint": "^10.0.1",
     "lodash": "^4.17.11",
+    "prop-types": "^15.7.2",
     "react": "16.6.0-alpha.8af6728",
     "react-native": "0.57.3",
     "react-native-keyboard-aware-scroll-view": "^0.8.0",
@@ -27,9 +30,29 @@
   },
   "devDependencies": {
     "babel-preset-react-native": "4.0.0",
-    "jest": "23.6.0"
+    "eslint": "^5.16.0",
+    "eslint-plugin-react": "^7.13.0",
+    "husky": ">=1",
+    "jest": "23.6.0",
+    "lint-staged": ">=8",
+    "prettier": "1.17.0"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
