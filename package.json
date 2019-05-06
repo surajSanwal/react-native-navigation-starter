@@ -8,6 +8,7 @@
     "rp": "prettier --write \"**/*.json\" \"**/*.js\" \"!dist/**/*.js\"",
     "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
     "preinstall": "node preinstall.js",
+    "precommit": "npm run rp && lint-staged",
     "android-build": "watchman watch-del-all && cd android && ./gradlew --stop && ./gradlew clean && ./gradlew assembleRelease"
   },
   "dependencies": {
