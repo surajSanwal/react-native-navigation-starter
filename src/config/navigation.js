@@ -1,4 +1,3 @@
-
 import React from "react";
 import { View, Text } from "react-native";
 import { Navigation } from "react-native-navigation";
@@ -98,7 +97,7 @@ export const goHome = () =>
                             },
                             drawBehind: false,
                             visible: true,
-                             animate: true
+                            animate: true
                           }
                         }
                       }

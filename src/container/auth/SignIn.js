@@ -28,7 +28,7 @@ class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: "",
+      username: ""
     };
   }
 
@@ -46,18 +46,18 @@ class SignIn extends React.Component {
     this.props.AppAction.login();
     goHome();
   };
-  forgotPassword=()=> {
+  forgotPassword = () => {
     this.props.AppAction.pushToParticularScreen(
       this.props.componentId,
       "ForgotPassword"
     );
-  }
-  signUp=()=> {
+  };
+  signUp = () => {
     this.props.AppAction.pushToParticularScreen(
       this.props.componentId,
       "SignUp"
     );
-  }
+  };
   render() {
     console.log("proppsss", this.props);
     return (
@@ -70,19 +70,19 @@ class SignIn extends React.Component {
         <View style={styles.container}>
           <View style={{ flex: 0.1 }} />
           <View
-           style={{
-            flex: 0.1,
-            justifyContent: "center",
-            alignItems: "center",
-            paddingVertical:moderateScale(10)
-          }}
+            style={{
+              flex: 0.1,
+              justifyContent: "center",
+              alignItems: "center",
+              paddingVertical: moderateScale(10)
+            }}
           >
             <Image
               style={{
                 height: moderateScale(80),
-              width:moderateScale(80),
+                width: moderateScale(80)
               }}
-              source={ constants.Images.Common.logoBase64 }
+              source={constants.Images.Common.logoBase64}
             />
           </View>
           <KeyboardAwareScrollView

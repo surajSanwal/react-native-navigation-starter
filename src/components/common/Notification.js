@@ -8,11 +8,17 @@ import Constants from "../../constants";
 
 const Notification = props => {
   let { type, message, notificationStyle, textStyle } = props; // type 1 for error, 2=for Notification
-  let primaryColor = type == Constants.AppCosntants.Notificaitons.Error ? Constants.Colors.red : Constants.Colors.green;
+  let primaryColor =
+    type == Constants.AppCosntants.Notificaitons.Error
+      ? Constants.Colors.red
+      : Constants.Colors.green;
   let gradientColors = [primaryColor, primaryColor];
   //let textColor = type == 1 ? Constants.Colors.White : Constants.Colors.White;
   return (
-    <LinearGradient colors={gradientColors} style={[Styles.notificationStyle, notificationStyle]}>
+    <LinearGradient
+      colors={gradientColors}
+      style={[Styles.notificationStyle, notificationStyle]}
+    >
       <SafeView backgroundColor={primaryColor} />
       <Text style={[Styles.textStyle, textStyle]}>{message}</Text>
     </LinearGradient>

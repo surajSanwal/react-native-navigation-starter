@@ -22,7 +22,9 @@ const Header = props => {
             >
               <Image source={Constants.Images.Common.Back} />
             </TouchableOpacity>
-            <View style={Styles.headingContainer}>{heading ? <Text>{heading}</Text> : null}</View>
+            <View style={Styles.headingContainer}>
+              {heading ? <Text>{heading}</Text> : null}
+            </View>
             <View style={Styles.rightButton} />
           </View>
         ) : null}

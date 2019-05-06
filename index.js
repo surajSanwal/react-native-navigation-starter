@@ -25,5 +25,4 @@ Navigation.events().registerAppLaunchedListener(() => {
       }
     }
   });
- 
 });

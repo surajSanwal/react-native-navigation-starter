@@ -79,8 +79,14 @@ class FormTextInput extends Component {
           this.props.style
         ]}
       >
-        <View style={{flexDirection:"row", alignItems:'center'}}>
-          {icon && <Icon name={icon} size={15} style={{marginHorizontal:moderateScale(10)}} />}
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          {icon && (
+            <Icon
+              name={icon}
+              size={15}
+              style={{ marginHorizontal: moderateScale(10) }}
+            />
+          )}
           <TextInput
             ref={ref => (this.inputBox = ref || "inputbox")}
             autoFocus={autoFocus}
@@ -117,9 +123,9 @@ const Styles = StyleSheet.create({
     borderColor: Constants.Colors.placehoder,
     borderRadius: moderateScale(25),
     marginHorizontal: moderateScale(25),
-    marginVertical:moderateScale(20),
+    marginVertical: moderateScale(20),
     alignItems: "center",
-    backgroundColor:Constants.Colors.White
+    backgroundColor: Constants.Colors.White
   },
   inputStyle: {
     color: Constants.Colors.Primary,
@@ -128,6 +134,6 @@ const Styles = StyleSheet.create({
     alignItems: "center",
     borderLeftWidth: 1,
     marginVertical: moderateScale(2),
-    paddingHorizontal: moderateScale(5),
+    paddingHorizontal: moderateScale(5)
   }
 });

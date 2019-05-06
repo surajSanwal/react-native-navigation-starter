@@ -1,4 +1,3 @@
-
 import React from "react";
 import { View, Text, StyleSheet, AsyncStorage } from "react-native";
 

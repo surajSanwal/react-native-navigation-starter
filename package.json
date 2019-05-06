@@ -35,16 +35,11 @@
     "eslint-plugin-react": "^7.13.0",
     "husky": ">=1",
     "jest": "23.6.0",
-    "lint-staged": ">=8",
+    "lint-staged": "^8.1.6",
     "prettier": "1.17.0"
   },
   "jest": {
     "preset": "react-native"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
   },
   "lint-staged": {
     "*.{js,css,json,md}": [

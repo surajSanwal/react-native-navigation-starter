@@ -1,5 +1,11 @@
 import React from "react";
-import { TouchableOpacity, Platform, TouchableNativeFeedback, View, Text } from "react-native";
+import {
+  TouchableOpacity,
+  Platform,
+  TouchableNativeFeedback,
+  View,
+  Text
+} from "react-native";
 import PropsTypes from "prop-types";
 
 import Constants from "../../constants";
@@ -16,7 +22,11 @@ const Button = props => {
     );
   } else {
     return (
-      <TouchableNativeFeedback activeOpacity={0.9} disabled={disabled} onPress={onPress}>
+      <TouchableNativeFeedback
+        activeOpacity={0.9}
+        disabled={disabled}
+        onPress={onPress}
+      >
         <View style={buttonStyle}>
           <Text style={textStyle}>{buttonName}</Text>
         </View>

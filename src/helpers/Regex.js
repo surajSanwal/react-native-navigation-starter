@@ -1,4 +1,3 @@
-
 /* eslint-disable */
 "use strict";
 var Regex = {
@@ -22,7 +21,9 @@ var Regex = {
   },
 
   validateMobileWithoutCC: function(val) {
-    return /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/.test(val);
+    return /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/.test(
+      val
+    );
   },
 
   validateString: function(val) {
@@ -46,7 +47,9 @@ var Regex = {
   },
 
   validateURL: function(url) {
-    return /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/.test(url);
+    return /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)$/.test(
+      url
+    );
   },
 
   validatePrice(val) {

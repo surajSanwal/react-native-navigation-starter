@@ -7,9 +7,22 @@ import CountryPicker from "react-native-country-picker-modal";
 import PickerTheme from "../../styles/component/Common/CountryPicker";
 
 const CountryPickerModal = props => {
-  let { onChange, isdCode, SubmitEditing, filterable, closeable, cca2, animationType, translation, disabled } = props;
+  let {
+    onChange,
+    isdCode,
+    SubmitEditing,
+    filterable,
+    closeable,
+    cca2,
+    animationType,
+    translation,
+    disabled
+  } = props;
   return (
-    <TouchableOpacity style={PickerTheme.picker} onPress={() => this.callingCode.openModal()}>
+    <TouchableOpacity
+      style={PickerTheme.picker}
+      onPress={() => this.callingCode.openModal()}
+    >
       <View style={PickerTheme.flagStyle}>
         <CountryPicker
           ref={ref => (this.callingCode = ref)}

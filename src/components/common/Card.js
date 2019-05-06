@@ -20,11 +20,11 @@ const styles = {
     marginTop: moderateScale(10),
     marginBottom: moderateScale(10),
     // padding: moderateScale(30),
-    backgroundColor: "white",
+    backgroundColor: "white"
     // minHeight:verticalScale(300),
     //alignSelf: "stretch",
     //justifyContent: "center"
   }
 };
 
-export default Card ;
+export default Card;

@@ -36,13 +36,13 @@ class SignUp extends React.Component {
             flex: 0.1,
             justifyContent: "center",
             alignItems: "center",
-            paddingVertical:moderateScale(10)
+            paddingVertical: moderateScale(10)
           }}
         >
           <Image
             style={{
               height: moderateScale(80),
-              width:moderateScale(80),
+              width: moderateScale(80)
             }}
             source={constants.Images.Common.logoBase64}
           />

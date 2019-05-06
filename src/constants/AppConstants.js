@@ -1,6 +1,5 @@
 let AppCosntants = {
-  AppName: "App Name",
- 
+  AppName: "App Name"
 };
 
 module.exports = AppCosntants;

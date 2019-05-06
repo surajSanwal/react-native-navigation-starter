@@ -6,7 +6,7 @@ export const pushToParticularScreen = (componentId, screenName, passProps) => {
     Navigation.push(componentId, {
       component: {
         name: screenName,
-        passProps,
+        passProps
       }
     });
   };

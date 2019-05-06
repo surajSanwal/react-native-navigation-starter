@@ -1,6 +1,13 @@
-
 import React, { Component } from "react";
-import { View, TextInput, Text, Image, TouchableOpacity, ActivityIndicator,StyleSheet } from "react-native";
+import {
+  View,
+  TextInput,
+  Text,
+  Image,
+  TouchableOpacity,
+  ActivityIndicator,
+  StyleSheet
+} from "react-native";
 
 import Constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
@@ -20,7 +27,16 @@ class FloatingInput extends Component {
     this.inputBox.focus();
   }
   render() {
-    const { label, value, value1, editable, onCancel, onUpdate, loading, ...props } = this.props;
+    const {
+      label,
+      value,
+      value1,
+      editable,
+      onCancel,
+      onUpdate,
+      loading,
+      ...props
+    } = this.props;
     const { isFocused } = this.state;
     const labelStyle = {
       ...Constants.Fonts.TitilliumWebRegular,
@@ -49,7 +65,10 @@ class FloatingInput extends Component {
             <View style={{ flexDirection: "row" }}>
               <TouchableOpacity style={Styles.pad5} onPress={onCancel}>
                 <View style={Styles.cancelImg}>
-                  <Image source={Constants.Images.Common.Cancel} resizeMode={"contain"} />
+                  <Image
+                    source={Constants.Images.Common.Cancel}
+                    resizeMode={"contain"}
+                  />
                 </View>
               </TouchableOpacity>
               <TouchableOpacity style={Styles.pad5} onPress={onUpdate}>
@@ -57,7 +76,10 @@ class FloatingInput extends Component {
                   {loading ? (
                     <ActivityIndicator color="#fff" />
                   ) : (
-                    <Image source={Constants.Images.Common.Accept} resizeMode={"contain"} />
+                    <Image
+                      source={Constants.Images.Common.Accept}
+                      resizeMode={"contain"}
+                    />
                   )}
                 </View>
               </TouchableOpacity>
@@ -71,7 +93,7 @@ class FloatingInput extends Component {
 
 export default FloatingInput;
 
-const Styles=StyleSheet.create({
+const Styles = StyleSheet.create({
   container: {
     paddingVertical: moderateScale(15)
   },

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { View, Image, Text, StyleSheet } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
@@ -22,10 +21,22 @@ const CancelView = props => {
               borderRadius: moderateScale(100)
             }}
           >
-            <Image source={Constants.Images.RideInfo.InActiveShuttle} resizeMode={"contain"} />
+            <Image
+              source={Constants.Images.RideInfo.InActiveShuttle}
+              resizeMode={"contain"}
+            />
           </View>
-          <View style={{ flex: 0.6, flexDirection: "column", justifyContent: "center", alignItems: "center" }}>
-            <Text style={Styles.text}>{sureMessage || Constants.Strings.CancelRide.AreYouSureYouWantTo}</Text>
+          <View
+            style={{
+              flex: 0.6,
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center"
+            }}
+          >
+            <Text style={Styles.text}>
+              {sureMessage || Constants.Strings.CancelRide.AreYouSureYouWantTo}
+            </Text>
             <Text style={Styles.text}>{cancelMessage}</Text>
           </View>
         </View>
@@ -108,6 +119,10 @@ const Styles = StyleSheet.create({
     fontSize: moderateScale(17),
     color: Constants.Colors.placehoder
   },
-  buttonStyle: { flex: 0.5, borderWidth: 0.4, borderColor: Constants.Colors.placehoder },
+  buttonStyle: {
+    flex: 0.5,
+    borderWidth: 0.4,
+    borderColor: Constants.Colors.placehoder
+  },
   gradientStyle: { borderRadius: 0 }
 });

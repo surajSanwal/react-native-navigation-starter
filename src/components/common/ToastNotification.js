@@ -8,14 +8,20 @@ import { moderateScale } from "../../helpers/ResponsiveFonts";
 const ToastNotification = props => {
   let { type, message } = props; // type 1 for error, 2=for Notification
   let primaryColor =
-    type == Constants.AppCosntants.Notificaitons.Error ? Constants.Colors.red : Constants.Colors.Yellow;
+    type == Constants.AppCosntants.Notificaitons.Error
+      ? Constants.Colors.red
+      : Constants.Colors.Yellow;
   let image =
-    type == Constants.AppCosntants.Notificaitons.Error ? Constants.Images.Common.Cross : Constants.Images.Common.Accept;
+    type == Constants.AppCosntants.Notificaitons.Error
+      ? Constants.Images.Common.Cross
+      : Constants.Images.Common.Accept;
   //let textColor = type == 1 ? Constants.Colors.White : Constants.Colors.White;
   return (
     <View style={Styles.container}>
       <SafeView />
-      <View style={{ alignItems: "center", justifyContent: "flex-start", flex: 1 }}>
+      <View
+        style={{ alignItems: "center", justifyContent: "flex-start", flex: 1 }}
+      >
         <View style={Styles.notificationView}>
           <View style={[Styles.imageView, { backgroundColor: primaryColor }]}>
             <Image source={image} resizeMode={"contain"} />
@@ -31,7 +37,11 @@ const ToastNotification = props => {
 };
 
 const Styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: Constants.Colors.transparent, justifyContent: "space-between" },
+  container: {
+    flex: 1,
+    backgroundColor: Constants.Colors.transparent,
+    justifyContent: "space-between"
+  },
   notificationView: {
     flexDirection: "row",
     justifyContent: "center",

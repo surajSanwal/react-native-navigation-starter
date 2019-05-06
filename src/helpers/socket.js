@@ -50,7 +50,10 @@ export function socketInit() {
     if (res.success) {
       dispatch({ type: Types.UPDATE_GPS_LOCATION, payload: res.gpsLoc });
     } else {
-      toastMessage(navigator, { type: Constants.AppCosntants.Notificaitons.Error, message: res.message });
+      toastMessage(navigator, {
+        type: Constants.AppCosntants.Notificaitons.Error,
+        message: res.message
+      });
     }
   });
 
@@ -59,7 +62,10 @@ export function socketInit() {
   //handling no driver found on request ride
   socket.on("noDriverOnRequestRide", res => {
     console.log("noDriverOnRequestRide", res);
-    toastMessage(navigator, { type: Constants.AppCosntants.Notificaitons.Error, message: res.message });
+    toastMessage(navigator, {
+      type: Constants.AppCosntants.Notificaitons.Error,
+      message: res.message
+    });
     navigator.showModal({
       screen: "RiderNoShuttle"
     });
@@ -73,7 +79,10 @@ export function socketInit() {
         screen: "RideRequestConfrim"
       });
     } else {
-      toastMessage(navigator, { type: Constants.AppCosntants.Notificaitons.Error, message: res.message });
+      toastMessage(navigator, {
+        type: Constants.AppCosntants.Notificaitons.Error,
+        message: res.message
+      });
     }
     console.log("rideRequestSentToDriver", res);
   });
@@ -95,11 +104,20 @@ export function socketInit() {
     let { meta } = getState().trip;
     console.log("requestDriver", res);
     if (res.success) {
-      toastNotification(navigator, { type: Constants.AppCosntants.Notificaitons.Success, message: res.message });
-      dispatch({ type: Types.UPDATE_RIDES_META, payload: meta && meta.newRequestsCount + 1 });
+      toastNotification(navigator, {
+        type: Constants.AppCosntants.Notificaitons.Success,
+        message: res.message
+      });
+      dispatch({
+        type: Types.UPDATE_RIDES_META,
+        payload: meta && meta.newRequestsCount + 1
+      });
       dispatch({ type: Types.UPDATE_RIDES, payload: res.data });
     } else {
-      toastMessage(navigator, { type: Constants.AppCosntants.Notificaitons.Error, message: res.message });
+      toastMessage(navigator, {
+        type: Constants.AppCosntants.Notificaitons.Error,
+        message: res.message
+      });
     }
   });
 

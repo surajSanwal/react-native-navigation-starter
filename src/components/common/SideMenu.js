@@ -29,7 +29,7 @@ class SideMenu extends Component {
     closes the toggle
     */
   closeToggle() {
-    this.props.appActions.mergeOptions(this.props.componentId,false);
+    this.props.appActions.mergeOptions(this.props.componentId, false);
   }
 
   onHomePress = () => {

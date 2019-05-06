@@ -12,7 +12,12 @@ const MyStatusBar = ({ backgroundColor, ...props }) => (
 
 export default class SafeView extends Component {
   render() {
-    return <MyStatusBar backgroundColor={Constants.Colors.transparent} barStyle="light-content" />;
+    return (
+      <MyStatusBar
+        backgroundColor={Constants.Colors.transparent}
+        barStyle="light-content"
+      />
+    );
   }
 }
 

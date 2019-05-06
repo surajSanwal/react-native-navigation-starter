@@ -61,8 +61,8 @@ export default Button;
 const Styles = StyleSheet.create({
   buttonContainer: {
     // alignSelf: "center",
-    marginHorizontal:moderateScale(25),
-    marginVertical:moderateScale(20)
+    marginHorizontal: moderateScale(25),
+    marginVertical: moderateScale(20)
   },
   gradientStyle: {
     borderRadius: moderateScale(50),
