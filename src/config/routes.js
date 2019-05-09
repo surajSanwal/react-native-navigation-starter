@@ -2,7 +2,7 @@ import React from "react";
 
 import { Navigation } from "react-native-navigation";
 
-import { View, Image } from "react-native";
+import { View } from "react-native";
 
 import { Provider } from "react-redux";
 import SignUp from "../container/auth/SignUp";
@@ -12,8 +12,10 @@ import Header from "../components/common/Header";
 import SideMenu from "../components/common/SideMenu";
 import GeneralDetails from "../container/dashboard/GeneralDetails";
 import ForgotPassword from "../container/auth/ForgotPassword";
+import HistoryAll from "../container/dashboard/HistoryAll";
+import Notifications from "../container/dashboard/Notifications";
+/* eslint-disable */
 var background = require("../assets/img/Screen.jpg");
-
 const WrapScreen = (ReduxScreen, store, headerProps) => props => (
   <Provider store={store}>
     <View style={{ flex: 1 }}>
@@ -60,6 +62,7 @@ const WrapScreen = (ReduxScreen, store, headerProps) => props => (
     </View>
   </Provider>
 );
+/* eslint-enable */
 
 export const registerScreens = (store, Provider) => {
   // Loader Stack
@@ -98,6 +101,21 @@ export const registerScreens = (store, Provider) => {
     () => WrapScreen(Dashboard, store, { title: "Home" }),
 
     () => Dashboard
+  );
+
+  Navigation.registerComponent(
+    "HistoryAll",
+
+    () => WrapScreen(HistoryAll, store, { title: "History" }),
+
+    () => HistoryAll
+  );
+  Navigation.registerComponent(
+    "Notifications",
+
+    () => WrapScreen(Notifications, store, { title: "Notifications" }),
+
+    () => Notifications
   );
   Navigation.registerComponent(
     "GeneralDetails",

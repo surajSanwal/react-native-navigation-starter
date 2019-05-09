@@ -14,10 +14,8 @@ import { bindActionCreators } from "redux";
 
 import * as appActions from "../../actions";
 import Constants from "../../constants";
-import Common from "../../helpers/common";
 import SafeView from "../../components/common/SafeView";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
-import constants from "../../constants";
 
 class SideMenu extends Component {
   constructor(props) {
@@ -66,7 +64,7 @@ class SideMenu extends Component {
   }
   onRateUsPress = () => {
     this.closeToggle();
-    this.props.navigator.handleDeepLink({ link: "RateUs" });
+    alert("Under Development");
   };
   onSupportPress = () => {
     this.closeToggle();
@@ -77,12 +75,6 @@ class SideMenu extends Component {
     alert("Under Development");
   };
 
-  inactiveShuttle = () => {
-    this.closeToggle();
-    this.props.navigator.showModal({
-      screen: "ActiveInactiveShuttle"
-    });
-  };
   render() {
     let user = {
       name: "John Deo",

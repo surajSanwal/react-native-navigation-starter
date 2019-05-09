@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { View, Text, StyleSheet, Image } from "react-native";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
@@ -94,7 +94,7 @@ class SignUp extends React.Component {
                 paddingVertical: moderateScale(20)
               }}
             >
-              {`Already Have an Account? `}
+              {"Already Have an Account? "}
             </Text>
             <Text
               style={{

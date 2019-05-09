@@ -1,16 +1,13 @@
 import React from "react";
-import { View, StyleSheet, FlatList, TouchableOpacity } from "react-native";
-import { goToAuth } from "../../config/navigation";
+import { View, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 import * as AppAction from "../../actions";
 import { removeListeners } from "../../utilities/listeners";
-import { handleBackPress } from "../../utilities/BackButtonHandling";
 import { Navigation } from "react-native-navigation";
 import { manageComponentStats } from "../../actions/componentStats";
 import { userList } from "../../actions/list/listAction";
-import Loader from "./../../components/common/loader";
+// import Loader from "./../../components/common/loader";
 
-import UsersList from "./../../components/users/usersList";
 import GeneralCard from "../../components/generalCard";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -69,20 +66,19 @@ class GeneralDetails extends React.Component {
   }
 
   render() {
-    console.log("propspspspspsp===>", this.props);
-    if (false) {
-      return (
-        <View
-          style={{
-            flex: 1,
-            justifyContent: "center",
-            alignItems: "center"
-          }}
-        >
-          <Loader />
-        </View>
-      );
-    }
+    // if (false) {
+    //   return (
+    //     <View
+    //       style={{
+    //         flex: 1,
+    //         justifyContent: "center",
+    //         alignItems: "center"
+    //       }}
+    //     >
+    //       <Loader />
+    //     </View>
+    //   );
+    // }
     return (
       <View style={{ flex: 1, paddingHorizontal: moderateScale(25) }}>
         <View
@@ -138,4 +134,4 @@ export default connect(
   mapDispatchToProps
 )(GeneralDetails);
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});

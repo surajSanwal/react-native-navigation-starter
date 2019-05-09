@@ -14,7 +14,7 @@ Navigation.events().registerAppLaunchedListener(() => {
       drawBehind: true
     },
     bottomTabs: {
-      visible: false,
+      visible: true,
       drawBehind: true
     }
   });

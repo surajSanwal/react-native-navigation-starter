@@ -1,8 +1,6 @@
 import React from "react";
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, FlatList } from "react-native";
 import { Navigation } from "react-native-navigation";
-import { TouchableOpacity } from "react-native-ui-lib";
-import BasicListScreen from "./../../components/other/BasicListScreen";
 
 export default class HistoryAll extends React.Component {
   constructor(props) {
@@ -56,7 +54,16 @@ export default class HistoryAll extends React.Component {
     return (
       <View style={{ flex: 1, paddingTop: 15 }}>
         {this.state.data.length > 0 ? (
-          <BasicListScreen navigateToNextScreen={this.navigateToNextScreen} />
+          <FlatList
+            data={this.state.data}
+            renderItem={(item, index) => {
+              return (
+                <View key={index}>
+                  <Text>{item.fname}</Text>
+                </View>
+              );
+            }}
+          />
         ) : (
           <View style={{ flex: 1, justifyContent: "center" }}>
             <Text style={{ textAlign: "center", fontSize: 20 }}>
@@ -69,22 +76,22 @@ export default class HistoryAll extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  welcome: {
-    fontSize: 28
-  },
-  container: {
-    flex: 1
-  },
-  item1: {
-    fontSize: 17,
-    fontWeight: "bold"
-  },
-  item: {
-    fontSize: 15
-  },
-  details: {
-    flexDirection: "row",
-    alignItems: "center"
-  }
-});
+// const styles = StyleSheet.create({
+//   welcome: {
+//     fontSize: 28
+//   },
+//   container: {
+//     flex: 1
+//   },
+//   item1: {
+//     fontSize: 17,
+//     fontWeight: "bold"
+//   },
+//   item: {
+//     fontSize: 15
+//   },
+//   details: {
+//     flexDirection: "row",
+//     alignItems: "center"
+//   }
+// });

@@ -1,15 +1,6 @@
 import React from "react";
-import {
-  View,
-  Text,
-  StyleSheet,
-  AsyncStorage,
-  ScrollView,
-  TouchableOpacity,
-  Image
-} from "react-native";
+import { View, Text } from "react-native";
 import { Navigation } from "react-native-navigation";
-import AppleMusic from "./../../components/other/AppleMusic";
 
 export default class Notifications extends React.Component {
   constructor(props) {
@@ -36,10 +27,10 @@ export default class Notifications extends React.Component {
   render() {
     return (
       <View style={{ flex: 1 }}>
-        <AppleMusic />
+        <Text>Notification</Text>
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({});
+// const styles = StyleSheet.create({});
