@@ -1475,7 +1475,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.RNFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starter;
 				PRODUCT_NAME = RNFramework;
 				PROVISIONING_PROFILE = "1ab6a067-b815-4b06-ae1a-1e1618b35c60";
 				PROVISIONING_PROFILE_SPECIFIER = reactNativeBoilerPlateV2RN5Adhoc;
@@ -1504,7 +1504,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.RNFramework;
+				PRODUCT_BUNDLE_IDENTIFIER = com.starter;
 				PRODUCT_NAME = RNFramework;
 				PROVISIONING_PROFILE = "1ab6a067-b815-4b06-ae1a-1e1618b35c60";
 				PROVISIONING_PROFILE_SPECIFIER = reactNativeBoilerPlateV2RN5Adhoc;
