@@ -6,6 +6,7 @@ import { Navigation } from "react-native-navigation";
 import registerRoutes, { commandListener } from "./src/config/Routes";
 import { auth } from "./src/config/Navigator";
 import setup from "./src/store";
+
 registerRoutes(setup());
 commandListener();
 Navigation.events().registerAppLaunchedListener(() => {

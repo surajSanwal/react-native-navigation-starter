@@ -3,12 +3,21 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "react-native start",
+    "start:dev": "NODE_ENV=development react-native start",
+    "start:prod": "NODE_ENV=production react-native start",
     "test": "jest",
-    "lint": "./node_modules/.bin/eslint **.js"
+    "lint": "./node_modules/.bin/eslint **.js",
+    "rp": "prettier --write \"**/*.json\" \"**/*.js\"",
+    "android": "cd ./android && ./gradlew app:assembleDebug && ./gradlew installDebug",
+    "precommit": "npm run rp && lint-staged",
+    "android-bundle:dev": "NODE_ENV=development react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android-bundle:prod": "NODE_ENV=production react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res",
+    "android-build": "watchman watch-del-all && cd android && ./gradlew --stop && ./gradlew clean && ./gradlew assembleRelease"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.6.1",
+    "@react-native-community/netinfo": "^4.1.4",
+    "dotenv": "^8.0.0",
     "eslint": "^6.1.0",
     "prettier": "^1.18.2",
     "react": "16.8.6",
@@ -25,11 +34,26 @@
     "@babel/runtime": "^7.5.0",
     "@react-native-community/eslint-config": "^0.0.3",
     "babel-jest": "^24.1.0",
+    "eslint": "^6.1.0",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.3",
     "jest": "^24.1.0",
+    "lint-staged": "^9.2.1",
     "metro-react-native-babel-preset": "^0.54.1",
+    "prettier": "^1.18.2",
     "react-test-renderer": "16.8.6"
   },
   "jest": {
     "preset": "react-native"
+  },
+  "lint-staged": {
+    "*.{js,css,json}": [
+      "prettier --write"
+    ],
+    "*.js": [
+      "yarn lint",
+      "git add"
+    ]
   }
 }

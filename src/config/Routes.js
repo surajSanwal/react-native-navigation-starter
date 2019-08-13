@@ -1,18 +1,17 @@
 import { Navigation } from "react-native-navigation";
-import Home from "../container/Home";
-import Profile from "../container/Profile";
+import { Provider } from "react-redux";
 
-const wrapeScene = ReduxScreen => props => {
-  <>
-    <ReduxScreen />
-  </>;
-};
+import Home from "../containers/Home";
+import Profile from "../containers/Profile";
 
 const registerRoutes = store => {
-  console.log("store===>", store.getState());
-
-  Navigation.registerComponent("Home", () => Home);
-  Navigation.registerComponent("Profile", () => Profile);
+  Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
+  Navigation.registerComponentWithRedux(
+    "Profile",
+    () => Profile,
+    Provider,
+    store
+  );
 };
 
 export const commandListener = () =>
