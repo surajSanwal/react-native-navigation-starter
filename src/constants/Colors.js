@@ -6,13 +6,14 @@
 "use strict";
 
 let colors = {
+  Turquoise: "#D2F035",
   Primary: "#00A8CB",
   Secondary: "#a8a8a8",
   Yellow: "#F6CF65",
   DarkGray: "#393B3B",
   Transparent: "transparent",
   White: "#FFFFFF",
-  Black: "#020E31",
+  Black: "#1C2025",
   Placeholder: "#707070",
   ListBorder: "#B4C9CC",
   Green: "#7DDE97",
@@ -21,7 +22,6 @@ let colors = {
   Gray: "#A9AFAF",
   menuItemTxt: "#393B3B",
   FadeBorder: "#e0e0e0",
-  Ocen: "#79ABDC",
   LightGray: "#EEEEEE",
   MedGray: "#828282",
   LightSkyBlue: "#EEFAFF",
@@ -34,7 +34,7 @@ let colors = {
   LightText: "#6A6D71",
   MedBlue: "#77E8FF",
   MedPink: "#FFB492",
-  MedDrak: "#3C4551"
+  MedDark: "#3C4551"
 };
 
 export default colors;

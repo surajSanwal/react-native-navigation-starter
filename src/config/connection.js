@@ -4,14 +4,14 @@ const envConfig = {
     apiServer: "172.24.5.81:3000",
     apiPath: "api",
     apiVersion: "v1",
-    chatPath: "chathub"
+    chatPath: "chatHub"
   },
   production: {
     frontEnd: "stagingsdei.com:4201",
     apiServer: "3.18.168.191:3000",
     apiPath: "api",
     apiVersion: "v1",
-    chatPath: "chathub"
+    chatPath: "chatHub"
   }
 };
 

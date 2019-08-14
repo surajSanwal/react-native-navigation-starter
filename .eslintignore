@@ -9,3 +9,9 @@ package.json
 babel.config.js
 metro.config.js
 app.js
+.eslintrc.json
+.eslintignore
+.gitignore
+.pretterierignore
+.watchmanconfig
+.flowconfig

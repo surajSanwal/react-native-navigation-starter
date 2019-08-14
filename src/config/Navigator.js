@@ -1,4 +1,5 @@
 import { Navigation } from "react-native-navigation";
+import constants from "../constants";
 
 export const auth = () => {
   Navigation.setRoot({
@@ -13,17 +14,16 @@ export const auth = () => {
                 text: "React Native"
               },
               options: {
-                statusBar: {
-                  visible: true,
-                  style: "light",
-                  hideWithTopBar: true,
-                  blur: true
-                },
                 topBar: {
                   drawBehind: true,
-                  visible: false,
-                  animate: false
-                }
+                  visible: false
+                },
+                layout: {
+                  direction: "ltr", // Supported directions are: 'rtl', 'ltr'
+                  backgroundColor: constants.Colors.Black,
+                  orientation: ["portrait", "landscape"] // An array of supported orientations
+                },
+                modalPresentationStyle: "overCurrentContext"
               }
             }
           }

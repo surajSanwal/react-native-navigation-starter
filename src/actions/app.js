@@ -1,5 +1,5 @@
 import { Navigation } from "react-native-navigation";
-
+import constants from "../constants";
 export const push = (componentId, screen, passProps = {}) => {
   return () => {
     Navigation.push(componentId, {
@@ -12,7 +12,17 @@ export const push = (componentId, screen, passProps = {}) => {
               visible: false,
               enabled: false
             }
-          }
+          },
+          topBar: {
+            visible: false,
+            drawBehind:true
+          },
+           layout: {
+                  direction: "ltr", // Supported directions are: 'rtl', 'ltr'
+                  backgroundColor: constants.Colors.Black,
+                  orientation: ["portrait", "landscape"] // An array of supported orientations
+                },
+                modalPresentationStyle: "overCurrentContext"
         }
       }
     });
@@ -26,7 +36,7 @@ export const pop = componentId => {
 };
 
 /**
- * Navigate to a new page and clear the backstack.
+ * Navigate to a new page and clear the backStack.
  */
 // export const resetTo = newScreen => {
 //   return dispatch => {

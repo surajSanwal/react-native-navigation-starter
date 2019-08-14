@@ -1,12 +1,15 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Navigation } from "react-native-navigation";
+import { View, Text, StyleSheet, TextInput } from "react-native";
 import { connect } from "react-redux";
 import { push } from "../actions";
+import constants from "../constants";
+import { moderateScale } from "../helpers/ResponsiveFonts";
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    top: 50
+    top: 50,
+    backgroundColor: constants.Colors.Black
   }
 });
 
@@ -15,14 +18,31 @@ class Home extends Component {
     super(props);
   }
 
-  navigate = () => {
-    this.props.push(this.props.componentId, "Profile");
+  navigate = screen => {
+    this.props.push(this.props.componentId, screen);
   };
 
   render() {
     return (
       <View style={styles.container}>
-        <Text onPress={this.navigate}> Home</Text>
+        <Text
+          style={{
+            color: "#fff",
+            fontSize: moderateScale(20)
+          }}
+          onPress={() => this.navigate("Login")}
+        >
+          Click to Login
+        </Text>
+        <Text
+          style={{
+            color: "#fff",
+            fontSize: moderateScale(20)
+          }}
+          onPress={() => this.navigate("SignUp")}
+        >
+          Click to SignUp
+        </Text>
       </View>
     );
   }
