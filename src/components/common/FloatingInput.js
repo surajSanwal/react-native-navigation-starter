@@ -9,7 +9,6 @@ import {
   StyleSheet
 } from "react-native";
 import PropTypes from "prop-types";
-import Constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
 
@@ -36,9 +35,9 @@ class FloatingInput extends Component {
       label,
       value,
       editable,
-      onCancel,
-      onUpdate,
-      loading,
+      // onCancel,
+      // onUpdate,
+      // loading,
       ...props
     } = this.props;
     const { isFocused } = this.state;
@@ -50,8 +49,8 @@ class FloatingInput extends Component {
       fontSize: !isFocused && !value ? moderateScale(20) : moderateScale(18),
       color:
         isFocused || value
-          ? Constants.Colors.White
-          : Constants.Colors.Turquoise,
+          ? constants.Colors.White
+          : constants.Colors.Turquoise,
       display: isFocused || value ? "flex" : "none"
     };
     return (
@@ -109,7 +108,7 @@ const Styles = StyleSheet.create({
     // ...Constants.Fonts.TitilliumWebRegular,
     height: moderateScale(50),
     fontSize: moderateScale(18),
-    color: Constants.Colors.Turquoise,
+    color: constants.Colors.Turquoise,
     left: moderateScale(5)
     //backgroundColor:'red',
     // width:Constants.BaseStyle.DEVICE_WIDTH*0.5
@@ -118,7 +117,7 @@ const Styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     borderBottomWidth: 1,
-    borderBottomColor: Constants.Colors.Turquoise
+    borderBottomColor: constants.Colors.Turquoise
     //backgroundColor: "#aabbcc"
   },
   cancelImg: {

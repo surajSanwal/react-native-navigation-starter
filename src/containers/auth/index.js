@@ -29,7 +29,7 @@ class Login extends Component {
         >
           <View
             style={{
-              borderBottomColor: constants.Colors.Turquoise,
+              borderBottomColor: constants.Colors.White,
               borderBottomWidth: 1,
               flex: 0.1,
               justifyContent: "flex-end",
@@ -58,8 +58,18 @@ class Login extends Component {
               onChangeText={password => this.setState({ password })}
             />
           </View>
-
-          <ArrowButton name={"Sign In"} />
+          <View
+            style={{
+              justifyContent: "flex-start",
+              alignItems: "flex-start"
+            }}
+          >
+            <ArrowButton
+              name={"Submit"}
+              image={constants.Images.ArrowRightWhite}
+              buttonReverse
+            />
+          </View>
         </View>
       </SafeView>
     );

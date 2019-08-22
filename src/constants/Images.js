@@ -3,8 +3,11 @@
  * @description: Images constants file for the application
 
  * */
-
+/* eslint-disable */
 "use strict";
 export default {
-  // BackBlack: require('../assets/img/back_circle_black/back_circle_black.png'),
+  Bulldozer: require("../assets/img/Bulldozer.png"),
+  ArrowRightDark: require("../assets/img/Arrow-right-dark.png"),
+  ArrowRightWhite: require("../assets/img/Arrow-Right-White.png"),
+  Drawer: require("../assets/img/drawer.png")
 };

@@ -34,6 +34,8 @@ target 'jetX' do
 
   pod 'react-native-netinfo', :path => '../node_modules/@react-native-community/netinfo'
 
+  pod 'react-native-material-kit', :path => '../node_modules/react-native-material-kit'
+
   target 'jetXTests' do
     inherit! :search_paths
     # Pods for testing

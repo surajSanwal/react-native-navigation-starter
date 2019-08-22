@@ -84,7 +84,10 @@ class Signup extends Component {
             />
           </View>
 
-          <ArrowButton name={"Submit"} />
+          <ArrowButton
+            name={"Submit"}
+            image={constants.Images.ArrowRightWhite}
+          />
         </View>
       </SafeView>
     );

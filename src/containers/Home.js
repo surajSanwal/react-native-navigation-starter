@@ -1,15 +1,21 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, TextInput } from "react-native";
+import { View, Text, StyleSheet, ImageBackground } from "react-native";
 import { connect } from "react-redux";
 import { push } from "../actions";
 import constants from "../constants";
 import { moderateScale } from "../helpers/ResponsiveFonts";
+import SafeView from "../components/common/SafeView";
+import ArrowButton from "../components/common/ArrowButton";
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    top: 50,
-    backgroundColor: constants.Colors.Black
+    justifyContent: "space-around",
+    alignItems: "center",
+    zIndex: 99
+  },
+  buttonFont: {
+    fontSize: moderateScale(34)
   }
 });
 
@@ -24,25 +30,53 @@ class Home extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <Text
+      <View style={{ flex: 1 }}>
+        <ImageBackground
+          source={constants.Images.Bulldozer}
           style={{
-            color: "#fff",
-            fontSize: moderateScale(20)
+            position: "absolute",
+            backfaceVisibility: 0,
+            height: constants.BaseStyle.DEVICE_HEIGHT,
+            width: constants.BaseStyle.DEVICE_WIDTH,
+            justifyContent: "center"
           }}
-          onPress={() => this.navigate("Login")}
+          resizeMode={"cover"}
+          resizeMethod={"auto"}
+        />
+        <SafeView
+          title={""}
+          hideBack
+          drawerEnabled
+          componentId={this.props.componentId}
         >
-          Click to Login
-        </Text>
-        <Text
-          style={{
-            color: "#fff",
-            fontSize: moderateScale(20)
-          }}
-          onPress={() => this.navigate("SignUp")}
-        >
-          Click to SignUp
-        </Text>
+          <View style={styles.container}>
+            <Text
+              style={{
+                color: "#fff",
+                fontSize: moderateScale(30),
+                fontWeight: "bold",
+                paddingLeft: moderateScale(50),
+                paddingRight: moderateScale(150)
+              }}
+            >
+              a simple nudge can move mountains
+            </Text>
+            <View>
+              <ArrowButton
+                name={"Find"}
+                textStyle={styles.buttonFont}
+                onPress={() => this.navigate("Find")}
+                image={constants.Images.ArrowRightWhite}
+              />
+              <ArrowButton
+                name={"My Nudgits"}
+                textStyle={styles.buttonFont}
+                onPress={() => this.navigate("MyNudgits")}
+                image={constants.Images.ArrowRightWhite}
+              />
+            </View>
+          </View>
+        </SafeView>
       </View>
     );
   }

@@ -1,10 +1,11 @@
-import React from "react";
-import { View, Text } from "react-native";
+import React, { useState } from "react";
+import { View, Text, Image, TouchableOpacity } from "react-native";
 import PropTypes from "prop-types";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
 import { Navigation } from "react-native-navigation";
 const Header = props => {
+  let [drawerOpen, updateDrawer] = useState(false); //eslint-disable-line
   return (
     <View
       style={{
@@ -12,12 +13,17 @@ const Header = props => {
         padding: moderateScale(15)
       }}
     >
-      <Text
-        onPress={() => Navigation.pop(props.componentId)}
-        style={{ color: constants.Colors.White, fontSize: moderateScale(14) }}
-      >
-        Back
-      </Text>
+      {!props.hideBack && (
+        <Text
+          onPress={() => Navigation.pop(props.componentId)}
+          style={[
+            { color: constants.Colors.White, fontSize: moderateScale(14) },
+            props.backStyle
+          ]}
+        >
+          Back
+        </Text>
+      )}
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
         <Text
           style={{
@@ -29,15 +35,34 @@ const Header = props => {
           {props.title}
         </Text>
       </View>
+      {props.drawerEnabled && (
+        <TouchableOpacity
+          style={{}}
+          onPress={() => {
+            Navigation.mergeOptions(props.componentId, {
+              sideMenu: {
+                right: {
+                  visible: !drawerOpen
+                }
+              }
+            });
+            // updateDrawer(!drawerOpen);
+          }}
+        >
+          <Image source={constants.Images.Drawer} />
+        </TouchableOpacity>
+      )}
     </View>
   );
 };
 
 Header.propTypes = {
-  title: PropTypes.string.isRequired
+  title: PropTypes.string.isRequired,
+  hideBack: PropTypes.bool
 };
 
 Header.defaultProps = {
-  title: ""
+  title: "",
+  hideBack: false
 };
 export default Header;

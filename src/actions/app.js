@@ -8,7 +8,7 @@ export const push = (componentId, screen, passProps = {}) => {
         passProps,
         options: {
           sideMenu: {
-            left: {
+            right: {
               visible: false,
               enabled: false
             }

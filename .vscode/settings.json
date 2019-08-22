@@ -1,0 +1,13 @@
+{
+  "psi-header.config": {
+    "forceToTop": true,
+    "blankLinesAfter": 2,
+    "author": "Suraj Sanwal",
+    "authorEmail": "sonusanwal65@gmail.com",
+    "company": "smartData Enterprises (I) Inc",
+    "copyrightHolder": "smartData Inc"
+  },
+  "psi-header.changes-tracking": {
+    "enforceHeader": true
+  }
+}
