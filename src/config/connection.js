@@ -1,3 +1,12 @@
+/*
+ * Filename: /Users/suraj.sanwal/Desktop/projects/react-native/jetX/src/config/connection.js
+ * Path: /Users/suraj.sanwal/Desktop/projects/react-native/jetX
+ * Created Date: Tuesday, August 13th 2019, 10:18:19 am
+ * Author: Suraj Sanwal
+ *
+ * Copyright (c) 2019 smartData Inc
+ */
+
 const envConfig = {
   development: {
     frontEnd: "3.18.168.191:3002",

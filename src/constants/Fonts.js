@@ -1,66 +1,58 @@
 /*
- * @file: Fonts.js
- * @description: App Fonts
- * */
+ * Filename: /Users/suraj.sanwal/Desktop/projects/react-native/jetX/src/constants/Fonts.js
+ * Path: /Users/suraj.sanwal/Desktop/projects/react-native/jetX
+ * Created Date: Thursday, August 22nd 2019, 6:27:08 pm
+ * Author: Suraj Sanwal
+ *
+ * Copyright (c) 2019 smartData Inc
+ */
 
 "use-strict";
 var Fonts = {
-  Black: {
-    fontFamily: "Raleway-Black"
+  ITCAvantGardeStdBold: {
+    fontFamily: "ITCAvantGardeStd-Bold"
   },
-  Bold: {
-    fontFamily: "Raleway-Bold"
+  ITCAvantGardeStdBoldCn: {
+    fontFamily: "ITCAvantGardeStd-BoldCn"
   },
-  BoldItalic: {
-    fontFamily: "Raleway-BoldItalic"
+  ITCAvantGardeStdBoldCnObl: {
+    fontFamily: "ITCAvantGardeStd-BoldCnObl"
   },
-  ExtraLight: {
-    fontFamily: "Raleway-ExtraLight"
+  ITCAvantGardeStdBk: {
+    fontFamily: "ITCAvantGardeStd-Bk"
   },
-  ExtraBold: {
-    fontFamily: "Raleway-ExtraBold"
+  ITCAvantGardeStdBoldObl: {
+    fontFamily: " ITCAvantGardeStd-BoldObl"
   },
-  ExtraLightItalic: {
-    fontFamily: "Raleway-ExtraLightItalic"
+  ITCAvantGardeStdBkCn: {
+    fontFamily: "ITCAvantGardeStd-BkCn"
   },
-  ExtraBoldItalic: {
-    fontFamily: "Raleway-ExtraBoldItalic"
+  ITCAvantGardeStdBkCnObl: {
+    fontFamily: "ITCAvantGardeStd-BkCnObl"
   },
-  Italic: {
-    fontFamily: "Raleway-Italic"
+  ITCAvantGardeStdBkObl: {
+    fontFamily: "ITCAvantGardeStd-BkObl"
   },
-  Medium: {
-    fontFamily: "Raleway-Medium"
+  ITCAvantGardeStdDemi: {
+    fontFamily: "Raleway-Me ITCAvantGardeStd-Demi"
   },
-  Heavy: {
-    fontFamily: "Raleway-Heavy"
+  ITCAvantGardeStdDemiCn: {
+    fontFamily: " ITCAvantGardeStd-DemiCn"
   },
-  MediumItalic: {
-    fontFamily: "Raleway-MediumItalic"
+  ITCAvantGardeStdDemiCnObl: {
+    fontFamily: "ITCAvantGardeStdDemiCnObl"
   },
-  Light: {
-    fontFamily: "Raleway-Light"
+  ITCAvantGardeStdXLt: {
+    fontFamily: "ITCAvantGardeStd-XLt"
   },
-  LightItalic: {
-    fontFamily: "Raleway-LightItalic"
+  ITCAvantGardeStdXLtCn: {
+    fontFamily: "ITCAvantGardeStd-XLtCn"
   },
-  Regular: {
-    fontFamily: "Raleway-Regular"
+  ITCAvantGardeStdXLtObl: {
+    fontFamily: "ITCAvantGardeStd-XLtObl"
   },
-  SemiBold: {
-    fontFamily: "Raleway-SemiBold"
-  },
-  SemiBoldItalic: {
-    fontFamily: "Raleway-SemiBoldItalic"
-  },
-  Thin: {
-    fontFamily: "Raleway-Thin"
-  },
-  ThinItalic: {
-    fontFamily: "Raleway-ThinItalic"
-  },
-  Bodoni: {
-    fontFamily: "Bodoni-Bold"
+  ITCAvantGardeStdMdCn: {
+    fontFamily: "ITCAvantGardeStd-MdCn"
   }
 };
 

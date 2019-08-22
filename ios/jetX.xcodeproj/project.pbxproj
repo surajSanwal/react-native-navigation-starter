@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* jetXTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* jetXTests.m */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -20,6 +19,21 @@
 		65FC247ECCF85551DBC24046 /* libPods-jetX.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D8016E1BA2079403761EBB8 /* libPods-jetX.a */; };
 		93788C3CC8DE1DBC6491DDB2 /* libPods-jetX-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D964E8400F36426FB14251CA /* libPods-jetX-tvOSTests.a */; };
 		BB383737C443BAD3819E7697 /* libPods-jetX-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B8BCC301167E515B7831319 /* libPods-jetX-tvOS.a */; };
+		63057B9637D4477695DBB861 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf in Resources */ = {isa = PBXBuildFile; fileRef = ABBDBD2AD55E4101819F19F6 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf */; };
+		E7DBB00BE0C540B1AAC6223A /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf in Resources */ = {isa = PBXBuildFile; fileRef = 776D8FA275F54E01924C8994 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf */; };
+		45745DEB2F81427FA5183240 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf in Resources */ = {isa = PBXBuildFile; fileRef = F00475BF993C4BD8B8A857A1 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf */; };
+		2D021621BCE041D9BB54D35F /* itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf in Resources */ = {isa = PBXBuildFile; fileRef = 1A72BC59FC844B438552212B /* itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf */; };
+		447A01DB7AC046DC87449847 /* itc-avant-garde-gothic-std-book-58957161d80eb.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE209A0027EB436C8CB4205F /* itc-avant-garde-gothic-std-book-58957161d80eb.otf */; };
+		D37ACB34185247FEAC5C671C /* itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9D3824C0E459402DB95B86DF /* itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf */; };
+		94DAA177C2A24BCEAEACA6D5 /* itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf in Resources */ = {isa = PBXBuildFile; fileRef = F0BB355AA07243EFAB610697 /* itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf */; };
+		62D6C04F0EEC4F38B5247A95 /* itc-avant-garde-gothic-std-book-oblique-589571c924212.otf in Resources */ = {isa = PBXBuildFile; fileRef = 35CB0C466F054165BD01CBD8 /* itc-avant-garde-gothic-std-book-oblique-589571c924212.otf */; };
+		5484305352CD414DA14BBE3C /* itc-avant-garde-gothic-std-demi-589572a199962.otf in Resources */ = {isa = PBXBuildFile; fileRef = 644B2E9E6340418FAED1F8D7 /* itc-avant-garde-gothic-std-demi-589572a199962.otf */; };
+		F723C6223DBF48F5B836B88C /* itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8FBE317FF4D1433CBC29AB40 /* itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf */; };
+		58E0BB9B290D4263BE388AB1 /* itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf in Resources */ = {isa = PBXBuildFile; fileRef = 94C771D9920A4FA4925C0909 /* itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf */; };
+		6CABCC45D23349B8B46D16E2 /* itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9A37BFEDA33A40F3A28D540C /* itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf */; };
+		08510D923ADC43C48AF9BC2F /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf in Resources */ = {isa = PBXBuildFile; fileRef = A88D073B4EAA4F9A9ABA7B96 /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf */; };
+		740EF211052149F8A2974790 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf in Resources */ = {isa = PBXBuildFile; fileRef = D858E281AEA44C949F2E5B88 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf */; };
+		F020B7E30D9141FB95842ED0 /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EBD05D62BE149FCBD222FFB /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +81,21 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		FD761C374A4721DE0D2D1C1F /* Pods-jetX-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jetX-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-jetX-tvOS/Pods-jetX-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
+		ABBDBD2AD55E4101819F19F6 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-bold-589572c7e9955.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-bold-589572c7e9955.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		776D8FA275F54E01924C8994 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F00475BF993C4BD8B8A857A1 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		1A72BC59FC844B438552212B /* itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		BE209A0027EB436C8CB4205F /* itc-avant-garde-gothic-std-book-58957161d80eb.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-book-58957161d80eb.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-book-58957161d80eb.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9D3824C0E459402DB95B86DF /* itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		F0BB355AA07243EFAB610697 /* itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		35CB0C466F054165BD01CBD8 /* itc-avant-garde-gothic-std-book-oblique-589571c924212.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-book-oblique-589571c924212.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-book-oblique-589571c924212.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		644B2E9E6340418FAED1F8D7 /* itc-avant-garde-gothic-std-demi-589572a199962.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-demi-589572a199962.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-demi-589572a199962.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8FBE317FF4D1433CBC29AB40 /* itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		94C771D9920A4FA4925C0909 /* itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9A37BFEDA33A40F3A28D540C /* itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A88D073B4EAA4F9A9ABA7B96 /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D858E281AEA44C949F2E5B88 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		5EBD05D62BE149FCBD222FFB /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,6 +194,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				A951A1318D44EA4709F41764 /* Pods */,
+				B82BEED9701F4032BF38B417 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -197,6 +227,29 @@
 			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
+		};
+		B82BEED9701F4032BF38B417 /* Resources */ = {
+			isa = "PBXGroup";
+			children = (
+				ABBDBD2AD55E4101819F19F6 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf */,
+				776D8FA275F54E01924C8994 /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf */,
+				F00475BF993C4BD8B8A857A1 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf */,
+				1A72BC59FC844B438552212B /* itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf */,
+				BE209A0027EB436C8CB4205F /* itc-avant-garde-gothic-std-book-58957161d80eb.otf */,
+				9D3824C0E459402DB95B86DF /* itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf */,
+				F0BB355AA07243EFAB610697 /* itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf */,
+				35CB0C466F054165BD01CBD8 /* itc-avant-garde-gothic-std-book-oblique-589571c924212.otf */,
+				644B2E9E6340418FAED1F8D7 /* itc-avant-garde-gothic-std-demi-589572a199962.otf */,
+				8FBE317FF4D1433CBC29AB40 /* itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf */,
+				94C771D9920A4FA4925C0909 /* itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf */,
+				9A37BFEDA33A40F3A28D540C /* itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf */,
+				A88D073B4EAA4F9A9ABA7B96 /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf */,
+				D858E281AEA44C949F2E5B88 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf */,
+				5EBD05D62BE149FCBD222FFB /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+			path = "";
 		};
 /* End PBXGroup section */
 
@@ -285,7 +338,7 @@
 		83CBB9F71A601CBA00E9B192 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0940;
+				LastUpgradeCheck = 940;
 				ORGANIZATIONNAME = Facebook;
 				TargetAttributes = {
 					00E356ED1AD99517003FC87E = {
@@ -338,6 +391,21 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
+				63057B9637D4477695DBB861 /* itc-avant-garde-gothic-std-bold-589572c7e9955.otf in Resources */,
+				E7DBB00BE0C540B1AAC6223A /* itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf in Resources */,
+				45745DEB2F81427FA5183240 /* itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf in Resources */,
+				2D021621BCE041D9BB54D35F /* itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf in Resources */,
+				447A01DB7AC046DC87449847 /* itc-avant-garde-gothic-std-book-58957161d80eb.otf in Resources */,
+				D37ACB34185247FEAC5C671C /* itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf in Resources */,
+				94DAA177C2A24BCEAEACA6D5 /* itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf in Resources */,
+				62D6C04F0EEC4F38B5247A95 /* itc-avant-garde-gothic-std-book-oblique-589571c924212.otf in Resources */,
+				5484305352CD414DA14BBE3C /* itc-avant-garde-gothic-std-demi-589572a199962.otf in Resources */,
+				F723C6223DBF48F5B836B88C /* itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf in Resources */,
+				58E0BB9B290D4263BE388AB1 /* itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf in Resources */,
+				6CABCC45D23349B8B46D16E2 /* itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf in Resources */,
+				08510D923ADC43C48AF9BC2F /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf in Resources */,
+				740EF211052149F8A2974790 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf in Resources */,
+				F020B7E30D9141FB95842ED0 /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

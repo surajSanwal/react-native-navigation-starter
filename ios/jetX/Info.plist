@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -53,5 +53,23 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>itc-avant-garde-gothic-std-bold-589572c7e9955.otf</string>
+		<string>itc-avant-garde-gothic-std-bold-condensed-5895705e8fe31.otf</string>
+		<string>itc-avant-garde-gothic-std-bold-condensed-oblique-5895710fb8537.otf</string>
+		<string>itc-avant-garde-gothic-std-bold-oblique-589573024abd6.otf</string>
+		<string>itc-avant-garde-gothic-std-book-58957161d80eb.otf</string>
+		<string>itc-avant-garde-gothic-std-book-condensed-5895704105b51.otf</string>
+		<string>itc-avant-garde-gothic-std-book-condensed-oblique-589570ed92a2c.otf</string>
+		<string>itc-avant-garde-gothic-std-book-oblique-589571c924212.otf</string>
+		<string>itc-avant-garde-gothic-std-demi-589572a199962.otf</string>
+		<string>itc-avant-garde-gothic-std-demi-condensed-589571f095e47.otf</string>
+		<string>itc-avant-garde-gothic-std-demi-condensed-oblique-5895723d52f87.otf</string>
+		<string>itc-avant-garde-gothic-std-extra-light-5895708744eb6.otf</string>
+		<string>itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf</string>
+		<string>itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf</string>
+		<string>itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf</string>
+	</array>
 </dict>
 </plist>
