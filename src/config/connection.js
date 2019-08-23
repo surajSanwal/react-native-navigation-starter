@@ -10,7 +10,7 @@
 const envConfig = {
   development: {
     frontEnd: "3.18.168.191:3002",
-    apiServer: "172.24.5.81:3000",
+    apiServer: "172.24.5.91:3000",
     apiPath: "api",
     apiVersion: "v1",
     chatPath: "chatHub"

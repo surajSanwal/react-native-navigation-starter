@@ -34,13 +34,13 @@ var Fonts = {
     fontFamily: "ITCAvantGardeStd-BkObl"
   },
   ITCAvantGardeStdDemi: {
-    fontFamily: "Raleway-Me ITCAvantGardeStd-Demi"
+    fontFamily: "ITCAvantGardeStd-Demi"
   },
   ITCAvantGardeStdDemiCn: {
     fontFamily: " ITCAvantGardeStd-DemiCn"
   },
   ITCAvantGardeStdDemiCnObl: {
-    fontFamily: "ITCAvantGardeStdDemiCnObl"
+    fontFamily: "ITCAvantGardeStd-DemiCnObl"
   },
   ITCAvantGardeStdXLt: {
     fontFamily: "ITCAvantGardeStd-XLt"
@@ -53,6 +53,12 @@ var Fonts = {
   },
   ITCAvantGardeStdMdCn: {
     fontFamily: "ITCAvantGardeStd-MdCn"
+  },
+  ITCAvantGardeProBk: {
+    fontFamily: "ITCAvantGardePro-Bk"
+  },
+  ITCAvantGardeProMd: {
+    fontFamily: "ITCAvantGardePro-Md"
   }
 };
 

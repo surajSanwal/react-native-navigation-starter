@@ -6,7 +6,7 @@ import ArrowButton from "../../components/common/ArrowButton";
 import SafeView from "../../components/common/SafeView";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
-
+import { userLogin } from "../../actions";
 class Login extends Component {
   constructor(props) {
     super(props);
@@ -15,6 +15,18 @@ class Login extends Component {
       password: ""
     };
   }
+
+  onLoginPress = () => {
+    this.props.userLogin({
+      email: this.state.username,
+      password: this.state.password,
+      device: {
+        type: "ios",
+        token: "xyxxxxzzzz"
+      },
+      role: this.props.role
+    });
+  };
   render() {
     let { username, password } = this.state;
     return (
@@ -68,6 +80,7 @@ class Login extends Component {
               name={"Submit"}
               image={constants.Images.ArrowRightWhite}
               buttonReverse
+              onPress={this.onLoginPress}
             />
           </View>
         </View>
@@ -82,5 +95,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  {}
+  { userLogin }
 )(Login);

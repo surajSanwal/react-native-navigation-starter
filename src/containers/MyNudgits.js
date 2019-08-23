@@ -29,8 +29,8 @@ class MyNudgits extends Component {
     super(props);
   }
 
-  navigate(screen) {
-    this.props.push(this.props.componentId, screen);
+  navigate(screen, role) {
+    this.props.push(this.props.componentId, screen, { role });
   }
 
   render() {
@@ -69,14 +69,14 @@ class MyNudgits extends Component {
               <ArrowButton
                 name={"I'm a Customer"}
                 textStyle={styles.buttonFont}
-                onPress={() => this.navigate("SignUp")}
+                onPress={() => this.navigate("SignUp", "customer")}
                 buttonReverse
                 buttonStyle={styles.buttonStyle}
               />
               <ArrowButton
                 name={"I'm a Operator"}
                 textStyle={styles.buttonFont}
-                onPress={() => this.navigate("SignUp")}
+                onPress={() => this.navigate("SignUp", "operator")}
                 buttonReverse
                 buttonStyle={styles.buttonStyle}
               />

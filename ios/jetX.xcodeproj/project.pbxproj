@@ -34,6 +34,8 @@
 		08510D923ADC43C48AF9BC2F /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf in Resources */ = {isa = PBXBuildFile; fileRef = A88D073B4EAA4F9A9ABA7B96 /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf */; };
 		740EF211052149F8A2974790 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf in Resources */ = {isa = PBXBuildFile; fileRef = D858E281AEA44C949F2E5B88 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf */; };
 		F020B7E30D9141FB95842ED0 /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf in Resources */ = {isa = PBXBuildFile; fileRef = 5EBD05D62BE149FCBD222FFB /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf */; };
+		D79CA283A358443A92353E80 /* ITCAvantGardePro-Bk.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 92C37C831DF8424097BCAC5F /* ITCAvantGardePro-Bk.ttf */; };
+		A7D6EA82E94342FCBF2F663E /* ITCAvantGardePro-Md.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 53BBC591EB2740FDBDE7D660 /* ITCAvantGardePro-Md.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +98,8 @@
 		A88D073B4EAA4F9A9ABA7B96 /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D858E281AEA44C949F2E5B88 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5EBD05D62BE149FCBD222FFB /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf */ = {isa = PBXFileReference; name = "itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf"; path = "../src/assets/Fonts/itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		92C37C831DF8424097BCAC5F /* ITCAvantGardePro-Bk.ttf */ = {isa = PBXFileReference; name = "ITCAvantGardePro-Bk.ttf"; path = "../src/assets/Fonts/ITCAvantGardePro-Bk.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		53BBC591EB2740FDBDE7D660 /* ITCAvantGardePro-Md.ttf */ = {isa = PBXFileReference; name = "ITCAvantGardePro-Md.ttf"; path = "../src/assets/Fonts/ITCAvantGardePro-Md.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -246,6 +250,8 @@
 				A88D073B4EAA4F9A9ABA7B96 /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf */,
 				D858E281AEA44C949F2E5B88 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf */,
 				5EBD05D62BE149FCBD222FFB /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf */,
+				92C37C831DF8424097BCAC5F /* ITCAvantGardePro-Bk.ttf */,
+				53BBC591EB2740FDBDE7D660 /* ITCAvantGardePro-Md.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -406,6 +412,8 @@
 				08510D923ADC43C48AF9BC2F /* itc-avant-garde-gothic-std-extra-light-condensed-589570b606f66.otf in Resources */,
 				740EF211052149F8A2974790 /* itc-avant-garde-gothic-std-extra-light-oblique-5895712c301f0.otf in Resources */,
 				F020B7E30D9141FB95842ED0 /* itc-avant-garde-gothic-std-medium-condensed-5895720edc668.otf in Resources */,
+				D79CA283A358443A92353E80 /* ITCAvantGardePro-Bk.ttf in Resources */,
+				A7D6EA82E94342FCBF2F663E /* ITCAvantGardePro-Md.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

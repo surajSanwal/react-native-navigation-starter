@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { View, SafeAreaView } from "react-native";
 import { connect } from "react-redux";
+import { logout } from "../../actions";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import MenuView from "./MenuView";
@@ -12,10 +13,11 @@ const menu = [
   {
     title: "About nudgit"
   },
-  { title: "Contacts" }
+  { title: "Contacts" },
+  { title: "Logout" }
 ];
 
-class AuthMenu extends Component {
+class CustomerMenu extends Component {
   constructor(props) {
     super(props);
   }
@@ -54,5 +56,5 @@ const mapStateToProps = state => {
 };
 export default connect(
   mapStateToProps,
-  {}
-)(AuthMenu);
+  { logout }
+)(CustomerMenu);

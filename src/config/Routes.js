@@ -7,7 +7,12 @@ import Login from "../containers/auth";
 import Signup from "../containers/auth/Signup";
 import MyNudgits from "../containers/MyNudgits";
 import AuthMenu from "../components/sideMenu/AuthMenu";
+import OperatorMenu from "../components/sideMenu/OperatorMenu";
+import CustomerMenu from "../components/sideMenu/CustomerMenu";
 import Find from "../containers/Find";
+import VerifyCustomer from "../containers/auth/VerifyCustomer";
+import Customer from "../containers/customer";
+import Operator from "../containers/operator";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -37,7 +42,37 @@ const registerRoutes = store => {
     Provider,
     store
   );
+  Navigation.registerComponentWithRedux(
+    "sideDrawerOperator",
+    () => OperatorMenu,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "sideDrawerCustomer",
+    () => CustomerMenu,
+    Provider,
+    store
+  );
   Navigation.registerComponentWithRedux("Find", () => Find, Provider, store);
+  Navigation.registerComponentWithRedux(
+    "VerifyCustomer",
+    () => VerifyCustomer,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "Customer",
+    () => Customer,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "Operator",
+    () => Operator,
+    Provider,
+    store
+  );
 };
 
 export const commandListener = () =>

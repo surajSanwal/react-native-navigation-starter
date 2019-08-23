@@ -8,12 +8,19 @@ const persistConfig = {
   key: "root",
   storage: AsyncStorage,
   blacklist: [],
-  whitelist: []
+  whitelist: ["user"]
 };
 export default () => {
-  return createStore(
-    persistCombineReducers(persistConfig, reducers),
-    {},
-    applyMiddleware(logger, thunk)
-  );
+  return new Promise((resolve, reject) => {
+    try {
+      var store = createStore(
+        persistCombineReducers(persistConfig, reducers),
+        {},
+        applyMiddleware(logger, thunk)
+      );
+      persistStore(store, {}, () => resolve(store));
+    } catch (e) {
+      reject(e);
+    }
+  });
 };
