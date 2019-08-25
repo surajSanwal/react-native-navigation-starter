@@ -13,6 +13,7 @@ import Find from "../containers/Find";
 import VerifyCustomer from "../containers/auth/VerifyCustomer";
 import Customer from "../containers/customer";
 import Operator from "../containers/operator";
+import SetupProfile from "../containers/auth/SetupProfile";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -70,6 +71,18 @@ const registerRoutes = store => {
   Navigation.registerComponentWithRedux(
     "Operator",
     () => Operator,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "SetupProfile",
+    () => SetupProfile,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "Profile",
+    () => Profile,
     Provider,
     store
   );

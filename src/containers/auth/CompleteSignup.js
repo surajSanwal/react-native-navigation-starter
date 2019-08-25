@@ -6,7 +6,7 @@ import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import ArrowButton from "../../components/common/ArrowButton";
 
-class CustomerDashboard extends Component {
+class CompleteSignup extends Component {
   render() {
     return (
       <SafeView
@@ -25,56 +25,44 @@ class CustomerDashboard extends Component {
           <View>
             <View
               style={{
-                width: "50%",
-                borderBottomColor: constants.Colors.Turquoise,
-                borderBottomWidth: 1
+                width: "50%"
               }}
             >
               <Text
                 style={{
-                  ...constants.Fonts.ITCAvantGardeStdBold,
-                  fontSize: moderateScale(27),
-                  color: constants.Colors.Turquoise,
+                  ...constants.Fonts.ITCAvantGardeStdBkObl,
+                  fontSize: moderateScale(32),
+                  color: constants.Colors.White,
                   paddingVertical: moderateScale(10)
                 }}
               >
-                My Naugits
+                Well done…{" "}
+              </Text>
+              <Text
+                style={{
+                  ...constants.Fonts.ITCAvantGardeStdBk,
+                  fontSize: moderateScale(15),
+                  color: constants.Colors.White,
+                  paddingVertical: moderateScale(10)
+                }}
+              >
+                to have a seamless experience complete your profile and payment
+                details so you can nudgit anytime or simply begin searching for
+                your digger now
               </Text>
             </View>
           </View>
           <View
-            style={{
-              flex: 1,
-              justifyContent: "space-around",
-              alignItems: "center"
-            }}
+            style={{ justifyContent: "space-around", alignItems: "center" }}
           >
             <ArrowButton
-              name={"Current Job"}
+              name={"Start Searching"}
               image={constants.Images.ArrowRightWhite}
               buttonReverse
               buttonStyle={styles.buttonStyle}
             />
             <ArrowButton
-              name={"Past Job"}
-              image={constants.Images.ArrowRightWhite}
-              buttonReverse
-              buttonStyle={styles.buttonStyle}
-            />
-            <ArrowButton
-              name={"Find"}
-              image={constants.Images.ArrowRightWhite}
-              buttonReverse
-              buttonStyle={styles.buttonStyle}
-            />
-            <ArrowButton
-              name={"Message"}
-              image={constants.Images.ArrowRightWhite}
-              buttonReverse
-              buttonStyle={styles.buttonStyle}
-            />
-            <ArrowButton
-              name={"Favorites"}
+              name={"complete profile"}
               image={constants.Images.ArrowRightWhite}
               buttonReverse
               buttonStyle={styles.buttonStyle}
@@ -100,4 +88,4 @@ const mapStateToProps = () => ({});
 export default connect(
   mapStateToProps,
   {}
-)(CustomerDashboard);
+)(CompleteSignup);

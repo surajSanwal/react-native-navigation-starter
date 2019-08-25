@@ -42,7 +42,8 @@ ArrowButton.defaultProps = {
   name: "",
   textStyle: {},
   image: constants.Images.ArrowRightDark,
-  buttonReverse: false
+  buttonReverse: false,
+  buttonStyle: {}
 };
 
 ArrowButton.propTypes = {
@@ -51,7 +52,8 @@ ArrowButton.propTypes = {
   name: PropTypes.string.isRequired,
   textStyle: PropTypes.object,
   image: PropTypes.number || PropTypes.string,
-  buttonReverse: PropTypes.bool
+  buttonReverse: PropTypes.bool,
+  buttonStyle: PropTypes.object
 };
 
 export default ArrowButton;

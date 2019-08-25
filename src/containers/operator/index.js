@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View } from "react-native";
 import { connect } from "react-redux";
+import SafeView from "../../components/common/SafeView";
 
 class OperatorDashboard extends Component {
   render() {
     return (
-      <View>
-        <Text> prop </Text>
-      </View>
+      <SafeView
+        hideBack
+        componentId={this.props.componentId}
+        title={"Home"}
+        drawerEnabled
+      >
+        <View style={{ flex: 1 }}>
+          <View></View>
+        </View>
+      </SafeView>
     );
   }
 }

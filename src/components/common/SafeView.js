@@ -21,13 +21,15 @@ SafeView.propTypes = {
   children: PropTypes.element.isRequired,
   title: PropTypes.string.isRequired,
   hideBack: PropTypes.bool,
-  onBackPress: PropTypes.func
+  onBackPress: PropTypes.func,
+  drawerEnabled: PropTypes.bool
 };
 
 SafeView.defaultProps = {
   children: null,
   title: "",
   hideBack: false,
-  onBackPress: () => {}
+  onBackPress: () => {},
+  drawerEnabled: false
 };
 export default SafeView;

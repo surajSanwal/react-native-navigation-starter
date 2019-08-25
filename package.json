@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start:dev": "NODE_ENV=development react-native start",
-    "start:prod": "NODE_ENV=production react-native start",
+    "start:dev": "NODE_ENV=development react-native start --reset-cache",
+    "start:prod": "NODE_ENV=production react-native start --reset-cache",
     "test": "jest",
     "lint": "./node_modules/.bin/eslint **.js",
     "rp": "prettier --write \"**/*.json\" \"**/*.js\"",

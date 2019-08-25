@@ -8,6 +8,7 @@ import registerRoutes, {
 } from "./src/config/Routes";
 import { auth, customer, operator } from "./src/config/Navigator";
 import setup from "./src/store";
+import { getEnv } from "./src/config/connection";
 console.disableYellowBox = true;
 // console.ignoredYellowBox = ["Warning: ..."];
 console.ignoredYellowBox = [
@@ -18,7 +19,7 @@ console.ignoredYellowBox = [
 ];
 setup()
   .then(store => {
-    console.log("storeee", store.getState());
+    console.log("environment", JSON.stringify(getEnv()));
     registerRoutes(store);
     commandListener();
     ComponentDidAppearListener();

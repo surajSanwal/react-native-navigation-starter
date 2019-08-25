@@ -58,11 +58,13 @@ const Header = props => {
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,
-  hideBack: PropTypes.bool
+  hideBack: PropTypes.bool,
+  drawerEnabled: PropTypes.bool
 };
 
 Header.defaultProps = {
   title: "",
-  hideBack: false
+  hideBack: false,
+  drawerEnabled: false
 };
 export default Header;

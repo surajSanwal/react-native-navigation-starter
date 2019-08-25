@@ -13,7 +13,7 @@ import { connect } from "react-redux";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 import SafeView from "../components/common/SafeView";
-import { push } from "../actions";
+import { push, getServiceType, getMachines } from "../actions";
 import constants from "../constants";
 // import { moderateScale } from "../helpers/ResponsiveFonts";
 import DropdownView from "../components/common/DropdownView";
@@ -21,27 +21,25 @@ import FloatingInput from "../components/common/FloatingInput";
 import ArrowButton from "../components/common/ArrowButton";
 import { moderateScale } from "../helpers/ResponsiveFonts";
 
-class componentName extends Component {
+class Find extends Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount() {
+    this.props.getMachines();
+    this.props.getServiceType();
+  }
+
   navigate = screen => {
     this.props.push(this.props.componentId, screen);
   };
 
   render() {
-    let data = [
-      {
-        value: "Banana"
-      },
-      {
-        value: "Mango"
-      },
-      {
-        value: "Pear"
-      }
-    ];
-
+    let {
+      machine: { machineList },
+      service: { serviceList }
+    } = this.props;
     return (
       <SafeView title={"Find"} componentId={this.props.componentId}>
         <View style={{ flex: 1, padding: moderateScale(70) }}>
@@ -55,8 +53,8 @@ class componentName extends Component {
             What are you looking for?
           </Text>
           <View style={{ flex: 1 }}>
-            <DropdownView data={data} label={"Service Type"} />
-            <DropdownView data={data} label={"Machine Type"} />
+            <DropdownView data={serviceList} label={"Service Type"} />
+            <DropdownView data={machineList} label={"Machine Type"} />
             <FloatingInput label={"When"} />
             <GooglePlacesAutocomplete
               placeholder="Search"
@@ -127,9 +125,12 @@ class componentName extends Component {
   }
 }
 
-const mapStateToProps = () => ({});
+const mapStateToProps = state => ({
+  machine: state.machine,
+  service: state.service
+});
 
 export default connect(
   mapStateToProps,
-  { push }
-)(componentName);
+  { push, getMachines, getServiceType }
+)(Find);
