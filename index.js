@@ -6,9 +6,9 @@ import registerRoutes, {
   commandListener,
   ComponentDidAppearListener
 } from "./src/config/Routes";
+// import { NODE_ENV } from "react-native-dotenv";
 import { auth, customer, operator } from "./src/config/Navigator";
 import setup from "./src/store";
-import { getEnv } from "./src/config/connection";
 console.disableYellowBox = true;
 // console.ignoredYellowBox = ["Warning: ..."];
 console.ignoredYellowBox = [
@@ -19,7 +19,7 @@ console.ignoredYellowBox = [
 ];
 setup()
   .then(store => {
-    console.log("environment", JSON.stringify(getEnv()));
+    // console.log("environment", process.env);
     registerRoutes(store);
     commandListener();
     ComponentDidAppearListener();

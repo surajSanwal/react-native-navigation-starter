@@ -25,8 +25,8 @@ const envConfig = {
 };
 
 /* eslint-disable-next-line */
-// export const env = envConfig[process.env.NODE_ENV || "development"];
-export const env = envConfig["production"];
+export const env = envConfig[process.env.NODE_ENV || "development"];
+// export const env = envConfig["production"];
 export const getEnv = () => {
   /* eslint-disable-next-line */
   return { env, nodeEnv: process.env.NODE_ENV };
