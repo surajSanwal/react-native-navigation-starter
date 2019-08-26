@@ -29,8 +29,13 @@ export const registerUser = (user, componentId) => {
     RestClient.restCall("user", user)
       .then(resp => {
         dispatch({ type: Types.SIGNUP_SUCCESS, payload: resp });
-        if (resp.role === "customer") {
-          dispatch(push(componentId, "VerifyCustomer"));
+        switch (resp.role) {
+          case "customer":
+            dispatch(push(componentId, "VerifyCustomer"));
+            return;
+          case "operator":
+            dispatch(push(componentId, "SetupProfile"));
+            return;
         }
       })
       .catch(e => dispatch({ type: Types.SIGNUP_FAIL, payload: e }));

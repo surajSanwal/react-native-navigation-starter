@@ -1,63 +1,27 @@
 import React, { Component } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View } from "react-native";
 import { connect } from "react-redux";
-import constants from "../../constants";
 import SafeView from "../../components/common/SafeView";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
-
-const ValueContainer = props => {
-  return (
-    <View
-      style={{
-        borderBottomColor: constants.Colors.Turquoise,
-        borderBottomWidth: 1,
-        padding: moderateScale(5),
-        flexDirection: "row",
-        flex: 1,
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}
-    >
-      {props.alwaysShowPlaceHolder && (
-        <Text
-          style={[
-            {
-              ...constants.Fonts.ITCAvantGardeProBk,
-              fontSize: moderateScale(18),
-              color: constants.Colors.Turquoise
-            },
-            props.style
-          ]}
-        >
-          {props.placeholder}
-        </Text>
-      )}
-      <TextInput
-        editable={props.editable}
-        value={props.value}
-        placeholder={props.placeholder}
-        placeholderTextColor={props.placeholderTextColor}
-        secureTextEntry={props.secureTextEntry}
-        onChangeText={props.onChangeText}
-        style={[
-          {
-            ...constants.Fonts.ITCAvantGardeProBk,
-            width: "100%",
-            fontSize: moderateScale(18),
-            color: constants.Colors.Turquoise
-          },
-          props.style
-        ]}
-        underlineColorAndroid={constants.Colors.Transparent}
-      />
-    </View>
-  );
-};
+import WeekView from "../../components/common/WeekView";
+import ValueContainer from "../../components/common/ValueContainer";
 
 export class Profile extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      days: []
+    };
   }
+  updateDays = day => {
+    let days = [...this.state.days];
+    if (days.includes(day)) {
+      days = days.filter(item => item !== day);
+    } else {
+      days.push(day);
+    }
+    this.setState({ days });
+  };
   render() {
     return (
       <SafeView componentId={this.props.componentId} title={"Edit Profile"}>
@@ -94,10 +58,15 @@ export class Profile extends Component {
             <ValueContainer placeholder={"email"} value={"Business Name"} />
             <ValueContainer
               alwaysShowPlaceHolder
-              placeholder={"email"}
-              value={"ABN"}
+              placeholder={"ABN"}
+              value={"00000000000"}
             />
           </View>
+          <WeekView
+            // days={Object.keys(WeekView.Days)}
+            days={this.state.days}
+            onDayPress={this.updateDays}
+          />
         </View>
       </SafeView>
     );

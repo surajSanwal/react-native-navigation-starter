@@ -5,7 +5,7 @@ import SafeView from "../../components/common/SafeView";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import ArrowButton from "../../components/common/ArrowButton";
-
+import { push } from "../../actions";
 class SetupProfile extends Component {
   render() {
     return (
@@ -37,7 +37,7 @@ class SetupProfile extends Component {
                   paddingVertical: moderateScale(10)
                 }}
               >
-                Set up Your Profile{" "}
+                Set up Your Profile
               </Text>
               <Text
                 style={{
@@ -102,6 +102,7 @@ class SetupProfile extends Component {
               image={constants.Images.ArrowRightWhite}
               buttonReverse
               buttonStyle={styles.buttonStyle}
+              onPress={() => this.props.push(this.props.componentId, "Profile")}
             />
           </View>
         </View>
@@ -123,5 +124,5 @@ const mapStateToProps = () => ({});
 
 export default connect(
   mapStateToProps,
-  {}
+  { push }
 )(SetupProfile);

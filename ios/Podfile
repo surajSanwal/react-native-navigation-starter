@@ -36,6 +36,8 @@ target 'jetX' do
 
   pod 'react-native-material-kit', :path => '../node_modules/react-native-material-kit'
 
+  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+
   target 'jetXTests' do
     inherit! :search_paths
     # Pods for testing
