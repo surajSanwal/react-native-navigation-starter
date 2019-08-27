@@ -18,7 +18,7 @@ const ValueContainer = props => {
         marginVertical: moderateScale(5)
       }}
     >
-      {props.value && props.alwaysShowPlaceHolder ? (
+      {props.alwaysShowPlaceHolder && props.value ? (
         <Text
           style={[
             {
