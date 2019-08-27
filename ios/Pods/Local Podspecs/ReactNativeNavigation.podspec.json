@@ -19,7 +19,9 @@
     "lib/ios/OCMock/**/*.*"
   ],
   "dependencies": {
-    "React": []
+    "React": [
+
+    ]
   },
   "frameworks": "UIKit"
 }
