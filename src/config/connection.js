@@ -31,11 +31,10 @@ export const getEnv = () => {
   /* eslint-disable-next-line */
   return { env, nodeEnv: process.env.NODE_ENV };
 };
-const running_url = env.apiServer,
-  frontEndUrl = `http://${env.frontEnd}`,
-  http_url = `http://${running_url}`,
-  apiBase_url = `http://${running_url}/${env.apiPath}/${env.apiVersion}/`,
-  chat_url = `http://${running_url}/${env.chatPath}`;
+const frontEndUrl = `http://${env.frontEnd}`,
+  http_url = `http://${env.apiServer}`,
+  apiBase_url = `http://${env.apiServer}/${env.apiPath}/${env.apiVersion}/`,
+  chat_url = `http://${env.apiServer}/${env.chatPath}`;
 
 export default class Connection {
   static getRestUrl() {

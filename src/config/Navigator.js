@@ -59,7 +59,7 @@ export const operator = () => {
           // children: [
           // {
           stack: {
-            id: "AUTH_STACK",
+            id: "OPERATOR_STACK",
             children: [
               {
                 component: {
@@ -108,7 +108,7 @@ export const customer = () => {
           // children: [
           // {
           stack: {
-            id: "AUTH_STACK",
+            id: "CUSTOMER_STACK",
             children: [
               {
                 component: {

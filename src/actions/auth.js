@@ -12,7 +12,7 @@ export const userLogin = user => {
           case "customer":
             customer();
             return;
-          case "Operator":
+          case "operator":
             operator();
             return;
           default:

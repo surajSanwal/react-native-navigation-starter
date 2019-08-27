@@ -14,6 +14,7 @@ import VerifyCustomer from "../containers/auth/VerifyCustomer";
 import Customer from "../containers/customer";
 import Operator from "../containers/operator";
 import SetupProfile from "../containers/auth/SetupProfile";
+import OperatorProfileCompliance from "../containers/operator/OperatorProfileCompliance";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -83,6 +84,12 @@ const registerRoutes = store => {
   Navigation.registerComponentWithRedux(
     "Profile",
     () => Profile,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "OperatorProfileCompliance",
+    () => OperatorProfileCompliance,
     Provider,
     store
   );

@@ -11,27 +11,40 @@ const ArrowButton = props => {
         {
           padding: moderateScale(15),
           backgroundColor: constants.Colors.Transparent,
-          flexDirection: props.buttonReverse ? "row-reverse" : "row",
-          alignItems: "center"
+          flexDirection: props.buttonReverse ? "row-reverse" : "row"
+          // justifyContent:"center",
+          //  alignItems:'center'
         },
         props.buttonStyle
       ]}
       disabled={props.disabled}
       onPress={props.onPress}
     >
-      <Image source={props.image} />
+      <Image
+        style={{
+          height: moderateScale(props.height || 60),
+          width: moderateScale(props.width || 60),
+          alignSelf: props.alignSelf || ""
+        }}
+        source={props.image}
+        resizeMode={"contain"}
+        resizeMethod={"resize"}
+      />
+      {/* <View style={[{ flex: 1, justifyContent: 'center' },
+      props.bottomBorder ? { borderBottomColor: constants.Colors.White, borderBottomWidth: 1 } : null]}> */}
       <Text
         style={[
           {
             color: constants.Colors.Turquoise,
             fontSize: moderateScale(18),
-            paddingHorizontal: moderateScale(5)
+            padding: moderateScale(20)
           },
           props.textStyle
         ]}
       >
         {props.name}
       </Text>
+      {/* </View> */}
     </TouchableOpacity>
   );
 };

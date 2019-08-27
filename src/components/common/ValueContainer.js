@@ -6,15 +6,18 @@ import { moderateScale } from "../../helpers/ResponsiveFonts";
 const ValueContainer = props => {
   return (
     <View
-      style={{
-        borderBottomColor: constants.Colors.Turquoise,
-        borderBottomWidth: 1,
-        padding: moderateScale(5),
-        flexDirection: "row",
-        flex: 1,
-        justifyContent: "space-between",
-        alignItems: "center"
-      }}
+      style={[
+        {
+          borderBottomColor: constants.Colors.Turquoise,
+          borderBottomWidth: 1,
+          padding: moderateScale(5),
+          flexDirection: "row",
+          flex: 1,
+          justifyContent: "space-between",
+          alignItems: "center"
+        },
+        props.containerStyle
+      ]}
     >
       {props.alwaysShowPlaceHolder && (
         <Text
