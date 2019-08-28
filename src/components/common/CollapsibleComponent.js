@@ -13,7 +13,10 @@ const CollapsibleComponent = props => {
         onPress={() => updateCollapsed(!isCollapsed)}
         style={{
           flexDirection: "row",
-          justifyContent: "flex-start",
+          justifyContent:
+            props.activeIcon || props.inActiveIcon
+              ? "space-between"
+              : "flex-start",
           marginVertical: moderateScale(5),
           alignItems: "center",
           padding: moderateScale(5),
@@ -31,10 +34,17 @@ const CollapsibleComponent = props => {
           {props.title}
         </Text>
         <Icon
-          name={isCollapsed ? "angle-right" : "angle-down"}
-          size={25}
+          name={
+            isCollapsed
+              ? props.activeIcon || "angle-right"
+              : props.inActiveIcon || "angle-down"
+          }
+          size={props.size || 25}
           color={constants.Colors.Turquoise}
-          style={{ paddingHorizontal: moderateScale(10) }}
+          style={{
+            paddingHorizontal: moderateScale(10),
+            alignSelf: "flex-end"
+          }}
         />
       </TouchableOpacity>
       <Collapsible collapsed={isCollapsed}>{props.children}</Collapsible>
@@ -43,6 +53,9 @@ const CollapsibleComponent = props => {
 };
 CollapsibleComponent.propsTypes = {
   children: PropTypes.object,
-  title: PropTypes.string
+  title: PropTypes.string,
+  activeIcon: PropTypes.number || PropTypes.string,
+  inActiveIcon: PropTypes.number || PropTypes.string,
+  size: PropTypes.number
 };
 export default CollapsibleComponent;
