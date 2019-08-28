@@ -1,25 +1,17 @@
 import React, { Component } from "react";
-import { View, StyleSheet, Image } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import SafeView from "../../components/common/SafeView";
-import ValueContainer from "../../components/common/ValueContainer";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
-import StarRating from "../../components/rating/StarRating.js";
-import Icon from "react-native-vector-icons/FontAwesome5";
 import ArrowButton from "../../components/common/ArrowButton";
 
-import { push } from "../../actions";
-
-class OperatorDashboard extends Component {
+class Notification extends Component {
   constructor(props) {
     super(props);
   }
-  // componentDidMount ()
+
   render() {
-    let {
-      user: { firstName, lastName }
-    } = this.props;
     return (
       <SafeView
         hideBack
@@ -28,47 +20,9 @@ class OperatorDashboard extends Component {
         drawerEnabled
       >
         <View style={{ flex: 1 }}>
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "flex-start",
-              alignItems: "flex-end",
-              padding: moderateScale(20),
-              backgroundColor: "#363636",
-              marginBottom: moderateScale(50)
-            }}
-          >
-            <View style={{ marginRight: moderateScale(15) }}>
-              <Image
-                source={constants.Images.BuilderImage}
-                style={styles.Image}
-              />
-            </View>
-            <View style={{ width: "75%" }}>
-              <ValueContainer
-                editable={false}
-                placeholder={"email"}
-                value={firstName + " " + lastName}
-                containerStyle={styles.Container}
-                style={[styles.Text, constants.Fonts.ITCAvantGardeStdBold]}
-              />
-              <StarRating
-                starSize={10}
-                size={20}
-                showRating={false}
-                style={{ paddingTop: 2 }}
-              />
-              <Icon
-                name={"edit"}
-                size={18}
-                color="white"
-                style={{ alignSelf: "flex-end" }}
-              />
-            </View>
-          </View>
           <View style={styles.buttonsContainer}>
             <ArrowButton
-              name={"Jobs"}
+              name={"Jobs pending"}
               image={constants.Images.ArrowRightGreen}
               buttonStyle={styles.buttonStyle}
               style={styles.buttonImage}
@@ -80,7 +34,7 @@ class OperatorDashboard extends Component {
             />
             <View style={styles.horizontalView}></View>
             <ArrowButton
-              name={"Notifications"}
+              name={"Messages"}
               image={constants.Images.ArrowRightGreen}
               style={styles.buttonImage}
               buttonStyle={styles.buttonStyle}
@@ -90,30 +44,14 @@ class OperatorDashboard extends Component {
               ]}
               textView={styles.textView}
               disabled={false}
-              onPress={() =>
-                this.props.push(this.props.componentId, "Notification")
-              }
             />
             <View style={styles.horizontalView}></View>
-            <ArrowButton
-              name={"Update Profile"}
-              image={constants.Images.ArrowRightGreen}
-              style={styles.buttonImage}
-              buttonStyle={styles.buttonStyle}
-              textStyle={styles.textBelow}
-              textView={styles.textView}
-              disabled={false}
-            />
           </View>
         </View>
       </SafeView>
     );
   }
 }
-
-const mapStateToProps = state => ({
-  user: state.user
-});
 
 const styles = StyleSheet.create({
   Container: {
@@ -126,7 +64,6 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     alignItems: "flex-end",
-    // padding: moderateScale(20),
     backgroundColor: "#1C2025"
   },
   Text: {
@@ -155,7 +92,6 @@ const styles = StyleSheet.create({
   textView: {
     borderBottomColor: constants.Colors.White,
     borderBottomWidth: 1
-    // width: "80%",
   },
   horizontalView: {
     borderWidth: 0.5,
@@ -166,7 +102,9 @@ const styles = StyleSheet.create({
   }
 });
 
+const mapStateToProps = () => ({});
+
 export default connect(
   mapStateToProps,
-  { push }
-)(OperatorDashboard);
+  {}
+)(Notification);

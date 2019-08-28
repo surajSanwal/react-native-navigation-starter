@@ -34,7 +34,9 @@ let colors = {
   LightText: "#6A6D71",
   MedBlue: "#77E8FF",
   MedPink: "#FFB492",
-  MedDark: "#3C4551"
+  MedDark: "#3C4551",
+  Greyish: "#282D33",
+  DarkBlack: "#000"
 };
 
 export default colors;

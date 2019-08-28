@@ -1,20 +1,22 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
+import { connect } from "react-redux";
+
 import SafeView from "../../components/common/SafeView";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
-import Icon from "react-native-vector-icons/FontAwesome5";
 import ArrowButton from "../../components/common/ArrowButton";
-
+import RenderTextIcon from "../../components/common/RenderTextIcon";
+import { push } from "../../actions";
 class OperatorProfileCompliance extends Component {
   constructor(props) {
     super(props);
     this.state = {
       references: [
         { id: 0, name: "Add insurance" },
-        { id: 0, name: "Add a certification" },
-        { id: 0, name: "Licences" },
-        { id: 0, name: "Experience" }
+        { id: 1, name: "Add a certification" },
+        { id: 2, name: "Licences" },
+        { id: 3, name: "Experience" }
       ]
     };
   }
@@ -33,35 +35,10 @@ class OperatorProfileCompliance extends Component {
           <FlatList
             data={this.state.references}
             renderItem={({ item }) => (
-              <View
-                style={[
-                  styles.bottomLineStyle,
-                  {
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    flexDirection: "row",
-                    paddingVertical: moderateScale(10)
-                  }
-                ]}
-              >
-                <Text
-                  style={{
-                    color: constants.Colors.Turquoise,
-                    ...constants.Fonts.ITCAvantGardeStdBk
-                  }}
-                >
-                  {item.name}
-                </Text>
-                <Icon
-                  name={"plus"}
-                  size={12}
-                  color="white"
-                  style={{
-                    alignSelf: "flex-end",
-                    paddingRight: moderateScale(15)
-                  }}
-                />
-              </View>
+              <RenderTextIcon
+                {...item}
+                bottomLineStyle={styles.bottomLineStyle}
+              />
             )}
           />
           <View>
@@ -76,6 +53,12 @@ class OperatorProfileCompliance extends Component {
               height={moderateScale(30)}
               width={moderateScale(30)}
               alignSelf="center"
+              onPress={() =>
+                this.props.push(
+                  this.props.componentId,
+                  "OperatorProfileServices"
+                )
+              }
             />
           </View>
         </View>
@@ -108,4 +91,9 @@ const styles = StyleSheet.create({
   }
 });
 
-export default OperatorProfileCompliance;
+const mapStateToProps = () => ({});
+
+export default connect(
+  mapStateToProps,
+  { push }
+)(OperatorProfileCompliance);
