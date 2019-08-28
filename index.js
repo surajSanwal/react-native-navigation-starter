@@ -4,7 +4,7 @@
 import { Navigation } from "react-native-navigation";
 import registerRoutes, {
   commandListener,
-  ComponentDidAppearListener
+  componentDidAppearListener
 } from "./src/config/Routes";
 // import { NODE_ENV } from "react-native-dotenv";
 import { auth, customer, operator } from "./src/config/Navigator";
@@ -17,16 +17,18 @@ console.ignoredYellowBox = [
   "Task orphaned for request ",
   "Remote debugger is in a background tab which may cause apps to perform slowly"
 ];
-setup()
-  .then(store => {
-    // console.log("environment", process.env);
-    registerRoutes(store);
-    commandListener();
-    ComponentDidAppearListener();
-    Navigation.events().registerAppLaunchedListener(() => {
+
+// console.log("environment", process.env);
+Navigation.events().registerAppLaunchedListener(() => {
+  setup()
+    .then(store => {
       let {
         user: { isLogin, role }
       } = store.getState();
+
+      registerRoutes(store);
+      commandListener();
+      componentDidAppearListener(store);
       if (isLogin) {
         switch (role) {
           case "customer":
@@ -41,6 +43,6 @@ setup()
       } else {
         auth();
       }
-    });
-  })
-  .catch(e => console.warn("error e ", e));
+    })
+    .catch(e => console.warn("error e ", e));
+});

@@ -5,8 +5,9 @@ import SafeView from "../../components/common/SafeView";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import FormTextInput from "../../components/common/FormTextInput";
+import ArrowButton from "../../components/common/ArrowButton";
 
-class componentName extends Component {
+class Payment extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -58,6 +59,20 @@ class componentName extends Component {
               onChangeText={bsb => this.setState({ bsb })}
             />
           </View>
+          <View>
+            <ArrowButton
+              name={"next"}
+              image={constants.Images.ArrowRightGreen}
+              buttonStyle={styles.buttonStyle}
+              buttonReverse
+              style={styles.buttonImage}
+              textStyle={[styles.textBelow]}
+              textView={styles.textView}
+              height={moderateScale(30)}
+              width={moderateScale(30)}
+              alignSelf="center"
+            />
+          </View>
         </View>
       </SafeView>
     );
@@ -72,13 +87,23 @@ const styles = StyleSheet.create({
   },
   titleContainer: {
     borderBottomColor: constants.Colors.Turquoise,
-    borderBottomWidth: 1
+    borderBottomWidth: 1,
+    marginBottom: moderateScale(10)
   },
   title: {
-    ...constants.Fonts.ITCAvantGardeProMd,
+    ...constants.Fonts.ITCAvantGardeStdBold,
     fontSize: moderateScale(22),
     fontWeight: "bold",
-    color: constants.Colors.Turquoise
+    color: constants.Colors.Turquoise,
+    marginBottom: moderateScale(5)
+  },
+  buttonStyle: {
+    alignSelf: "center"
+  },
+  textBelow: {
+    paddingLeft: moderateScale(0),
+    fontSize: moderateScale(25),
+    ...constants.Fonts.ITCAvantGardeStdBk
   }
 });
 
@@ -87,4 +112,4 @@ const mapStateToProps = () => ({});
 export default connect(
   mapStateToProps,
   {}
-)(componentName);
+)(Payment);

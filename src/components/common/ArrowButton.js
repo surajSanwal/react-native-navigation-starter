@@ -12,8 +12,6 @@ const ArrowButton = props => {
           padding: moderateScale(15),
           backgroundColor: constants.Colors.Transparent,
           flexDirection: props.buttonReverse ? "row-reverse" : "row"
-          // justifyContent:"center",
-          //  alignItems:'center'
         },
         props.buttonStyle
       ]}
@@ -23,8 +21,8 @@ const ArrowButton = props => {
       <Image
         style={{
           height: moderateScale(props.height || 60),
-          width: moderateScale(props.width || 60),
-          alignSelf: props.alignSelf || ""
+          width: moderateScale(props.width || 60)
+          // alignSelf: props.alignSelf || ""
         }}
         source={props.image}
         resizeMode={"contain"}

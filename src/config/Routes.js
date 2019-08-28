@@ -89,10 +89,14 @@ const registerRoutes = store => {
     store
   );
   Navigation.registerComponentWithRedux(
-    "Payment",
-    () => Payment,
     "OperatorProfileCompliance",
     () => OperatorProfileCompliance,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "Payment",
+    () => Payment,
     Provider,
     store
   );
@@ -103,9 +107,14 @@ export const commandListener = () =>
     console.log(name, " invoked with params= ", params);
   });
 
-export const ComponentDidAppearListener = () =>
-  Navigation.events().registerComponentDidAppearListener((name, params) => {
-    console.log(name, " Appeard with params= ", params);
-  });
+export const componentDidAppearListener = store =>
+  Navigation.events().registerComponentDidAppearListener(
+    ({ componentId, componentName }) => {
+      store.dispatch({
+        type: "SCREEN_LISTENER",
+        payload: { componentId, componentName }
+      });
+    }
+  );
 
 export default registerRoutes;

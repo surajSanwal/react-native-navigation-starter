@@ -29,13 +29,14 @@ class Home extends Component {
   };
 
   render() {
+    console.log("rending home");
+
     return (
       <View style={{ flex: 1 }}>
         <ImageBackground
           source={constants.Images.Bulldozer}
           style={{
             position: "absolute",
-            backfaceVisibility: 0,
             height: constants.BaseStyle.DEVICE_HEIGHT,
             width: constants.BaseStyle.DEVICE_WIDTH,
             justifyContent: "center"
