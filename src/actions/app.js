@@ -1,5 +1,6 @@
 import { Navigation } from "react-native-navigation";
 import constants from "../constants";
+
 export const push = (componentId, screen, passProps = {}) => {
   return () => {
     Navigation.push(componentId, {

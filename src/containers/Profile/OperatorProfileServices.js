@@ -7,16 +7,16 @@ import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
 import ArrowButton from "../../components/common/ArrowButton";
 import RenderTextIcon from "../../components/common/RenderTextIcon";
+
 import { push } from "../../actions";
-class OperatorProfileCompliance extends Component {
+
+class OperatorProfileServices extends Component {
   constructor(props) {
     super(props);
     this.state = {
       references: [
-        { id: 0, name: "Add insurance" },
-        { id: 1, name: "Add a certification" },
-        { id: 2, name: "Licences" },
-        { id: 3, name: "Experience" }
+        { id: 0, name: "Add a machine" },
+        { id: 1, name: "Add service" }
       ]
     };
   }
@@ -30,7 +30,7 @@ class OperatorProfileCompliance extends Component {
       >
         <View style={styles.container}>
           <View style={styles.bottomLineStyle}>
-            <Text style={styles.title}>References</Text>
+            <Text style={styles.title}>Services</Text>
           </View>
           <FlatList
             data={this.state.references}
@@ -53,12 +53,6 @@ class OperatorProfileCompliance extends Component {
               height={moderateScale(30)}
               width={moderateScale(30)}
               alignSelf="center"
-              onPress={() =>
-                this.props.push(
-                  this.props.componentId,
-                  "OperatorProfileServices"
-                )
-              }
             />
           </View>
         </View>
@@ -96,4 +90,4 @@ const mapStateToProps = () => ({});
 export default connect(
   mapStateToProps,
   { push }
-)(OperatorProfileCompliance);
+)(OperatorProfileServices);
