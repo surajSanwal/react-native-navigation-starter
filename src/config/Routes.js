@@ -14,6 +14,7 @@ import VerifyCustomer from "../containers/auth/VerifyCustomer";
 import Customer from "../containers/customer";
 import Operator from "../containers/operator";
 import SetupProfile from "../containers/auth/SetupProfile";
+import Payment from "../containers/Profile/Payment";
 import OperatorProfileCompliance from "../containers/operator/OperatorProfileCompliance";
 import OperatorProfileServices from "../containers/Profile/OperatorProfileServices";
 
@@ -89,6 +90,8 @@ const registerRoutes = store => {
     store
   );
   Navigation.registerComponentWithRedux(
+    "Payment",
+    () => Payment,
     "OperatorProfileCompliance",
     () => OperatorProfileCompliance,
     Provider,

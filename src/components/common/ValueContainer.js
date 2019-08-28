@@ -1,25 +1,24 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, TextInput } from "react-native";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
-
+import PropTypes from "prop-types";
+import Icon from "react-native-vector-icons/FontAwesome";
 const ValueContainer = props => {
+  let [editable, allowEdit] = useState(false);
   return (
     <View
-      style={[
-        {
-          borderBottomColor: constants.Colors.Turquoise,
-          borderBottomWidth: 1,
-          padding: moderateScale(5),
-          flexDirection: "row",
-          flex: 1,
-          justifyContent: "space-between",
-          alignItems: "center"
-        },
-        props.containerStyle
-      ]}
+      style={{
+        borderBottomColor: constants.Colors.Turquoise,
+        borderBottomWidth: 1,
+        padding: moderateScale(5),
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        marginVertical: moderateScale(5)
+      }}
     >
-      {props.alwaysShowPlaceHolder && (
+      {props.alwaysShowPlaceHolder && props.value ? (
         <Text
           style={[
             {
@@ -32,18 +31,20 @@ const ValueContainer = props => {
         >
           {props.placeholder}
         </Text>
-      )}
+      ) : null}
       <TextInput
-        editable={props.editable}
+        editable={editable}
         value={props.value}
         placeholder={props.placeholder}
-        placeholderTextColor={props.placeholderTextColor}
+        placeholderTextColor={
+          props.placeholderTextColor || constants.Colors.Turquoise
+        }
         secureTextEntry={props.secureTextEntry}
         onChangeText={props.onChangeText}
         style={[
           {
             ...constants.Fonts.ITCAvantGardeProBk,
-            width: props.alwaysShowPlaceHolder ? "80%" : "100%",
+            width: props.alwaysShowPlaceHolder ? "80%" : "90%",
             fontSize: moderateScale(18),
             color: constants.Colors.Turquoise
           },
@@ -51,8 +52,24 @@ const ValueContainer = props => {
         ]}
         underlineColorAndroid={constants.Colors.Transparent}
       />
+      {!props.disableEdit && !editable && (
+        <Icon
+          onPress={() => allowEdit(true)}
+          name="edit"
+          size={20}
+          color={constants.Colors.Turquoise}
+        />
+      )}
     </View>
   );
 };
-
+ValueContainer.propTypes = {
+  style: PropTypes.object,
+  placeholder: PropTypes.string.isRequired,
+  editable: PropTypes.bool,
+  placeholderTextColor: PropTypes.number || PropTypes.string,
+  secureTextEntry: PropTypes.bool,
+  onChangeText: PropTypes.func,
+  alwaysShowPlaceHolder: PropTypes.bool
+};
 export default ValueContainer;
