@@ -49,7 +49,6 @@ class OperatorMenu extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log("state", state);
   return {
     auth: state.auth
   };

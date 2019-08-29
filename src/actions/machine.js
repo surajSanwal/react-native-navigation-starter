@@ -9,6 +9,7 @@
 
 import * as Types from "../ActionTypes";
 import RestClient from "../helpers/RestClient";
+import Common from "../helpers/Common";
 
 export const getMachines = () => {
   return (dispatch, getState) => {
@@ -24,6 +25,9 @@ export const getMachines = () => {
         }, []);
         dispatch({ type: Types.MACHINE_LIST_SUCCESS, payload: resp });
       })
-      .catch(e => dispatch({ type: Types.MACHINE_LIST_FAIL, payload: e }));
+      .catch(e => {
+        Common.Dialog(e.message);
+        dispatch({ tpe: Types.MACHINE_LIST_FAIL, payload: e });
+      });
   };
 };

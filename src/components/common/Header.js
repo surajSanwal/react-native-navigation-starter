@@ -12,17 +12,19 @@ const Header = props => {
     <View
       style={{
         flexDirection: "row",
-        padding: moderateScale(15)
+        paddingVertical: moderateScale(0),
+        paddingHorizontal: moderateScale(10)
       }}
     >
-      {!props.hideBack && (
+      {!props.drawerEnabled ? (
         <Icon
           onPress={() => Navigation.pop(props.componentId)}
           name={"angle-left"}
           size={35}
           color={props.backIconColor || constants.Colors.White}
         />
-      )}
+      ) : null}
+
       {!props.drawerEnabled ? (
         <View
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
@@ -72,14 +74,20 @@ const Header = props => {
           >
             <View
               style={{
-                backgroundColor: constants.Colors.White,
+                backgroundColor: props.barColor
+                  ? constants.Colors.Black
+                  : constants.Colors.White,
                 justifyContent: "center",
                 alignItems: "center",
                 height: moderateScale(40),
                 width: moderateScale(40)
               }}
             >
-              <Icon name={"bars"} size={35} color={constants.Colors.Black} />
+              <Icon
+                name={"bars"}
+                size={35}
+                color={props.barColor || constants.Colors.Black}
+              />
             </View>
           </TouchableOpacity>
         </View>
@@ -91,7 +99,9 @@ const Header = props => {
 Header.propTypes = {
   title: PropTypes.string.isRequired,
   hideBack: PropTypes.bool,
-  drawerEnabled: PropTypes.bool
+  drawerEnabled: PropTypes.bool,
+  barColor: PropTypes.string,
+  backIconColor: PropTypes.string
 };
 
 Header.defaultProps = {

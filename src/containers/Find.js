@@ -46,11 +46,16 @@ class Find extends Component {
   render() {
     let {
       machine: { machineList },
-      service: { serviceList }
+      service: { serviceList },
+      drawerEnable
     } = this.props;
     let { modalVisible } = this.state;
     return (
-      <SafeView title={"Find"} componentId={this.props.componentId}>
+      <SafeView
+        title={"Find"}
+        componentId={this.props.componentId}
+        drawerEnabled={drawerEnable}
+      >
         <View style={{ flex: 1, padding: moderateScale(70) }}>
           <Text
             style={{
@@ -92,10 +97,10 @@ class Find extends Component {
               returnKeyType={"search"}
               keyboardAppearance={"light"}
               listViewDisplayed={false} // true/false/undefined
-              fetchDetails={true}
-              onPress={(data, details = null) => {
+              fetchDetails={true} //eslint-disable-next-line
+              onPress={data => {
                 // 'details' is provided when fetchDetails = true
-                console.log("data iiiii===>", data, details);
+                // console.log("data iiiii===>", data, details);
               }}
               query={{
                 key: constants.DevKeys.GooglePlaceAPIKey,

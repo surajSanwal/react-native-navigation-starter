@@ -9,6 +9,7 @@
 
 import * as Types from "../ActionTypes";
 import RestClient from "../helpers/RestClient";
+import Common from "../helpers/Common";
 export const getServiceType = () => {
   return (dispatch, getState) => {
     let {
@@ -23,6 +24,9 @@ export const getServiceType = () => {
         }, []);
         dispatch({ type: Types.SERVICE_TYPE_SUCCESS, payload: resp });
       })
-      .catch(e => dispatch({ type: Types.SERVICE_TYPE_FAIL, payload: e }));
+      .catch(e => {
+        Common.Dialog(e.message);
+        dispatch({ type: Types.SERVICE_TYPE_FAIL, payload: e });
+      });
   };
 };

@@ -70,9 +70,9 @@ class Signup extends Component {
         >
           <View
             style={{
-              height: constants.BaseStyle.DEVICE_HEIGHT * 0.9,
+              height: constants.BaseStyle.DEVICE_HEIGHT,
               flexDirection: "column",
-              justifyContent: "space-between",
+              justifyContent: "center",
               marginLeft: moderateScale(70)
             }}
           >
@@ -87,7 +87,8 @@ class Signup extends Component {
                 borderBottomWidth: 1,
                 flex: 0.05,
                 justifyContent: "flex-end",
-                paddingVertical: moderateScale(5)
+                paddingVertical: moderateScale(5),
+                marginBottom: moderateScale(20)
               }}
             >
               <Text

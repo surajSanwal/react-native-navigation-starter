@@ -49,28 +49,35 @@ export const mergeOptions = (componentId, drawerOpen) => {
   return () => {
     Navigation.mergeOptions(componentId, {
       sideMenu: {
-        left: {
+        right: {
           visible: drawerOpen
         }
       }
     });
   };
 };
-export const setScreenStack = (componentId, stack, visible) => {
+export const setScreenStack = (componentId, stack, passProps= {},visible,) => {
   return () => {
     Navigation.setStackRoot(componentId, {
       component: {
         name: stack,
+        passProps,
         options: {
           topBar: {
-            title: {
-              text: "Home"
-            }
+            visible: false,
+            drawBehind: true
           },
           bottomTabs: {
             visible,
             drawBehind: true
-          }
+          },
+          layout: {
+            direction: "ltr", // Supported directions are: 'rtl', 'ltr'
+            backgroundColor: constants.Colors.Black,
+            orientation: ["portrait", "landscape"] // An array of supported orientations
+          },
+          modalPresentationStyle: "overCurrentContext"
+        
         }
       }
     });

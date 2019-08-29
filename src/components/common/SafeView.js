@@ -22,7 +22,9 @@ SafeView.propTypes = {
   title: PropTypes.string.isRequired,
   hideBack: PropTypes.bool,
   onBackPress: PropTypes.func,
-  drawerEnabled: PropTypes.bool
+  drawerEnabled: PropTypes.bool,
+  barColor: PropTypes.string,
+  backIconColor: PropTypes.string
 };
 
 SafeView.defaultProps = {

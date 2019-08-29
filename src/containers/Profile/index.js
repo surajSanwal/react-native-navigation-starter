@@ -161,10 +161,10 @@ export class Profile extends Component {
               returnKeyType={"search"}
               keyboardAppearance={"light"}
               listViewDisplayed={false} // true/false/undefined
-              fetchDetails={true}
-              onPress={(data, details = null) => {
+              fetchDetails={true} //eslint-disable-next-line
+              onPress={data => {
                 // 'details' is provided when fetchDetails = true
-                console.log("data iiiii===>", data, details);
+                // console.log("data iiiii===>", data, details);
               }}
               query={{
                 key: constants.DevKeys.GooglePlaceAPIKey,

@@ -22,8 +22,6 @@ class FloatingInput extends Component {
   }
 
   handleFocus = () => {
-    console.log("focused", this.props);
-
     this.setState({ isFocused: true });
   };
   handleBlur = () => this.setState({ isFocused: false });

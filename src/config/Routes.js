@@ -18,6 +18,7 @@ import Payment from "../containers/Profile/Payment";
 import OperatorProfileCompliance from "../containers/operator/OperatorProfileCompliance";
 import OperatorProfileServices from "../containers/Profile/OperatorProfileServices";
 import Notification from "../containers/notification";
+import WebViewContainer from "../containers/WebViewContainer";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -111,6 +112,12 @@ const registerRoutes = store => {
   Navigation.registerComponentWithRedux(
     "Notification",
     () => Notification,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "WebView",
+    () => WebViewContainer,
     Provider,
     store
   );

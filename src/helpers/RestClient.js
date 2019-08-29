@@ -46,7 +46,7 @@ class RestClient {
             .then(response => {
               console.log(`****** ${type} response*****`, response);
               if (response.statusCode === 200) resolve(response.data);
-              else reject(response.message);
+              else reject(response);
             })
             .catch(error => {
               reject({
@@ -83,7 +83,7 @@ class RestClient {
             .then(response => {
               console.log(" get call responseText*****", response);
               if (response.statusCode === 200) resolve(response.data);
-              else reject(response.message);
+              else reject(response);
             })
             .catch(error => {
               reject({
@@ -120,7 +120,7 @@ class RestClient {
             .then(response => {
               console.log("Del responseText*****", response);
               if (response.statusCode === 200) resolve(response.data);
-              else reject(response.message);
+              else reject(response);
             })
             .catch(error => {
               reject({
@@ -165,7 +165,7 @@ class RestClient {
             .then(response => {
               console.log("POST responseText*****", response);
               if (response.statusCode === 200) resolve(response.data);
-              else reject(response.message);
+              else reject(response);
             })
             .catch(error => {
               //   debugger;

@@ -29,8 +29,6 @@ class Home extends Component {
   };
 
   render() {
-    console.log("rending home");
-
     return (
       <View style={{ flex: 1 }}>
         <ImageBackground
@@ -83,7 +81,6 @@ class Home extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log("state", state);
   return {
     auth: state.auth
   };

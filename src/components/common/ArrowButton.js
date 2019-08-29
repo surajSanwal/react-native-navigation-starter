@@ -3,6 +3,7 @@ import { TouchableOpacity, Text, Image } from "react-native";
 import PropTypes from "prop-types";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
+import Common from "../../helpers/Common";
 
 const ArrowButton = props => {
   return (
@@ -53,7 +54,9 @@ const ArrowButton = props => {
 
 ArrowButton.defaultProps = {
   disabled: false,
-  onPress: () => {},
+  onPress: () => {
+    Common.Dialog("Under Development");
+  },
   name: "",
   textStyle: {},
   image: constants.Images.ArrowRightDark,

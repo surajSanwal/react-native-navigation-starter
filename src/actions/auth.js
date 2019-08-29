@@ -2,6 +2,7 @@ import * as Types from "../ActionTypes";
 import RestClient from "../helpers/RestClient";
 import { push } from "./";
 import { customer, operator, auth } from "../config/Navigator.js";
+import Common from "../helpers/Common";
 export const userLogin = user => {
   return dispatch => {
     dispatch({ type: Types.LOGIN_REQUEST });
@@ -19,7 +20,10 @@ export const userLogin = user => {
             auth();
         }
       })
-      .catch(e => dispatch({ type: Types.LOGIN_FAIL, payload: e }));
+      .catch(e => {
+        Common.Dialog(e.message);
+        dispatch({ type: Types.LOGIN_FAIL, payload: e });
+      });
   };
 };
 
@@ -38,7 +42,10 @@ export const registerUser = (user, componentId) => {
             return;
         }
       })
-      .catch(e => dispatch({ type: Types.SIGNUP_FAIL, payload: e }));
+      .catch(e => {
+        Common.Dialog(e.message);
+        dispatch({ type: Types.SIGNUP_FAIL, payload: e });
+      });
   };
 };
 
@@ -49,9 +56,10 @@ export const resendVerification = user => {
       .then(resp => {
         dispatch({ type: Types.RESEND_VERIFICATION_SUCCESS, payload: resp });
       })
-      .catch(e =>
-        dispatch({ type: Types.RESEND_VERIFICATION_FAIL, payload: e })
-      );
+      .catch(e => {
+        Common.Dialog(e.message);
+        dispatch({ type: Types.RESEND_VERIFICATION_FAIL, payload: e });
+      });
   };
 };
 
@@ -67,6 +75,7 @@ export const logout = () => {
         auth();
       })
       .catch(e => {
+        // Common.Dialog(e.message);
         dispatch({ type: Types.LOGOUT_FAIL, payload: e });
         auth();
       });
@@ -87,7 +96,10 @@ export const updatePassword = data => {
       .then(resp => {
         dispatch({ type: Types.UPDATE_PASSWORD_SUCCESS, payload: resp });
       })
-      .catch(e => dispatch({ type: Types.UPDATE_PASSWORD_FAIL, payload: e }));
+      .catch(e => {
+        Common.Dialog(e.message);
+        dispatch({ type: Types.UPDATE_PASSWORD_FAIL, payload: e });
+      });
   };
 };
 
@@ -105,6 +117,9 @@ export const forgotPassword = data => {
       .then(resp => {
         dispatch({ type: Types.FORGOT_PASSWORD_SUCCESS, payload: resp });
       })
-      .catch(e => dispatch({ type: Types.FORGOT_PASSWORD_FAIL, payload: e }));
+      .catch(e => {
+        Common.Dialog(e.message);
+        dispatch({ type: Types.FORGOT_PASSWORD_FAIL, payload: e });
+      });
   };
 };

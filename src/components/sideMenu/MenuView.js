@@ -5,7 +5,7 @@ import { moderateScale } from "../../helpers/ResponsiveFonts";
 
 const MenuView = props => (
   <TouchableOpacity
-    onPress={() => props.menuPress(props.title)}
+    onPress={() => props.menuPress(props)}
     style={{
       borderBottomColor: constants.Colors.Black,
       borderBottomWidth: 1,

@@ -34,12 +34,16 @@ class MyNudgits extends Component {
   }
 
   render() {
+    let { drawerEnable } = this.props;
+    console.log("drawerEnable", drawerEnable);
+
     return (
       <View style={{ flex: 1, backgroundColor: constants.Colors.Turquoise }}>
         <SafeView
           title={""}
           componentId={this.props.componentId}
           backIconColor={constants.Colors.Black}
+          drawerEnabled={drawerEnable}
         >
           <View style={styles.container}>
             <View
@@ -88,7 +92,6 @@ class MyNudgits extends Component {
   }
 }
 const mapStateToProps = state => {
-  console.log("state", state);
   return {
     auth: state.auth
   };
