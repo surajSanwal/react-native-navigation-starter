@@ -22,11 +22,16 @@ import ArrowButton from "../components/common/ArrowButton";
 import { moderateScale } from "../helpers/ResponsiveFonts";
 import { Calendar } from "react-native-calendars";
 import { ModalCenterView } from "../components/common/ModalView";
+
+var markedDates,
+  nextDay = [];
+
 class Find extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      modalVisible: false
+      modalVisible: false,
+      marked: null
     };
   }
 
@@ -41,6 +46,30 @@ class Find extends Component {
 
   toggleModal = () => {
     this.setState({ modalVisible: !this.state.modalVisible });
+  };
+  onDayPressFunc = day => {
+    nextDay.push(day);
+    console.log("nextDat??????", nextDay);
+    markedDates = nextDay.reduce(
+      (i, day) =>
+        Object.assign(i, {
+          [day.dateString]: {
+            startingDay: true,
+            endingDay: true,
+            selected: true,
+            marked: true,
+            color: constants.Colors.Turquoise
+          }
+        }),
+      {}
+    );
+    this.setState({ marked: markedDates }, () => {
+      console.log("State>>>>", this.state.marked);
+    });
+    // markedDates =  Object.assign({[day.dateString]: {selected: true,marked: true, selectedColor: constants.Colors.Turquoise}});
+    // this.setState({ marked : markedDates},()=>{
+    //   console.log("State>>>>", this.state.marked);
+    // });
   };
 
   render() {
@@ -157,24 +186,13 @@ class Find extends Component {
         <ModalCenterView visible={modalVisible} onCloseModal={this.toggleModal}>
           <Calendar
             // Collection of dates that have to be colored in a special way. Default = {}
-            markedDates={{
-              "2019-05-20": { textColor: "green" },
-              "2019-05-22": { startingDay: true, color: "green" },
-              "2019-05-23": {
-                selected: true,
-                endingDay: true,
-                color: "green",
-                textColor: "gray"
-              },
-              "2019-05-04": {
-                disabled: true,
-                startingDay: true,
-                color: "green",
-                endingDay: true
-              }
+            onDayPress={day => {
+              console.log("selected day", day);
+              return this.onDayPressFunc(day);
             }}
+            markedDates={this.state.marked}
             // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
-            markingType={"period"}
+            markingType={"interactive"}
           />
         </ModalCenterView>
       </SafeView>
