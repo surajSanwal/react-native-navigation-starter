@@ -17,13 +17,17 @@ import { push, getServiceType, getMachines } from "../actions";
 import constants from "../constants";
 // import { moderateScale } from "../helpers/ResponsiveFonts";
 import DropdownView from "../components/common/DropdownView";
-import FloatingInput from "../components/common/FloatingInput";
+// import FloatingInput from "../components/common/FloatingInput";
 import ArrowButton from "../components/common/ArrowButton";
 import { moderateScale } from "../helpers/ResponsiveFonts";
-
+import { Calendar } from "react-native-calendars";
+import { ModalCenterView } from "../components/common/ModalView";
 class Find extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      modalVisible: false
+    };
   }
 
   componentDidMount() {
@@ -35,11 +39,16 @@ class Find extends Component {
     this.props.push(this.props.componentId, screen);
   };
 
+  toggleModal = () => {
+    this.setState({ modalVisible: !this.state.modalVisible });
+  };
+
   render() {
     let {
       machine: { machineList },
       service: { serviceList }
     } = this.props;
+    let { modalVisible } = this.state;
     return (
       <SafeView title={"Find"} componentId={this.props.componentId}>
         <View style={{ flex: 1, padding: moderateScale(70) }}>
@@ -55,7 +64,26 @@ class Find extends Component {
           <View style={{ flex: 1 }}>
             <DropdownView data={serviceList} label={"Service Type"} />
             <DropdownView data={machineList} label={"Machine Type"} />
-            <FloatingInput label={"When"} />
+            <View
+              style={{
+                borderBottomColor: constants.Colors.Turquoise,
+                borderBottomWidth: 1,
+                paddingTop: moderateScale(5)
+              }}
+            >
+              <Text
+                style={{
+                  color: constants.Colors.Turquoise,
+                  paddingVertical: moderateScale(5),
+                  borderBottomColor: constants.Colors.Turquoise,
+                  borderBottomWidth: 1,
+                  fontSize: moderateScale(15)
+                }}
+                onPress={this.toggleModal}
+              >
+                When
+              </Text>
+            </View>
             <GooglePlacesAutocomplete
               placeholder="Search"
               placeholderTextColor={constants.Colors.Turquoise}
@@ -78,7 +106,8 @@ class Find extends Component {
                 container: {
                   flex: 0.5,
                   backgroundColor: constants.Colors.Black,
-                  borderWidth: 0
+                  borderWidth: 0,
+                  paddingTop: 10
                 },
                 description: {
                   color: constants.Colors.Turquoise
@@ -120,6 +149,29 @@ class Find extends Component {
             />
           </View>
         </View>
+        <ModalCenterView visible={modalVisible} onCloseModal={this.toggleModal}>
+          <Calendar
+            // Collection of dates that have to be colored in a special way. Default = {}
+            markedDates={{
+              "2019-05-20": { textColor: "green" },
+              "2019-05-22": { startingDay: true, color: "green" },
+              "2019-05-23": {
+                selected: true,
+                endingDay: true,
+                color: "green",
+                textColor: "gray"
+              },
+              "2019-05-04": {
+                disabled: true,
+                startingDay: true,
+                color: "green",
+                endingDay: true
+              }
+            }}
+            // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
+            markingType={"period"}
+          />
+        </ModalCenterView>
       </SafeView>
     );
   }

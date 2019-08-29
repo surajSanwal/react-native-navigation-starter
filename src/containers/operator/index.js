@@ -47,6 +47,7 @@ class OperatorDashboard extends Component {
             <View style={{ width: "75%" }}>
               <ValueContainer
                 editable={false}
+                disableEdit
                 placeholder={"email"}
                 value={firstName + " " + lastName}
                 containerStyle={styles.Container}

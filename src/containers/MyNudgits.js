@@ -39,7 +39,7 @@ class MyNudgits extends Component {
         <SafeView
           title={""}
           componentId={this.props.componentId}
-          backStyle={{ color: constants.Colors.Black }}
+          backIconColor={constants.Colors.Black}
         >
           <View style={styles.container}>
             <View

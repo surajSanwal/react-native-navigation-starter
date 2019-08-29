@@ -66,7 +66,7 @@ class Home extends Component {
               <ArrowButton
                 name={"Find"}
                 textStyle={styles.buttonFont}
-                onPress={() => this.navigate("OperatorProfileServices")}
+                onPress={() => this.navigate("Find")}
                 image={constants.Images.ArrowRightWhite}
               />
               <ArrowButton
