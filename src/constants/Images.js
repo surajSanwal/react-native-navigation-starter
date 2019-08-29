@@ -15,5 +15,6 @@ export default {
   Rating: {
     StarInActive: require("../assets/img/rating/star_inactive.png"),
     StarActive: require("../assets/img/rating/Star.png")
-  }
+  },
+  Nugit: require("../assets/img/nudgit.png")
 };
