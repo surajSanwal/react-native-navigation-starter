@@ -22,16 +22,15 @@ import ArrowButton from "../components/common/ArrowButton";
 import { moderateScale } from "../helpers/ResponsiveFonts";
 import { Calendar } from "react-native-calendars";
 import { ModalCenterView } from "../components/common/ModalView";
-
-var markedDates,
-  nextDay = [];
+import moment from "moment";
 
 class Find extends Component {
   constructor(props) {
     super(props);
     this.state = {
       modalVisible: false,
-      marked: null
+      marked: null,
+      markedDates: []
     };
   }
 
@@ -48,28 +47,71 @@ class Find extends Component {
     this.setState({ modalVisible: !this.state.modalVisible });
   };
   onDayPressFunc = day => {
-    nextDay.push(day);
-    console.log("nextDat??????", nextDay);
-    markedDates = nextDay.reduce(
-      (i, day) =>
-        Object.assign(i, {
-          [day.dateString]: {
-            startingDay: true,
-            endingDay: true,
-            selected: true,
-            marked: true,
-            color: constants.Colors.Turquoise
-          }
-        }),
-      {}
+    /*
+    {
+          date: day.dateString,
+          selected: true,
+          endingDay: true,
+          startingDay: true
+  }
+  */ let markedDates = [
+      ...this.state.markedDates
+    ];
+    if (!markedDates.length) {
+      markedDates.push({
+        dateString: day.dateString,
+        selected: true,
+        endingDay: true,
+        startingDay: true,
+        color: constants.Colors.Turquoise
+      });
+    } else if (moment(day.dateString).isBefore(markedDates[0].dateString)) {
+      markedDates[0].startingDay = false;
+      let current = moment(day.dateString);
+      while (current.isBefore(markedDates[0].dateString)) {
+        markedDates.push({
+          dateString: current.format("YYYY-MM-DD"),
+          selected: true,
+          endingDay: false,
+          startingDay: false,
+          color: constants.Colors.Turquoise
+        });
+        current.add(1, "day");
+      }
+    } else {
+      let current = moment(day.dateString);
+      while (current.isAfter(markedDates[0].dateString)) {
+        markedDates.push({
+          dateString: current.format("YYYY-MM-DD"),
+          selected: true,
+          endingDay: false,
+          startingDay: false,
+          color: constants.Colors.Turquoise
+        });
+        current.subtract(1, "day");
+      }
+    }
+    var sortedArray = markedDates.sort(
+      (a, b) =>
+        moment(a.dateString).format("YYYYMMDD") -
+        moment(b.dateString).format("YYYYMMDD")
     );
-    this.setState({ marked: markedDates }, () => {
-      console.log("State>>>>", this.state.marked);
-    });
-    // markedDates =  Object.assign({[day.dateString]: {selected: true,marked: true, selectedColor: constants.Colors.Turquoise}});
-    // this.setState({ marked : markedDates},()=>{
-    //   console.log("State>>>>", this.state.marked);
-    // });
+    if (sortedArray.length > 1) {
+      sortedArray[0].startingDay = true;
+      sortedArray[0].endingDay = false;
+      sortedArray[sortedArray.length - 1].endingDay = true;
+    }
+    console.log("markedDates", markedDates, sortedArray);
+    this.setState({ markedDates: sortedArray });
+  };
+
+  parseDate = () => {
+    let markedDates = [...this.state.markedDates];
+    return (markedDates = markedDates.reduce((obj, item) => {
+      obj[item.dateString] = { ...item };
+      delete obj[item.dateString].dateString;
+      return obj;
+    }, {}));
   };
 
   render() {
@@ -186,13 +228,10 @@ class Find extends Component {
         <ModalCenterView visible={modalVisible} onCloseModal={this.toggleModal}>
           <Calendar
             // Collection of dates that have to be colored in a special way. Default = {}
-            onDayPress={day => {
-              console.log("selected day", day);
-              return this.onDayPressFunc(day);
-            }}
-            markedDates={this.state.marked}
+            onDayPress={this.onDayPressFunc}
+            markedDates={this.parseDate(this.state.markedDates)}
             // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
-            markingType={"interactive"}
+            markingType={"period"}
           />
         </ModalCenterView>
       </SafeView>
