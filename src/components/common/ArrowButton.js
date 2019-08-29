@@ -9,9 +9,14 @@ const ArrowButton = props => {
     <TouchableOpacity
       style={[
         {
-          padding: moderateScale(15),
+          // padding: moderateScale(0),
           backgroundColor: constants.Colors.Transparent,
-          flexDirection: props.buttonReverse ? "row-reverse" : "row"
+          flexDirection: props.buttonReverse ? "row-reverse" : "row",
+          alignItems: "center",
+          marginVertical: moderateScale(5),
+          paddingVertical: moderateScale(10)
+
+          // justifyContent: "space-between"
         },
         props.buttonStyle
       ]}
@@ -22,7 +27,6 @@ const ArrowButton = props => {
         style={{
           height: moderateScale(props.height || 60),
           width: moderateScale(props.width || 60)
-          // alignSelf: props.alignSelf || ""
         }}
         source={props.image}
         resizeMode={"contain"}

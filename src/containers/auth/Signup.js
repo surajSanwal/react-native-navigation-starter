@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+
 import FloatingInput from "../../components/common/FloatingInput";
 import ArrowButton from "../../components/common/ArrowButton";
 import SafeView from "../../components/common/SafeView";
@@ -53,82 +55,110 @@ class Signup extends Component {
     );
   };
 
+  focusNext(next) {
+    this[next].focus();
+  }
+
   render() {
     let { email, password, name } = this.state;
     return (
       <SafeView title="Sign Up" componentId={this.props.componentId}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "center",
-            marginLeft: moderateScale(70)
-          }}
+        <KeyboardAwareScrollView
+          enableAutomaticScroll
+          enableOnAndroid
+          keyboardShouldPersistTaps={"handled"}
         >
-          <TouchableOpacity
-            onPress={() =>
-              this.props.push(this.props.componentId, "Login", {
-                role: this.props.role
-              })
-            }
-            style={{
-              borderBottomColor: constants.Colors.Turquoise,
-              borderBottomWidth: 1,
-              flex: 0.1,
-              justifyContent: "flex-end",
-              paddingVertical: moderateScale(5)
-            }}
-          >
-            <Text
-              style={{
-                color: constants.Colors.Turquoise,
-                fontSize: moderateScale(30)
-              }}
-            >
-              Login
-            </Text>
-          </TouchableOpacity>
           <View
             style={{
-              borderBottomColor: constants.Colors.Turquoise,
-              flex: 0.1,
-              justifyContent: "flex-end",
-              paddingVertical: moderateScale(5)
+              height: constants.BaseStyle.DEVICE_HEIGHT * 0.9,
+              flexDirection: "column",
+              justifyContent: "space-between",
+              marginLeft: moderateScale(70)
             }}
           >
-            <Text
+            <TouchableOpacity
+              onPress={() =>
+                this.props.push(this.props.componentId, "Login", {
+                  role: this.props.role
+                })
+              }
               style={{
-                color: constants.Colors.White,
-                fontSize: moderateScale(30)
+                borderBottomColor: constants.Colors.Turquoise,
+                borderBottomWidth: 1,
+                flex: 0.05,
+                justifyContent: "flex-end",
+                paddingVertical: moderateScale(5)
               }}
             >
-              Sign up now
-            </Text>
+              <Text
+                style={{
+                  color: constants.Colors.Turquoise,
+                  fontSize: moderateScale(30)
+                }}
+              >
+                Login
+              </Text>
+            </TouchableOpacity>
+            <View
+              style={{
+                borderBottomColor: constants.Colors.Turquoise,
+                flex: 0.05,
+                justifyContent: "flex-end",
+                paddingVertical: moderateScale(5)
+              }}
+            >
+              <Text
+                style={{
+                  color: constants.Colors.White,
+                  fontSize: moderateScale(30)
+                }}
+              >
+                Sign up now
+              </Text>
+            </View>
+            <View style={{ flex: 0.5 }}>
+              <FloatingInput
+                label={"Name"}
+                value={name}
+                onChangeText={name => this.setState({ name })}
+                autoCapitalize={"words"}
+                ref={ref => (this.name = ref)}
+                onSubmitEditing={() => {
+                  this.focusNext("email");
+                }}
+              />
+              <FloatingInput
+                label={"Email"}
+                value={email}
+                onChangeText={email => this.setState({ email })}
+                ref={ref => (this.email = ref)}
+                onSubmitEditing={() => {
+                  this.focusNext("password");
+                }}
+              />
+              <FloatingInput
+                label={"Password"}
+                value={password}
+                secureTextEntry={true}
+                onChangeText={password => this.setState({ password })}
+                ref={ref => (this.password = ref)}
+                onSubmitEditing={this.onSignUpPress}
+              />
+            </View>
+            <View
+              style={{
+                justifyContent: "flex-start",
+                alignItems: "flex-start"
+              }}
+            >
+              <ArrowButton
+                name={"Submit"}
+                image={constants.Images.ArrowRightWhite}
+                onPress={this.onSignUpPress}
+              />
+            </View>
           </View>
-          <View style={{ flex: 0.4 }}>
-            <FloatingInput
-              label={"Name"}
-              value={name}
-              onChangeText={name => this.setState({ name })}
-            />
-            <FloatingInput
-              label={"Email"}
-              value={email}
-              onChangeText={email => this.setState({ email })}
-            />
-            <FloatingInput
-              label={"Password"}
-              value={password}
-              secureTextEntry={true}
-              onChangeText={password => this.setState({ password })}
-            />
-            <ArrowButton
-              name={"Submit"}
-              image={constants.Images.ArrowRightWhite}
-              onPress={this.onSignUpPress}
-            />
-          </View>
-        </View>
+        </KeyboardAwareScrollView>
       </SafeView>
     );
   }

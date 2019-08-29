@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { View, Text } from "react-native";
 import { connect } from "react-redux";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+
 import FloatingInput from "../../components/common/FloatingInput";
 import ArrowButton from "../../components/common/ArrowButton";
 import SafeView from "../../components/common/SafeView";
@@ -31,59 +33,65 @@ class Login extends Component {
     let { username, password } = this.state;
     return (
       <SafeView title="Login" componentId={this.props.componentId}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "center",
-            marginLeft: moderateScale(70)
-          }}
+        <KeyboardAwareScrollView
+          enableAutomaticScroll
+          enableOnAndroid
+          keyboardShouldPersistTaps={"handled"}
         >
           <View
             style={{
-              borderBottomColor: constants.Colors.White,
-              borderBottomWidth: 1,
-              flex: 0.1,
-              justifyContent: "flex-end",
-              paddingVertical: moderateScale(5)
+              height: constants.BaseStyle.DEVICE_HEIGHT * 0.8,
+              flexDirection: "column",
+              justifyContent: "space-around",
+              marginLeft: moderateScale(70)
             }}
           >
-            <Text
+            <View
               style={{
-                color: constants.Colors.Turquoise,
-                fontSize: moderateScale(30)
+                borderBottomColor: constants.Colors.White,
+                borderBottomWidth: 1,
+                flex: 0.1,
+                justifyContent: "flex-end",
+                paddingVertical: moderateScale(5)
               }}
             >
-              Login
-            </Text>
+              <Text
+                style={{
+                  color: constants.Colors.Turquoise,
+                  fontSize: moderateScale(30)
+                }}
+              >
+                Login
+              </Text>
+            </View>
+            <View style={{ flex: 0.3 }}>
+              <FloatingInput
+                label={"User Name"}
+                value={username}
+                onChangeText={username => this.setState({ username })}
+              />
+              <FloatingInput
+                label={"Password"}
+                value={password}
+                secureTextEntry={true}
+                onChangeText={password => this.setState({ password })}
+              />
+            </View>
+            <View
+              style={{
+                justifyContent: "flex-start",
+                alignItems: "flex-start"
+              }}
+            >
+              <ArrowButton
+                name={"Submit"}
+                image={constants.Images.ArrowRightWhite}
+                buttonReverse
+                onPress={this.onLoginPress}
+              />
+            </View>
           </View>
-          <View style={{ flex: 0.3 }}>
-            <FloatingInput
-              label={"User Name"}
-              value={username}
-              onChangeText={username => this.setState({ username })}
-            />
-            <FloatingInput
-              label={"Password"}
-              value={password}
-              secureTextEntry={true}
-              onChangeText={password => this.setState({ password })}
-            />
-          </View>
-          <View
-            style={{
-              justifyContent: "flex-start",
-              alignItems: "flex-start"
-            }}
-          >
-            <ArrowButton
-              name={"Submit"}
-              image={constants.Images.ArrowRightWhite}
-              buttonReverse
-              onPress={this.onLoginPress}
-            />
-          </View>
-        </View>
+        </KeyboardAwareScrollView>
       </SafeView>
     );
   }

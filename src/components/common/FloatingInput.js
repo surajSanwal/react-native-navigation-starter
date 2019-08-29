@@ -35,6 +35,8 @@ class FloatingInput extends Component {
       label,
       value,
       editable,
+      autoCapitalize,
+      returnKeyType,
       // onCancel,
       // onUpdate,
       // loading,
@@ -67,6 +69,8 @@ class FloatingInput extends Component {
               onBlur={this.handleBlur}
               value={value}
               editable={editable}
+              autoCapitalize={autoCapitalize}
+              returnKeyType={returnKeyType || "next"}
               {...props}
             />
           </View>
@@ -145,7 +149,8 @@ FloatingInput.defaultProps = {
   editable: true,
   onCancel: () => {},
   onUpdate: () => {},
-  loading: false
+  loading: false,
+  autoCapitalize: "none"
 };
 
 FloatingInput.propTypes = {
@@ -154,6 +159,7 @@ FloatingInput.propTypes = {
   editable: PropTypes.bool,
   onCancel: PropTypes.func,
   onUpdate: PropTypes.func,
-  loading: PropTypes.bool
+  loading: PropTypes.bool,
+  autoCapitalize: PropTypes.string
 };
 export default FloatingInput;
