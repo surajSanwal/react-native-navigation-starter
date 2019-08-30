@@ -63,7 +63,7 @@ class Find extends Component {
         selected: true,
         endingDay: true,
         startingDay: true,
-        color: constants.Colors.Turquoise
+        color: constants.Colors.Gray
       });
     } else if (moment(day.dateString).isBefore(markedDates[0].dateString)) {
       markedDates[0].startingDay = false;
@@ -74,7 +74,7 @@ class Find extends Component {
           selected: true,
           endingDay: false,
           startingDay: false,
-          color: constants.Colors.Turquoise
+          color: constants.Colors.Gray
         });
         current.add(1, "day");
       }
@@ -86,7 +86,7 @@ class Find extends Component {
           selected: true,
           endingDay: false,
           startingDay: false,
-          color: constants.Colors.Turquoise
+          color: constants.Colors.Gray
         });
         current.subtract(1, "day");
       }
@@ -225,12 +225,28 @@ class Find extends Component {
             />
           </View>
         </View>
-        <ModalCenterView visible={modalVisible} onCloseModal={this.toggleModal}>
+        <ModalCenterView
+          modalStyle={{
+            backgroundColor: constants.Colors.Turquoise,
+            marginTop: "60%"
+          }}
+          visible={modalVisible}
+          onCloseModal={this.toggleModal}
+        >
           <Calendar
-            // Collection of dates that have to be colored in a special way. Default = {}
+            theme={{
+              backgroundColor: constants.Colors.Turquoise,
+              calendarBackground: constants.Colors.Turquoise,
+              textSectionTitleColor: constants.Colors.DarkBlack,
+              selectedDayBackgroundColor: constants.Colors.DarkBlack,
+              selectedDayTextColor: constants.Colors.DarkBlack,
+              textMonthFontFamily: "ITCAvantGardeStd-Bold",
+              monthTextColor: constants.Colors.DarkBlack,
+              textMonthFontWeight: "bold",
+              arrowColor: constants.Colors.Gray
+            }}
             onDayPress={this.onDayPressFunc}
             markedDates={this.parseDate(this.state.markedDates)}
-            // Date marking style [simple/period/multi-dot/custom]. Default = 'simple'
             markingType={"period"}
           />
         </ModalCenterView>

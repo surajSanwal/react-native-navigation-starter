@@ -104,6 +104,7 @@ class OperatorDashboard extends Component {
               textStyle={styles.textBelow}
               textView={styles.textView}
               disabled={false}
+              onPress={() => this.props.push(this.props.componentId, "Profile")}
             />
           </View>
         </View>

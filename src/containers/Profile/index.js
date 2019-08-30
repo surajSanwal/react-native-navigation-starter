@@ -19,9 +19,9 @@ export class Profile extends Component {
     this.state = {
       days: [],
       isDateTimePickerVisible: false,
-      firstName: "",
-      lastName: "",
-      email: "",
+      first_Name: "",
+      last_Name: "",
+      user_Email: "",
       password: "",
       businessName: "",
       abn: "",
@@ -31,6 +31,10 @@ export class Profile extends Component {
       endTime: undefined
     };
   }
+  componentDidMount() {
+    console.log("this.props.user", this.props.user);
+  }
+
   updateDays = day => {
     let days = [...this.state.days];
     if (days.includes(day)) {
@@ -62,16 +66,10 @@ export class Profile extends Component {
   };
 
   render() {
+    let { password, businessName, abn, startTime, endTime } = this.state;
     let {
-      firstName,
-      lastName,
-      email,
-      password,
-      businessName,
-      abn,
-      startTime,
-      endTime
-    } = this.state;
+      user: { firstName, lastName, email }
+    } = this.props;
     return (
       <SafeView componentId={this.props.componentId} title={"Edit Profile"}>
         <View style={{ flex: 1, paddingHorizontal: moderateScale(20) }}>
@@ -97,12 +95,12 @@ export class Profile extends Component {
               <ValueContainer
                 placeholder={"First Name"}
                 value={firstName}
-                onChangeText={firstName => this.setState({ firstName })}
+                onChangeText={first_Name => this.setState({ first_Name })}
               />
               <ValueContainer
                 placeholder={"Last Name"}
                 value={lastName}
-                onChangeText={lastName => this.setState({ lastName })}
+                onChangeText={last_Name => this.setState({ last_Name })}
               />
             </View>
           </View>
@@ -122,7 +120,7 @@ export class Profile extends Component {
               placeholder={"password"}
               value={password}
               secureTextEntry={true}
-              onChangeText={password => this.setState({ password })}
+              onChangeText={user_Email => this.setState({ user_Email })}
             />
             <ValueContainer
               placeholder={"Business Name"}
