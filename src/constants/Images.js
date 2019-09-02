@@ -10,6 +10,7 @@ export default {
   ArrowRightDark: require("../assets/img/Arrow-right-dark.png"),
   ArrowRightWhite: require("../assets/img/Arrow-Right-White.png"),
   ArrowRightGreen: require("../assets/img/Arrow-Right-Green.png"),
+  ArrowUpGreen: require("../assets/img/Arrow-UP-Green.png"),
   Drawer: require("../assets/img/drawer.png"),
   BuilderImage: require("../assets/img/BuilderImage.png"),
   Rating: {

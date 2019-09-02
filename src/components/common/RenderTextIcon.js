@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
-import Icon from "react-native-vector-icons/FontAwesome5";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 const RenderTextIcon = props => {
   return (
@@ -18,17 +18,21 @@ const RenderTextIcon = props => {
       ]}
     >
       <Text
-        style={{
-          color: constants.Colors.Turquoise,
-          ...constants.Fonts.ITCAvantGardeStdBk
-        }}
+        style={[
+          {
+            color: constants.Colors.Turquoise,
+            ...constants.Fonts.ITCAvantGardeStdBk,
+            fontSize: moderateScale(18)
+          },
+          props.titleStyle
+        ]}
       >
         {props.name}
       </Text>
       <Icon
-        name={"plus"}
-        size={12}
-        color="white"
+        name={props.icons || "plus"}
+        size={props.iconSize || 12}
+        color={props.iconColor || "white"}
         style={{
           alignSelf: "flex-end",
           paddingRight: moderateScale(15)
