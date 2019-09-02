@@ -20,6 +20,7 @@ import OperatorProfileServices from "../containers/Profile/OperatorProfileServic
 import Notification from "../containers/notification";
 import WebViewContainer from "../containers/WebViewContainer";
 import ForgotPassword from "../containers/auth/ForgotPassword";
+import ShowText from "../containers/ShowText";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -125,6 +126,12 @@ const registerRoutes = store => {
   Navigation.registerComponentWithRedux(
     "WebView",
     () => WebViewContainer,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "ShowText",
+    () => ShowText,
     Provider,
     store
   );

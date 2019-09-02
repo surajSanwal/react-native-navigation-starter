@@ -48,7 +48,7 @@ class OperatorDashboard extends Component {
               <ValueContainer
                 editable={false}
                 disableEdit
-                placeholder={"email"}
+                placeholder={"Name"}
                 value={firstName + " " + lastName}
                 containerStyle={styles.Container}
                 style={[styles.Text, constants.Fonts.ITCAvantGardeStdBold]}
@@ -78,6 +78,12 @@ class OperatorDashboard extends Component {
                 constants.Fonts.ITCAvantGardeStdBold
               ]}
               textView={styles.textView}
+              onPress={() =>
+                this.props.push(this.props.componentId, "ShowText", {
+                  profileCompleteMsg: "Weldone on completing your profile",
+                  message: "Content Still To Come"
+                })
+              }
             />
             <View style={styles.horizontalView}></View>
             <ArrowButton
