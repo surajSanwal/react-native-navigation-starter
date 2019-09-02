@@ -2,12 +2,14 @@ import * as Types from "../ActionTypes";
 import RestClient from "../helpers/RestClient";
 import { push } from "./";
 import { customer, operator, auth } from "../config/Navigator.js";
-import Common from "../helpers/Common";
+import { showToast } from "./app";
+
 export const userLogin = user => {
   return dispatch => {
     dispatch({ type: Types.LOGIN_REQUEST });
     RestClient.restCall("user/login", user)
       .then(resp => {
+        dispatch(showToast(resp.message));
         dispatch({ type: Types.LOGIN_SUCCESS, payload: resp });
         switch (resp.role) {
           case "customer":
@@ -21,7 +23,7 @@ export const userLogin = user => {
         }
       })
       .catch(e => {
-        Common.Dialog(e.message);
+        dispatch(showToast(e.message));
         dispatch({ type: Types.LOGIN_FAIL, payload: e });
       });
   };
@@ -32,6 +34,7 @@ export const registerUser = (user, componentId) => {
     dispatch({ type: Types.SIGNUP_REQUEST });
     RestClient.restCall("user", user)
       .then(resp => {
+        dispatch(showToast(resp.message));
         dispatch({ type: Types.SIGNUP_SUCCESS, payload: resp });
         switch (resp.role) {
           case "customer":
@@ -43,7 +46,7 @@ export const registerUser = (user, componentId) => {
         }
       })
       .catch(e => {
-        Common.Dialog(e.message);
+        dispatch(showToast(e.message));
         dispatch({ type: Types.SIGNUP_FAIL, payload: e });
       });
   };
@@ -54,10 +57,11 @@ export const resendVerification = user => {
     dispatch({ type: Types.RESEND_VERIFICATION_REQUEST });
     RestClient.restCall("user/resend-email", user)
       .then(resp => {
+        dispatch(showToast(resp.message));
         dispatch({ type: Types.RESEND_VERIFICATION_SUCCESS, payload: resp });
       })
       .catch(e => {
-        Common.Dialog(e.message);
+        dispatch(showToast(e.message));
         dispatch({ type: Types.RESEND_VERIFICATION_FAIL, payload: e });
       });
   };
@@ -71,11 +75,12 @@ export const logout = () => {
     dispatch({ type: Types.LOGOUT_REQUEST });
     RestClient.restCall("user/logout", {}, loginToken, "DELETE")
       .then(resp => {
+        dispatch(showToast(resp.message));
         dispatch({ type: Types.LOGOUT_SUCCESS, payload: resp });
         auth();
       })
       .catch(e => {
-        // Common.Dialog(e.message);
+        dispatch(showToast(e.message));
         dispatch({ type: Types.LOGOUT_FAIL, payload: e });
         auth();
       });
@@ -94,10 +99,11 @@ export const updatePassword = data => {
     dispatch({ type: Types.UPDATE_PASSWORD_REQUEST });
     RestClient.restCall("user/password", data, loginToken, "PUT")
       .then(resp => {
+        dispatch(showToast(resp.message));
         dispatch({ type: Types.UPDATE_PASSWORD_SUCCESS, payload: resp });
       })
       .catch(e => {
-        Common.Dialog(e.message);
+        dispatch(showToast(e.message));
         dispatch({ type: Types.UPDATE_PASSWORD_FAIL, payload: e });
       });
   };
@@ -115,10 +121,11 @@ export const forgotPassword = data => {
     dispatch({ type: Types.FORGOT_PASSWORD_REQUEST });
     RestClient.restCall("user/forgot-password", data, loginToken, "PUT")
       .then(resp => {
+        dispatch(showToast(resp.message));
         dispatch({ type: Types.FORGOT_PASSWORD_SUCCESS, payload: resp });
       })
       .catch(e => {
-        Common.Dialog(e.message);
+        dispatch(showToast(e.message));
         dispatch({ type: Types.FORGOT_PASSWORD_FAIL, payload: e });
       });
   };

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text } from "react-native";
 import { connect } from "react-redux";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -8,8 +8,7 @@ import ArrowButton from "../../components/common/ArrowButton";
 import SafeView from "../../components/common/SafeView";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
-import { push, registerUser } from "../../actions";
-import Common from "../../helpers/Common";
+import { push, registerUser, showToast } from "../../actions";
 import Regex from "../../helpers/Regex";
 
 class Signup extends Component {
@@ -22,23 +21,28 @@ class Signup extends Component {
     };
   }
 
+  showToast = message => {
+    let { showToast } = this.props;
+    showToast(message, constants.Colors.Red);
+  };
+
   onSignUpPress = () => {
     let { name, email, password } = this.state;
     let { role } = this.props;
     if (!name.length) {
-      return Common.Dialog("Please Enter Name");
+      return this.showToast("Please Enter Name");
     }
     if (!email.length) {
-      return Common.Dialog("Please Enter Email");
+      return this.showToast("Please Enter Email");
     }
     if (!Regex.validateEmail(email)) {
-      return Common.Dialog("Please Enter Valid Email");
+      return this.showToast("Please Enter Valid Email");
     }
     if (!password.length) {
-      return Common.Dialog("Please Enter Password");
+      return this.showToast("Please Enter Password");
     }
     if (!Regex.validatePassword(password)) {
-      return Common.Dialog(
+      return this.showToast(
         "Password must be between 8-15 characters and having minimum 1 special character, 1 upper case latter , 1 lower case latter and 1 numeric value!"
       );
     }
@@ -61,8 +65,9 @@ class Signup extends Component {
 
   render() {
     let { email, password, name } = this.state;
+    let { loader } = this.props;
     return (
-      <SafeView title="Sign Up" componentId={this.props.componentId}>
+      <SafeView title="" componentId={this.props.componentId}>
         <KeyboardAwareScrollView
           enableAutomaticScroll
           enableOnAndroid
@@ -76,35 +81,27 @@ class Signup extends Component {
               marginLeft: moderateScale(70)
             }}
           >
-            <TouchableOpacity
+            <ArrowButton
+              name={"Login"}
+              image={constants.Images.ArrowRightWhite}
               onPress={() =>
                 this.props.push(this.props.componentId, "Login", {
                   role: this.props.role
                 })
               }
-              style={{
+              buttonReverse
+              buttonStyle={{
                 borderBottomColor: constants.Colors.Turquoise,
-                borderBottomWidth: 1,
-                flex: 0.05,
-                justifyContent: "flex-end",
-                paddingVertical: moderateScale(5),
-                marginBottom: moderateScale(20)
+                borderBottomWidth: 1
               }}
-            >
-              <Text
-                style={{
-                  color: constants.Colors.Turquoise,
-                  fontSize: moderateScale(30)
-                }}
-              >
-                Login
-              </Text>
-            </TouchableOpacity>
+              textStyle={{
+                color: constants.Colors.Turquoise,
+                fontSize: moderateScale(30)
+              }}
+            />
             <View
               style={{
                 borderBottomColor: constants.Colors.Turquoise,
-                flex: 0.05,
-                justifyContent: "flex-end",
                 paddingVertical: moderateScale(5)
               }}
             >
@@ -117,7 +114,7 @@ class Signup extends Component {
                 Sign up now
               </Text>
             </View>
-            <View style={{ flex: 0.5 }}>
+            <View style={{ flex: 0.6 }}>
               <FloatingInput
                 label={"Name"}
                 value={name}
@@ -146,18 +143,13 @@ class Signup extends Component {
                 onSubmitEditing={this.onSignUpPress}
               />
             </View>
-            <View
-              style={{
-                justifyContent: "flex-start",
-                alignItems: "flex-start"
-              }}
-            >
-              <ArrowButton
-                name={"Submit"}
-                image={constants.Images.ArrowRightWhite}
-                onPress={this.onSignUpPress}
-              />
-            </View>
+
+            <ArrowButton
+              name={"Submit"}
+              image={constants.Images.ArrowRightWhite}
+              onPress={this.onSignUpPress}
+              loading={loader.signup}
+            />
           </View>
         </KeyboardAwareScrollView>
       </SafeView>
@@ -166,10 +158,11 @@ class Signup extends Component {
 }
 
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  loader: state.loader
 });
 
 export default connect(
   mapStateToProps,
-  { push, registerUser }
+  { push, registerUser, showToast }
 )(Signup);

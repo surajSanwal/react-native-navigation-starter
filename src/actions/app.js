@@ -1,6 +1,7 @@
-import { Navigation } from "react-native-navigation";
+import { Navigation, Constants } from "react-native-navigation";
 import constants from "../constants";
-
+import Toast from 'react-native-root-toast';
+import * as Types from "../ActionTypes";
 export const push = (componentId, screen, passProps = {}) => {
   return () => {
     Navigation.push(componentId, {
@@ -83,3 +84,40 @@ export const setScreenStack = (componentId, stack, passProps= {},visible,) => {
     });
   };
 };
+
+/**
+ * 
+ * @param {*} message 
+ * @param {*} backgroundColor 
+ * @param {*} textColor 
+ * @param {*} duration 
+ * @param {*} position 
+ * @param {*} shadow 
+ * @param {*} animation 
+ * @param {*} hideOnPress 
+ * @param {*} delay 
+ * @param {*} onShow 
+ * @param {*} onShown 
+ * @param {*} onHide 
+ * @param {*} onHidden 
+ */
+export const showToast = (message,backgroundColor=constants.Colors.Black,textColor=constants.Colors.White, duration = Toast.durations.LONG, position = Toast.positions.BOTTOM, shadow = true, animation = true, hideOnPress = true, delay = 0, onShow = () => { },onShown = () => { },onHide = () => { },onHidden = () => { }) => {
+  return dispatch => {
+    dispatch({ type: Types.SHOW_TOAST });
+    Toast.show(message, {
+    duration,
+    position,
+    shadow,
+    animation,
+    hideOnPress,
+    delay,
+    onShow,// calls on toast\`s appear animation start
+    onShown,        // calls on toast\`s appear animation end.
+    onHide,        // calls on toast\`s hide animation start.
+    onHidden,        // calls on toast\`s hide animation end.
+    backgroundColor,
+    textColor,
+})
+    dispatch({type:Types.HIDE_TOAST})
+  }
+}

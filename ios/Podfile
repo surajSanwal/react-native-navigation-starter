@@ -40,6 +40,8 @@ target 'jetX' do
 
   pod 'react-native-webview', :path => '../node_modules/react-native-webview'
 
+  pod 'react-native-spinkit', :path => '../node_modules/react-native-spinkit'
+
   target 'jetXTests' do
     inherit! :search_paths
     # Pods for testing

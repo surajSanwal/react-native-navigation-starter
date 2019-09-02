@@ -10,6 +10,7 @@ import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
+import com.react.rnspinkit.RNSpinkitPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.reactnativecommunity.netinfo.NetInfoPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
@@ -53,7 +54,8 @@ public class MainApplication extends NavigationApplication {
                 new VectorIconsPackage(),
                 new NetInfoPackage(),
                 new AsyncStoragePackage(),
-                new RNCWebViewPackage()
+                new RNCWebViewPackage(),
+                new RNSpinkitPackage()
         );
 
     }

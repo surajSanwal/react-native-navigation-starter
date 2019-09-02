@@ -1,40 +1,50 @@
+/*
+ * Filename: /Users/suraj.sanwal/Desktop/projects/react-native/jetX/src/components/common/ArrowButton.js
+ * Path: /Users/suraj.sanwal/Desktop/projects/react-native/jetX
+ * Created Date: Thursday, August 29th 2019, 5:48:13 pm
+ * Author: Suraj Sanwal
+ *
+ * Copyright (c) 2019 smartData Inc
+ */
+
 import React from "react";
 import { TouchableOpacity, Text, Image } from "react-native";
 import PropTypes from "prop-types";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
 import Common from "../../helpers/Common";
+import SpinnerComponent from "./Spinner";
 
 const ArrowButton = props => {
   return (
     <TouchableOpacity
       style={[
         {
-          // padding: moderateScale(0),
           backgroundColor: constants.Colors.Transparent,
           flexDirection: props.buttonReverse ? "row-reverse" : "row",
           alignItems: "center",
+          justifyContent: !props.buttonReverse ? "flex-start" : "flex-end",
           marginVertical: moderateScale(5),
           paddingVertical: moderateScale(10)
-
-          // justifyContent: "space-between"
         },
         props.buttonStyle
       ]}
-      disabled={props.disabled}
+      disabled={props.disabled || props.loading}
       onPress={props.onPress}
     >
-      <Image
-        style={{
-          height: moderateScale(props.height || 60),
-          width: moderateScale(props.width || 60)
-        }}
-        source={props.image}
-        resizeMode={"contain"}
-        resizeMethod={"resize"}
-      />
-      {/* <View style={[{ flex: 1, justifyContent: 'center' },
-      props.bottomBorder ? { borderBottomColor: constants.Colors.White, borderBottomWidth: 1 } : null]}> */}
+      {props.loading ? (
+        <SpinnerComponent />
+      ) : (
+        <Image
+          style={{
+            height: moderateScale(props.height || 60),
+            width: moderateScale(props.width || 60)
+          }}
+          source={props.image}
+          resizeMode={"contain"}
+          resizeMethod={"resize"}
+        />
+      )}
       <Text
         style={[
           {
@@ -47,7 +57,6 @@ const ArrowButton = props => {
       >
         {props.name}
       </Text>
-      {/* </View> */}
     </TouchableOpacity>
   );
 };
@@ -61,7 +70,8 @@ ArrowButton.defaultProps = {
   textStyle: {},
   image: constants.Images.ArrowRightDark,
   buttonReverse: false,
-  buttonStyle: {}
+  buttonStyle: {},
+  loading: false
 };
 
 ArrowButton.propTypes = {
@@ -71,7 +81,8 @@ ArrowButton.propTypes = {
   textStyle: PropTypes.object,
   image: PropTypes.number || PropTypes.string,
   buttonReverse: PropTypes.bool,
-  buttonStyle: PropTypes.object
+  buttonStyle: PropTypes.object,
+  loading: PropTypes.bool
 };
 
 export default ArrowButton;

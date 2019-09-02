@@ -17,7 +17,7 @@ let colors = {
   Placeholder: "#707070",
   ListBorder: "#B4C9CC",
   Green: "#7DDE97",
-  Red: "#FF7474",
+  Red: "#FC0E05",
   orange: "#FF9B70",
   Gray: "#A9AFAF",
   menuItemTxt: "#393B3B",
