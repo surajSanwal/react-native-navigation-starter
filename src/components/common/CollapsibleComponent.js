@@ -11,18 +11,21 @@ const CollapsibleComponent = props => {
     <View>
       <TouchableOpacity
         onPress={() => updateCollapsed(!isCollapsed)}
-        style={{
-          flexDirection: "row",
-          justifyContent:
-            props.activeIcon || props.inActiveIcon
-              ? "space-between"
-              : "flex-start",
-          marginVertical: moderateScale(5),
-          alignItems: "center",
-          padding: moderateScale(5),
-          borderBottomColor: constants.Colors.Turquoise,
-          borderBottomWidth: 1
-        }}
+        style={[
+          {
+            flexDirection: "row",
+            justifyContent:
+              props.activeIcon || props.inActiveIcon
+                ? "space-between"
+                : "flex-start",
+            marginVertical: moderateScale(5),
+            alignItems: "center",
+            padding: moderateScale(5),
+            borderBottomColor: constants.Colors.Turquoise,
+            borderBottomWidth: 1
+          },
+          props.buttonStyle
+        ]}
       >
         <Text
           style={{

@@ -102,7 +102,12 @@ class SetupProfile extends Component {
               image={constants.Images.ArrowRightWhite}
               buttonReverse
               buttonStyle={styles.buttonStyle}
-              onPress={() => this.props.push(this.props.componentId, "Profile")}
+              onPress={() =>
+                this.props.push(this.props.componentId, "ShowText", {
+                  profileCompleteMsg: "Weldone on completing your profile",
+                  message: "Content Still To Come"
+                })
+              }
             />
           </View>
         </View>

@@ -3,6 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import constants from "../constants";
 import { moderateScale } from "../helpers/ResponsiveFonts";
 import SafeView from "../components/common/SafeView";
+import Icon from "react-native-vector-icons/FontAwesome";
 
 class ShowText extends Component {
   componentDidMount() {
@@ -20,12 +21,18 @@ class ShowText extends Component {
             {
               borderBottomColor: constants.Colors.Turquoise,
               borderBottomWidth: 1,
-              padding: moderateScale(5),
+              paddingBottom: moderateScale(20),
               marginVertical: moderateScale(35)
             },
             this.props.style
           ]}
         >
+          <Icon
+            name={"check-circle"}
+            size={45}
+            color={constants.Colors.Turquoise}
+            style={style.icon}
+          />
           <Text style={[style.text, this.props.style]}>
             {this.props.profileCompleteMsg}
           </Text>
@@ -37,10 +44,14 @@ class ShowText extends Component {
 }
 
 const style = StyleSheet.create({
+  icon: {
+    marginHorizontal: moderateScale(65),
+    marginBottom: moderateScale(25)
+  },
   text: {
     ...constants.Fonts.ITCAvantGardeProBk,
     fontSize: moderateScale(28),
-    color: constants.Colors.Turquoise,
+    color: constants.Colors.White,
     marginHorizontal: moderateScale(35),
     alignSelf: "center"
   }

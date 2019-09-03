@@ -78,12 +78,7 @@ class OperatorDashboard extends Component {
                 constants.Fonts.ITCAvantGardeStdBold
               ]}
               textView={styles.textView}
-              onPress={() =>
-                this.props.push(this.props.componentId, "ShowText", {
-                  profileCompleteMsg: "Weldone on completing your profile",
-                  message: "Content Still To Come"
-                })
-              }
+              onPress={() => this.props.push(this.props.componentId, "Jobs")}
             />
             <View style={styles.horizontalView}></View>
             <ArrowButton
