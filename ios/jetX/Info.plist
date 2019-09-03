@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string></string>
+	<string>$(PRODUCT_NAME) want to access your location for live tracking</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>itc-avant-garde-gothic-std-bold-589572c7e9955.otf</string>

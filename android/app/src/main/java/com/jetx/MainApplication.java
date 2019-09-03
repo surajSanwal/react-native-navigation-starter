@@ -10,6 +10,7 @@ import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
+import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
 import com.reactnativecommunity.netinfo.NetInfoPackage;
@@ -21,6 +22,8 @@ import com.facebook.soloader.SoLoader;
 import com.reactnativenavigation.NavigationApplication;
 import com.reactnativenavigation.react.NavigationReactNativeHost;
 import com.reactnativenavigation.react.ReactGateway;
+import com.airbnb.android.react.maps.MapsPackage;
+import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -55,7 +58,9 @@ public class MainApplication extends NavigationApplication {
                 new NetInfoPackage(),
                 new AsyncStoragePackage(),
                 new RNCWebViewPackage(),
-                new RNSpinkitPackage()
+                new RNSpinkitPackage(),
+                new MapsPackage(),
+                new RNFusedLocationPackage()
         );
 
     }

@@ -24,7 +24,8 @@ SafeView.propTypes = {
   onBackPress: PropTypes.func,
   drawerEnabled: PropTypes.bool,
   barColor: PropTypes.string,
-  backIconColor: PropTypes.string
+  backIconColor: PropTypes.string,
+  componentId: PropTypes.string.isRequired
 };
 
 SafeView.defaultProps = {

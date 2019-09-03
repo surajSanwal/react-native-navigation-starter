@@ -101,7 +101,8 @@ Header.propTypes = {
   hideBack: PropTypes.bool,
   drawerEnabled: PropTypes.bool,
   barColor: PropTypes.string,
-  backIconColor: PropTypes.string
+  backIconColor: PropTypes.string,
+  componentId: PropTypes.string.isRequired
 };
 
 Header.defaultProps = {

@@ -9,7 +9,7 @@
 
 "use strict";
 const DevKeys = {
-  GooglePlaceAPIKey: "AIzaSyB_oXjYfDeTC656jj49F93Tl5_h1ao9OY4"
+  GoogleAPIKey: "AIzaSyB_oXjYfDeTC656jj49F93Tl5_h1ao9OY4"
 };
 
 export default DevKeys;
