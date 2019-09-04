@@ -46,6 +46,8 @@ target 'jetX' do
   pod 'react-native-geolocation', path: '../node_modules/@react-native-community/geolocation'
   
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
   target 'jetXTests' do
     inherit! :search_paths
     # Pods for testing

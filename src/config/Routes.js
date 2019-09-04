@@ -22,6 +22,7 @@ import WebViewContainer from "../containers/WebViewContainer";
 import ForgotPassword from "../containers/auth/ForgotPassword";
 import ShowText from "../containers/ShowText";
 import Maps from "../components/operator/Map";
+import FileSystem from "../containers/fileSystem";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -137,6 +138,12 @@ const registerRoutes = store => {
     store
   );
   Navigation.registerComponentWithRedux("Maps", () => Maps, Provider, store);
+  Navigation.registerComponentWithRedux(
+    "FileSystem",
+    () => FileSystem,
+    Provider,
+    store
+  );
 };
 
 export const commandListener = () =>

@@ -10,6 +10,7 @@ import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
+import com.rnfs.RNFSPackage;
 import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
 import com.reactnativecommunity.webview.RNCWebViewPackage;
@@ -60,7 +61,8 @@ public class MainApplication extends NavigationApplication {
                 new RNCWebViewPackage(),
                 new RNSpinkitPackage(),
                 new MapsPackage(),
-                new RNFusedLocationPackage()
+                new RNFusedLocationPackage(),
+                new RNFSPackage()
         );
 
     }

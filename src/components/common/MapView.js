@@ -1,6 +1,6 @@
 import React from "react";
-import { StyleSheet } from "react-native";
-import MapView, { PROVIDER_GOOGLE } from "react-native-maps";
+import { StyleSheet, Platform } from "react-native";
+import MapView, { PROVIDER_GOOGLE, PROVIDER_DEFAULT } from "react-native-maps";
 import constants from "../../constants";
 
 const INITIAL_REGION = {
@@ -16,7 +16,7 @@ const MapViewComponent = props => {
   return (
     <MapView
       initialRegion={INITIAL_REGION}
-      provider={PROVIDER_GOOGLE}
+      provider={Platform.OS === "android" ? PROVIDER_GOOGLE : PROVIDER_DEFAULT}
       showsUserLocation
       showsCompass
       showsTraffic
