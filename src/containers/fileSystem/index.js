@@ -1,12 +1,17 @@
 import React, { Component } from "react";
-import { Text } from "react-native";
+import { Text, FlatList, View } from "react-native";
 import { connect } from "react-redux";
 import Files from "../../helpers/Files";
 import SafeView from "../../components/common/SafeView";
-
+import Icon from "react-native-vector-icons/FontAwesome5";
+import constants from "../../constants";
+import { moderateScale } from "../../helpers/ResponsiveFonts";
 class FileSystem extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      files: []
+    };
   }
 
   componentDidMount() {
@@ -43,6 +48,38 @@ class FileSystem extends Component {
         <Text style={{ color: "#fff" }} onPress={this.uploadFile}>
           Upload File
         </Text>
+        <FlatList
+          data={this.state.files}
+          keyExtractor={item => item.path}
+          renderItem={({ item, index }) => (
+            <View
+              key={index}
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-around",
+                alignItems: "center",
+                margin: moderateScale(10)
+              }}
+            >
+              <Icon
+                name={"file"}
+                color={constants.Colors.Turquoise}
+                size={35}
+              />
+              <View
+                style={{
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  flex: 0.8
+                }}
+              >
+                <Text style={{ color: "#fff", fontSize: moderateScale(18) }}>
+                  {item.name}
+                </Text>
+              </View>
+            </View>
+          )}
+        />
       </SafeView>
     );
   }
