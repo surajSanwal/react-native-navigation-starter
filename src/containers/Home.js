@@ -6,10 +6,15 @@ import constants from "../constants";
 import { moderateScale } from "../helpers/ResponsiveFonts";
 import SafeView from "../components/common/SafeView";
 import ArrowButton from "../components/common/ArrowButton";
+import Socket from "../helpers/Socket";
 
 class Home extends Component {
   constructor(props) {
     super(props);
+  }
+
+  componentDidMount() {
+    Socket.init();
   }
 
   navigate = screen => {
