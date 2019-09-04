@@ -24,6 +24,7 @@ import ShowText from "../containers/ShowText";
 import Maps from "../components/operator/Map";
 import FileSystem from "../containers/fileSystem";
 import Jobs from "../containers/operator/Jobs";
+import PdfViewer from "../containers/fileSystem/PdfViewer";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -146,6 +147,12 @@ const registerRoutes = store => {
     store
   );
   Navigation.registerComponentWithRedux("Jobs", () => Jobs, Provider, store);
+  Navigation.registerComponentWithRedux(
+    "PDFViewer",
+    () => PdfViewer,
+    Provider,
+    store
+  );
 };
 
 export const commandListener = () =>

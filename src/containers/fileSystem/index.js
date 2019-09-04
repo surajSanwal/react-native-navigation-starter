@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Text, FlatList, View } from "react-native";
+import { Text, FlatList, View, TouchableOpacity } from "react-native";
 import { connect } from "react-redux";
 import Files from "../../helpers/Files";
 import SafeView from "../../components/common/SafeView";
 import Icon from "react-native-vector-icons/FontAwesome5";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
+import { push } from "../../actions";
 class FileSystem extends Component {
   constructor(props) {
     super(props);
@@ -38,7 +39,12 @@ class FileSystem extends Component {
       .then(resp => console.log("Files-===>", resp))
       .catch(e => console.log("error on file==>", e));
   };
-
+  openFile = file => {
+    this.props.push(this.props.componentId, "PDFViewer", {
+      source: file.path,
+      title: file.name
+    });
+  };
   render() {
     return (
       <SafeView title={"File System"} componentId={this.props.componentId}>
@@ -52,7 +58,8 @@ class FileSystem extends Component {
           data={this.state.files}
           keyExtractor={item => item.path}
           renderItem={({ item, index }) => (
-            <View
+            <TouchableOpacity
+              onPress={() => this.openFile(item)}
               key={index}
               style={{
                 flexDirection: "row",
@@ -77,7 +84,7 @@ class FileSystem extends Component {
                   {item.name}
                 </Text>
               </View>
-            </View>
+            </TouchableOpacity>
           )}
         />
       </SafeView>
@@ -87,7 +94,7 @@ class FileSystem extends Component {
 
 const mapStateToProps = () => ({});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = { push };
 
 export default connect(
   mapStateToProps,

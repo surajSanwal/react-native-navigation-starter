@@ -10,6 +10,9 @@ import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.bridge.JavaScriptExecutorFactory;
 import com.facebook.react.ReactApplication;
+import org.wonday.pdf.RCTPdfView;
+import com.RNFetchBlob.RNFetchBlobPackage;
+import io.github.elyx0.reactnativedocumentpicker.DocumentPickerPackage;
 import com.rnfs.RNFSPackage;
 import com.agontuk.RNFusedLocation.RNFusedLocationPackage;
 import com.react.rnspinkit.RNSpinkitPackage;
@@ -62,7 +65,10 @@ public class MainApplication extends NavigationApplication {
                 new RNSpinkitPackage(),
                 new MapsPackage(),
                 new RNFusedLocationPackage(),
-                new RNFSPackage()
+                new RNFSPackage(),
+                new DocumentPickerPackage(),
+                new RNFetchBlobPackage(),
+                new RCTPdfView()
         );
 
     }
