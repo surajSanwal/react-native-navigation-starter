@@ -6,20 +6,10 @@ import Icon from "react-native-vector-icons/FontAwesome";
 const Address = props => {
   let [isEditable, toggleEdit] = useState(false);
   return (
-    <View
-      style={{
-        borderBottomColor: constants.Colors.Turquoise,
-        borderBottomWidth: 1,
-        padding: moderateScale(5),
-        marginVertical: moderateScale(5)
-        // flex: 1,
-      }}
-    >
+    <View style={styles.container}>
       {props.title && props.data ? (
         <View>
-          <View
-            style={{ flexDirection: "row", justifyContent: "space-between" }}
-          >
+          <View style={styles.textWrapper}>
             <Text style={[styles.title, props.style]}>{props.title} </Text>
             <Icon
               name={"edit"}
@@ -47,6 +37,17 @@ const Address = props => {
 };
 
 const styles = StyleSheet.create({
+  container: {
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1,
+    padding: moderateScale(5),
+    marginVertical: moderateScale(5)
+    // flex: 1,
+  },
+  textWrapper: {
+    flexDirection: "row",
+    justifyContent: "space-between"
+  },
   title: {
     ...constants.Fonts.ITCAvantGardeProBk,
     fontSize: moderateScale(18),

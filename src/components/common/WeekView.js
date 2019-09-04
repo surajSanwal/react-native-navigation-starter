@@ -5,6 +5,8 @@ import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 
 const WeekView = props => {
+  console.log("props in weekview", props);
+
   return (
     <FlatList
       scrollEnabled={false}
@@ -29,6 +31,7 @@ const WeekView = props => {
             {item.charAt(0)}
           </Text>
           <TouchableOpacity
+            key={index}
             onPress={() => props.onDayPress(item)}
             style={{
               height: moderateScale(10),
@@ -57,7 +60,7 @@ export const Days = [
 
 WeekView.propTypes = {
   onDayPress: PropTypes.func,
-  days: PropTypes.arrayOf(Days)
+  days: PropTypes.array
 };
 WeekView.Days = {
   Sunday: "Sunday",

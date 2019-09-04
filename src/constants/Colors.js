@@ -10,6 +10,7 @@ let colors = {
   Primary: "#00A8CB",
   Secondary: "#a8a8a8",
   Yellow: "#F6CF65",
+  Yellowish: "#FFF200",
   DarkGray: "#393B3B",
   Transparent: "transparent",
   White: "#FFFFFF",

@@ -23,6 +23,7 @@ import ForgotPassword from "../containers/auth/ForgotPassword";
 import ShowText from "../containers/ShowText";
 import Maps from "../components/operator/Map";
 import FileSystem from "../containers/fileSystem";
+import Jobs from "../containers/operator/Jobs";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -144,6 +145,7 @@ const registerRoutes = store => {
     Provider,
     store
   );
+  Navigation.registerComponentWithRedux("Jobs", () => Jobs, Provider, store);
 };
 
 export const commandListener = () =>

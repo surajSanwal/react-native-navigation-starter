@@ -15,46 +15,18 @@ class CompleteSignup extends Component {
         hideBack
         drawerEnabled
       >
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            paddingHorizontal: moderateScale(10)
-          }}
-        >
+        <View style={styles.container}>
           <View>
-            <View
-              style={{
-                width: "50%"
-              }}
-            >
-              <Text
-                style={{
-                  ...constants.Fonts.ITCAvantGardeStdBkObl,
-                  fontSize: moderateScale(32),
-                  color: constants.Colors.White,
-                  paddingVertical: moderateScale(10)
-                }}
-              >
-                Well done…{" "}
-              </Text>
-              <Text
-                style={{
-                  ...constants.Fonts.ITCAvantGardeStdBk,
-                  fontSize: moderateScale(15),
-                  color: constants.Colors.White,
-                  paddingVertical: moderateScale(10)
-                }}
-              >
+            <View style={{ width: "50%" }}>
+              <Text style={styles.wellDone}>Well done… </Text>
+              <Text style={styles.msg}>
                 to have a seamless experience complete your profile and payment
                 details so you can nudgit anytime or simply begin searching for
                 your digger now
               </Text>
             </View>
           </View>
-          <View
-            style={{ justifyContent: "space-around", alignItems: "center" }}
-          >
+          <View style={styles.arrowButtons}>
             <ArrowButton
               name={"Start Searching"}
               image={constants.Images.ArrowRightWhite}
@@ -75,12 +47,30 @@ class CompleteSignup extends Component {
 }
 
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    paddingHorizontal: moderateScale(10)
+  },
   buttonStyle: {
     justifyContent: "space-between",
     width: "90%",
     borderBottomColor: constants.Colors.White,
     borderBottomWidth: 1
-  }
+  },
+  wellDone: {
+    ...constants.Fonts.ITCAvantGardeStdBkObl,
+    fontSize: moderateScale(32),
+    color: constants.Colors.White,
+    paddingVertical: moderateScale(10)
+  },
+  msg: {
+    ...constants.Fonts.ITCAvantGardeStdBk,
+    fontSize: moderateScale(15),
+    color: constants.Colors.White,
+    paddingVertical: moderateScale(10)
+  },
+  arrowButtons: { justifyContent: "space-around", alignItems: "center" }
 });
 
 const mapStateToProps = () => ({});

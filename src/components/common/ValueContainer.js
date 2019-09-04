@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput } from "react-native";
+import { View, Text, TextInput, StyleSheet } from "react-native";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import PropTypes from "prop-types";
@@ -7,28 +7,9 @@ import Icon from "react-native-vector-icons/FontAwesome";
 const ValueContainer = props => {
   let [editable, allowEdit] = useState(false);
   return (
-    <View
-      style={{
-        borderBottomColor: constants.Colors.Turquoise,
-        borderBottomWidth: 1,
-        padding: moderateScale(5),
-        flexDirection: "row",
-        justifyContent: "space-between",
-        alignItems: "center",
-        marginVertical: moderateScale(5)
-      }}
-    >
+    <View style={style.container}>
       {props.alwaysShowPlaceHolder && props.value ? (
-        <Text
-          style={[
-            {
-              ...constants.Fonts.ITCAvantGardeProBk,
-              fontSize: moderateScale(18),
-              color: constants.Colors.Turquoise
-            },
-            props.style
-          ]}
-        >
+        <Text style={[style.placeholder, props.style]}>
           {props.placeholder}
         </Text>
       ) : null}
@@ -42,13 +23,11 @@ const ValueContainer = props => {
         secureTextEntry={props.secureTextEntry}
         onChangeText={props.onChangeText}
         style={[
+          style.textInput,
+          props.style,
           {
-            ...constants.Fonts.ITCAvantGardeProBk,
-            width: props.alwaysShowPlaceHolder ? "80%" : "90%",
-            fontSize: moderateScale(18),
-            color: constants.Colors.Turquoise
-          },
-          props.style
+            width: props.alwaysShowPlaceHolder ? "80%" : "90%"
+          }
         ]}
         underlineColorAndroid={constants.Colors.Transparent}
       />
@@ -63,6 +42,29 @@ const ValueContainer = props => {
     </View>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1,
+    padding: moderateScale(5),
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginVertical: moderateScale(5)
+  },
+  placeholder: {
+    ...constants.Fonts.ITCAvantGardeProBk,
+    fontSize: moderateScale(18),
+    color: constants.Colors.Turquoise
+  },
+  textInput: {
+    ...constants.Fonts.ITCAvantGardeProBk,
+    fontSize: moderateScale(18),
+    color: constants.Colors.Turquoise
+  }
+});
+
 ValueContainer.propTypes = {
   style: PropTypes.object,
   placeholder: PropTypes.string.isRequired,

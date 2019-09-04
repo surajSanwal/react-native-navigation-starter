@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -34,14 +34,7 @@ class ForgotPassword extends Component {
           enableOnAndroid
           keyboardShouldPersistTaps={"handled"}
         >
-          <View
-            style={{
-              height: constants.BaseStyle.DEVICE_HEIGHT * 0.8,
-              flexDirection: "column",
-              justifyContent: "space-around",
-              marginLeft: moderateScale(70)
-            }}
-          >
+          <View style={style.container}>
             {/* <View
               style={{
                 borderBottomColor: constants.Colors.White,
@@ -61,14 +54,7 @@ class ForgotPassword extends Component {
               </Text>
             </View> */}
             {/* <View style={{ flex: 0.3 }}> */}
-            <Text
-              style={{
-                color: constants.Colors.White,
-                ...constants.Fonts.ITCAvantGardeProBk,
-                fontSize: moderateScale(20),
-                paddingVertical: moderateScale(5)
-              }}
-            >
+            <Text style={style.message}>
               Enter your email address, we&#39;ll send you reset password
               link...
             </Text>
@@ -93,6 +79,20 @@ class ForgotPassword extends Component {
   }
 }
 
+const style = StyleSheet.create({
+  container: {
+    height: constants.BaseStyle.DEVICE_HEIGHT * 0.8,
+    flexDirection: "column",
+    justifyContent: "space-around",
+    marginLeft: moderateScale(70)
+  },
+  message: {
+    color: constants.Colors.White,
+    ...constants.Fonts.ITCAvantGardeProBk,
+    fontSize: moderateScale(20),
+    paddingVertical: moderateScale(5)
+  }
+});
 const mapStateToProps = state => ({
   auth: state.auth,
   loader: state.loader

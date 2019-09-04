@@ -6,14 +6,7 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 
 const FileUpload = props => {
   return (
-    <View
-      style={{
-        borderBottomColor: constants.Colors.Turquoise,
-        borderBottomWidth: 1,
-        padding: moderateScale(5),
-        marginVertical: moderateScale(5)
-      }}
-    >
+    <View style={style.container}>
       <Text style={[style.text, props.style]}>Insurance & Liability</Text>
       <View style={style.content || props.contentStyle}>
         <Icon
@@ -31,6 +24,12 @@ const FileUpload = props => {
 };
 
 const style = StyleSheet.create({
+  container: {
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1,
+    padding: moderateScale(5),
+    marginVertical: moderateScale(5)
+  },
   content: {
     flexDirection: "row",
     marginVertical: moderateScale(10)
