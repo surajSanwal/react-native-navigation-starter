@@ -26,10 +26,10 @@ class Notification extends Component {
               image={constants.Images.ArrowRightGreen}
               buttonStyle={styles.buttonStyle}
               style={styles.buttonImage}
-              textStyle={[
-                styles.textBelow,
-                constants.Fonts.ITCAvantGardeStdBold
-              ]}
+              textStyle={{
+                ...styles.textBelow,
+                ...constants.Fonts.ITCAvantGardeStdBold
+              }}
               textView={styles.textView}
             />
             <View style={styles.horizontalView}></View>
@@ -38,10 +38,10 @@ class Notification extends Component {
               image={constants.Images.ArrowRightGreen}
               style={styles.buttonImage}
               buttonStyle={styles.buttonStyle}
-              textStyle={[
-                styles.textBelow,
-                constants.Fonts.ITCAvantGardeStdBold
-              ]}
+              textStyle={{
+                ...styles.textBelow,
+                ...constants.Fonts.ITCAvantGardeStdBold
+              }}
               textView={styles.textView}
               disabled={false}
             />

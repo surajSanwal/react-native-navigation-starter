@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -73,14 +73,7 @@ class Signup extends Component {
           enableOnAndroid
           keyboardShouldPersistTaps={"handled"}
         >
-          <View
-            style={{
-              height: constants.BaseStyle.DEVICE_HEIGHT,
-              flexDirection: "column",
-              justifyContent: "center",
-              marginLeft: moderateScale(70)
-            }}
-          >
+          <View style={styles.container}>
             <ArrowButton
               name={"Login"}
               image={constants.Images.ArrowRightWhite}
@@ -90,29 +83,11 @@ class Signup extends Component {
                 })
               }
               buttonReverse
-              buttonStyle={{
-                borderBottomColor: constants.Colors.Turquoise,
-                borderBottomWidth: 1
-              }}
-              textStyle={{
-                color: constants.Colors.Turquoise,
-                fontSize: moderateScale(30)
-              }}
+              buttonStyle={styles.buttonStyle}
+              textStyle={styles.textStyle}
             />
-            <View
-              style={{
-                borderBottomColor: constants.Colors.Turquoise,
-                paddingVertical: moderateScale(5)
-              }}
-            >
-              <Text
-                style={{
-                  color: constants.Colors.White,
-                  fontSize: moderateScale(30)
-                }}
-              >
-                Sign up now
-              </Text>
+            <View style={styles.signupButtonWrapper}>
+              <Text style={styles.signupButtonText}>Sign up now</Text>
             </View>
             <View style={{ flex: 0.6 }}>
               <FloatingInput
@@ -157,6 +132,30 @@ class Signup extends Component {
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    height: constants.BaseStyle.DEVICE_HEIGHT,
+    flexDirection: "column",
+    justifyContent: "center",
+    marginLeft: moderateScale(70)
+  },
+  buttonStyle: {
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1
+  },
+  textStyle: {
+    color: constants.Colors.Turquoise,
+    fontSize: moderateScale(30)
+  },
+  signupButtonWrapper: {
+    borderBottomColor: constants.Colors.Turquoise,
+    paddingVertical: moderateScale(5)
+  },
+  signupButtonText: {
+    color: constants.Colors.White,
+    fontSize: moderateScale(30)
+  }
+});
 const mapStateToProps = state => ({
   auth: state.auth,
   loader: state.loader

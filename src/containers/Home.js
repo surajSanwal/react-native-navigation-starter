@@ -7,18 +7,6 @@ import { moderateScale } from "../helpers/ResponsiveFonts";
 import SafeView from "../components/common/SafeView";
 import ArrowButton from "../components/common/ArrowButton";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "space-around",
-    alignItems: "center",
-    zIndex: 99
-  },
-  buttonFont: {
-    fontSize: moderateScale(34)
-  }
-});
-
 class Home extends Component {
   constructor(props) {
     super(props);
@@ -33,12 +21,7 @@ class Home extends Component {
       <View style={{ flex: 1 }}>
         <ImageBackground
           source={constants.Images.Bulldozer}
-          style={{
-            position: "absolute",
-            height: constants.BaseStyle.DEVICE_HEIGHT,
-            width: constants.BaseStyle.DEVICE_WIDTH,
-            justifyContent: "center"
-          }}
+          style={styles.imageBackground}
           resizeMode={"cover"}
           resizeMethod={"auto"}
         />
@@ -49,15 +32,7 @@ class Home extends Component {
           componentId={this.props.componentId}
         >
           <View style={styles.container}>
-            <Text
-              style={{
-                color: "#fff",
-                fontSize: moderateScale(30),
-                fontWeight: "bold",
-                paddingLeft: moderateScale(50),
-                paddingRight: moderateScale(150)
-              }}
-            >
+            <Text style={styles.nudgeMessage}>
               a simple nudge can move mountains
             </Text>
             <View>
@@ -80,6 +55,31 @@ class Home extends Component {
     );
   }
 }
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "space-around",
+    alignItems: "center",
+    zIndex: 99
+  },
+  buttonFont: {
+    fontSize: moderateScale(34)
+  },
+  imageBackground: {
+    position: "absolute",
+    height: constants.BaseStyle.DEVICE_HEIGHT,
+    width: constants.BaseStyle.DEVICE_WIDTH,
+    justifyContent: "center"
+  },
+  nudgeMessage: {
+    color: "#fff",
+    fontSize: moderateScale(30),
+    fontWeight: "bold",
+    paddingLeft: moderateScale(50),
+    paddingRight: moderateScale(150)
+  }
+});
+
 const mapStateToProps = state => {
   return {
     auth: state.auth

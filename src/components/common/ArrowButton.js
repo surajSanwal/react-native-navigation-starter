@@ -8,7 +8,7 @@
  */
 
 import React from "react";
-import { TouchableOpacity, Text, Image } from "react-native";
+import { TouchableOpacity, Text, Image, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
@@ -19,15 +19,12 @@ const ArrowButton = props => {
   return (
     <TouchableOpacity
       style={[
+        style.container,
+        props.buttonStyle,
         {
-          backgroundColor: constants.Colors.Transparent,
           flexDirection: props.buttonReverse ? "row-reverse" : "row",
-          alignItems: "center",
-          justifyContent: !props.buttonReverse ? "flex-start" : "flex-end",
-          marginVertical: moderateScale(5),
-          paddingVertical: moderateScale(10)
-        },
-        props.buttonStyle
+          justifyContent: !props.buttonReverse ? "flex-start" : "flex-end"
+        }
       ]}
       disabled={props.disabled || props.loading}
       onPress={props.onPress}
@@ -45,21 +42,24 @@ const ArrowButton = props => {
           resizeMethod={"resize"}
         />
       )}
-      <Text
-        style={[
-          {
-            color: constants.Colors.Turquoise,
-            fontSize: moderateScale(18),
-            padding: moderateScale(20)
-          },
-          props.textStyle
-        ]}
-      >
-        {props.name}
-      </Text>
+      <Text style={[style.buttonText, props.textStyle]}>{props.name}</Text>
     </TouchableOpacity>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    backgroundColor: constants.Colors.Transparent,
+    alignItems: "center",
+    marginVertical: moderateScale(5),
+    paddingVertical: moderateScale(10)
+  },
+  buttonText: {
+    color: constants.Colors.Turquoise,
+    fontSize: moderateScale(18),
+    padding: moderateScale(20)
+  }
+});
 
 ArrowButton.defaultProps = {
   disabled: false,

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
@@ -39,31 +39,9 @@ class Login extends Component {
           enableOnAndroid
           keyboardShouldPersistTaps={"handled"}
         >
-          <View
-            style={{
-              height: constants.BaseStyle.DEVICE_HEIGHT * 0.8,
-              flexDirection: "column",
-              justifyContent: "space-around",
-              marginLeft: moderateScale(70)
-            }}
-          >
-            <View
-              style={{
-                borderBottomColor: constants.Colors.Turquoise,
-                borderBottomWidth: 1,
-                flex: 0.1,
-                justifyContent: "flex-end",
-                paddingVertical: moderateScale(5)
-              }}
-            >
-              <Text
-                style={{
-                  color: constants.Colors.Turquoise,
-                  fontSize: moderateScale(30)
-                }}
-              >
-                Login
-              </Text>
+          <View style={style.container}>
+            <View style={style.content}>
+              <Text style={style.loginText}>Login</Text>
             </View>
             <View style={{ flex: 0.3 }}>
               <FloatingInput
@@ -81,23 +59,13 @@ class Login extends Component {
                 onPress={() =>
                   this.props.push(this.props.componentId, "ForgotPassword")
                 }
-                style={{
-                  color: constants.Colors.White,
-                  ...constants.Fonts.ITCAvantGardeProBk,
-                  fontSize: moderateScale(12),
-                  paddingVertical: moderateScale(5)
-                }}
+                style={style.forgotPassword}
               >
                 Forgot Password ?
               </Text>
             </View>
 
-            <View
-              style={{
-                justifyContent: "flex-start",
-                alignItems: "flex-start"
-              }}
-            >
+            <View style={style.buttonWrapper}>
               <ArrowButton
                 name={"Submit"}
                 image={constants.Images.ArrowRightWhite}
@@ -112,6 +80,36 @@ class Login extends Component {
     );
   }
 }
+
+const style = StyleSheet.create({
+  container: {
+    height: constants.BaseStyle.DEVICE_HEIGHT * 0.8,
+    flexDirection: "column",
+    justifyContent: "space-around",
+    marginLeft: moderateScale(70)
+  },
+  content: {
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1,
+    flex: 0.1,
+    justifyContent: "flex-end",
+    paddingVertical: moderateScale(5)
+  },
+  loginText: {
+    color: constants.Colors.Turquoise,
+    fontSize: moderateScale(30)
+  },
+  forgotPassword: {
+    color: constants.Colors.White,
+    ...constants.Fonts.ITCAvantGardeProBk,
+    fontSize: moderateScale(12),
+    paddingVertical: moderateScale(5)
+  },
+  buttonWrapper: {
+    justifyContent: "flex-start",
+    alignItems: "flex-start"
+  }
+});
 
 const mapStateToProps = state => ({
   auth: state.auth,

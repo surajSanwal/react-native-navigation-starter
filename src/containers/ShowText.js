@@ -6,9 +6,6 @@ import SafeView from "../components/common/SafeView";
 import Icon from "react-native-vector-icons/FontAwesome";
 
 class ShowText extends Component {
-  componentDidMount() {
-    console.log("PassProps", this.props);
-  }
   render() {
     return (
       <SafeView
@@ -16,17 +13,7 @@ class ShowText extends Component {
         componentId={this.props.componentId}
         title={this.props.title}
       >
-        <View
-          style={[
-            {
-              borderBottomColor: constants.Colors.Turquoise,
-              borderBottomWidth: 1,
-              paddingBottom: moderateScale(20),
-              marginVertical: moderateScale(35)
-            },
-            this.props.style
-          ]}
-        >
+        <View style={[style.container, this.props.style]}>
           <Icon
             name={"check-circle"}
             size={45}
@@ -44,6 +31,12 @@ class ShowText extends Component {
 }
 
 const style = StyleSheet.create({
+  container: {
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1,
+    paddingBottom: moderateScale(20),
+    marginVertical: moderateScale(35)
+  },
   icon: {
     marginHorizontal: moderateScale(65),
     marginBottom: moderateScale(25)

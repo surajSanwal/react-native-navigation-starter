@@ -51,7 +51,10 @@ class OperatorDashboard extends Component {
                 placeholder={"Name"}
                 value={firstName + " " + lastName}
                 containerStyle={styles.Container}
-                style={[styles.Text, constants.Fonts.ITCAvantGardeStdBold]}
+                style={{
+                  ...styles.Text,
+                  ...constants.Fonts.ITCAvantGardeStdBold
+                }}
               />
               <StarRating
                 starSize={10}
@@ -73,10 +76,10 @@ class OperatorDashboard extends Component {
               image={constants.Images.ArrowRightGreen}
               buttonStyle={styles.buttonStyle}
               style={styles.buttonImage}
-              textStyle={[
-                styles.textBelow,
-                constants.Fonts.ITCAvantGardeStdBold
-              ]}
+              textStyle={{
+                ...styles.textBelow,
+                ...constants.Fonts.ITCAvantGardeStdBold
+              }}
               textView={styles.textView}
               onPress={() => this.props.push(this.props.componentId, "Jobs")}
             />
@@ -86,10 +89,10 @@ class OperatorDashboard extends Component {
               image={constants.Images.ArrowRightGreen}
               style={styles.buttonImage}
               buttonStyle={styles.buttonStyle}
-              textStyle={[
-                styles.textBelow,
-                constants.Fonts.ITCAvantGardeStdBold
-              ]}
+              textStyle={{
+                ...styles.textBelow,
+                ...constants.Fonts.ITCAvantGardeStdBold
+              }}
               textView={styles.textView}
               disabled={false}
               onPress={() =>

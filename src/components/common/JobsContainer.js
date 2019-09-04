@@ -9,9 +9,7 @@ const JobsContainer = props => {
     <View>
       <View style={style.titleContainer}>
         <Text style={style.title}>{props.day} | </Text>
-        <Text style={[style.title, { fontSize: moderateScale(20) }]}>
-          {props.date}
-        </Text>
+        <Text style={[style.title, style.date]}>{props.date}</Text>
       </View>
       <View style={style.contentBox}>
         <Text style={style.contentTitle}>{props.contentTitle}</Text>
@@ -52,6 +50,7 @@ const style = StyleSheet.create({
     marginVertical: moderateScale(35),
     marginHorizontal: moderateScale(30)
   },
+  date: { fontSize: moderateScale(20) },
   contentBox: {
     backgroundColor: constants.Colors.Turquoise,
     paddingVertical: moderateScale(10),

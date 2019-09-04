@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity, Image, StyleSheet } from "react-native";
 import PropTypes from "prop-types";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
 import constants from "../../constants";
@@ -9,13 +9,7 @@ import Icon from "react-native-vector-icons/FontAwesome5";
 const Header = props => {
   let [drawerOpen, updateDrawer] = useState(false); //eslint-disable-line
   return (
-    <View
-      style={{
-        flexDirection: "row",
-        paddingVertical: moderateScale(0),
-        paddingHorizontal: moderateScale(10)
-      }}
-    >
+    <View style={style.container}>
       {!props.drawerEnabled ? (
         <Icon
           onPress={() => Navigation.pop(props.componentId)}
@@ -26,41 +20,18 @@ const Header = props => {
       ) : null}
 
       {!props.drawerEnabled ? (
-        <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
-        >
-          <Text
-            style={{
-              color: constants.Colors.White,
-              fontSize: moderateScale(20),
-              fontWeight: "bold"
-            }}
-          >
-            {props.title}
-          </Text>
+        <View style={style.titleWrapper}>
+          <Text style={style.title}>{props.title}</Text>
         </View>
       ) : null}
 
       {props.drawerEnabled && (
-        <View
-          style={{
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            flex: 1
-          }}
-        >
-          <View
-            style={{
-              width: "80%",
-              height: moderateScale(80),
-              justifyContent: "center"
-            }}
-          >
+        <View style={style.content}>
+          <View style={style.imageWrapper}>
             <Image source={constants.Images.Nugit} resizeMode="cover" />
           </View>
           <TouchableOpacity
-            style={{ flexDirection: "row" }}
+            style={style.button}
             onPress={() => {
               Navigation.mergeOptions(props.componentId, {
                 sideMenu: {
@@ -73,15 +44,14 @@ const Header = props => {
             }}
           >
             <View
-              style={{
-                backgroundColor: props.barColor
-                  ? constants.Colors.Black
-                  : constants.Colors.White,
-                justifyContent: "center",
-                alignItems: "center",
-                height: moderateScale(40),
-                width: moderateScale(40)
-              }}
+              style={[
+                style.iconWrapper,
+                {
+                  backgroundColor: props.barColor
+                    ? constants.Colors.Black
+                    : constants.Colors.White
+                }
+              ]}
             >
               <Icon
                 name={"bars"}
@@ -95,6 +65,42 @@ const Header = props => {
     </View>
   );
 };
+
+const style = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+    paddingVertical: moderateScale(0),
+    paddingHorizontal: moderateScale(10)
+  },
+  content: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    flex: 1
+  },
+  titleWrapper: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
+  },
+  title: {
+    color: constants.Colors.White,
+    fontSize: moderateScale(20),
+    fontWeight: "bold"
+  },
+  button: { flexDirection: "row" },
+  iconWrapper: {
+    justifyContent: "center",
+    alignItems: "center",
+    height: moderateScale(40),
+    width: moderateScale(40)
+  },
+  imageWrapper: {
+    width: "80%",
+    height: moderateScale(80),
+    justifyContent: "center"
+  }
+});
 
 Header.propTypes = {
   title: PropTypes.string.isRequired,

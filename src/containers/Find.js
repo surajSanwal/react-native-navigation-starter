@@ -8,7 +8,7 @@
  */
 
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
@@ -127,36 +127,13 @@ class Find extends Component {
         componentId={this.props.componentId}
         drawerEnabled={drawerEnable}
       >
-        <View style={{ flex: 1, padding: moderateScale(70) }}>
-          <Text
-            style={{
-              color: constants.Colors.White,
-              ...constants.Fonts.ITCAvantGardeProBk,
-              fontSize: moderateScale(32)
-            }}
-          >
-            What are you looking for?
-          </Text>
+        <View style={style.containerStyle}>
+          <Text style={style.title}>What are you looking for?</Text>
           <View style={{ flex: 1 }}>
             <DropdownView data={serviceList} label={"Service Type"} />
             <DropdownView data={machineList} label={"Machine Type"} />
-            <View
-              style={{
-                borderBottomColor: constants.Colors.Turquoise,
-                borderBottomWidth: 1,
-                paddingTop: moderateScale(5)
-              }}
-            >
-              <Text
-                style={{
-                  color: constants.Colors.Turquoise,
-                  paddingVertical: moderateScale(5),
-                  borderBottomColor: constants.Colors.Turquoise,
-                  borderBottomWidth: 1,
-                  fontSize: moderateScale(15)
-                }}
-                onPress={this.toggleModal}
-              >
+            <View style={style.whenWrapper}>
+              <Text style={style.whenText} onPress={this.toggleModal}>
                 When
               </Text>
             </View>
@@ -226,10 +203,7 @@ class Find extends Component {
           </View>
         </View>
         <ModalCenterView
-          modalStyle={{
-            backgroundColor: constants.Colors.Turquoise,
-            marginTop: "60%"
-          }}
+          modalStyle={style.modalStyle}
           visible={modalVisible}
           onCloseModal={this.toggleModal}
         >
@@ -254,6 +228,31 @@ class Find extends Component {
     );
   }
 }
+
+const style = StyleSheet.create({
+  containerStyle: { flex: 1, padding: moderateScale(70) },
+  title: {
+    color: constants.Colors.White,
+    ...constants.Fonts.ITCAvantGardeProBk,
+    fontSize: moderateScale(32)
+  },
+  whenWrapper: {
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1,
+    paddingTop: moderateScale(5)
+  },
+  whenText: {
+    color: constants.Colors.Turquoise,
+    paddingVertical: moderateScale(5),
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1,
+    fontSize: moderateScale(15)
+  },
+  modalStyle: {
+    backgroundColor: constants.Colors.Turquoise,
+    marginTop: "60%"
+  }
+});
 
 const mapStateToProps = state => ({
   machine: state.machine,

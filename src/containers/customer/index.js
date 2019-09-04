@@ -15,40 +15,13 @@ class CustomerDashboard extends Component {
         hideBack
         drawerEnabled
       >
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            paddingHorizontal: moderateScale(10)
-          }}
-        >
+        <View style={styles.container}>
           <View>
-            <View
-              style={{
-                width: "50%",
-                borderBottomColor: constants.Colors.Turquoise,
-                borderBottomWidth: 1
-              }}
-            >
-              <Text
-                style={{
-                  ...constants.Fonts.ITCAvantGardeStdBold,
-                  fontSize: moderateScale(27),
-                  color: constants.Colors.Turquoise,
-                  paddingVertical: moderateScale(10)
-                }}
-              >
-                My Naugits
-              </Text>
+            <View style={styles.titleWrapper}>
+              <Text style={styles.title}>My Naugits</Text>
             </View>
           </View>
-          <View
-            style={{
-              flex: 1,
-              justifyContent: "space-around",
-              alignItems: "center"
-            }}
-          >
+          <View style={styles.buttonsWrapper}>
             <ArrowButton
               name={"Current Job"}
               image={constants.Images.ArrowRightWhite}
@@ -92,6 +65,27 @@ const styles = StyleSheet.create({
     width: "90%",
     borderBottomColor: constants.Colors.White,
     borderBottomWidth: 1
+  },
+  container: {
+    flex: 1,
+    flexDirection: "column",
+    paddingHorizontal: moderateScale(10)
+  },
+  titleWrapper: {
+    width: "50%",
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1
+  },
+  title: {
+    ...constants.Fonts.ITCAvantGardeStdBold,
+    fontSize: moderateScale(27),
+    color: constants.Colors.Turquoise,
+    paddingVertical: moderateScale(10)
+  },
+  buttonsWrapper: {
+    flex: 1,
+    justifyContent: "space-around",
+    alignItems: "center"
   }
 });
 
