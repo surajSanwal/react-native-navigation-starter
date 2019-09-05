@@ -1,13 +1,14 @@
 import React, { Component } from "react";
-import { View, Text, TouchableOpacity } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { connect } from "react-redux";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+
 import FloatingInput from "../../components/common/FloatingInput";
 import ArrowButton from "../../components/common/ArrowButton";
 import SafeView from "../../components/common/SafeView";
 import constants from "../../constants";
 import { moderateScale } from "../../helpers/ResponsiveFonts";
-import { push, registerUser } from "../../actions";
-import Common from "../../helpers/Common";
+import { push, registerUser, showToast } from "../../actions";
 import Regex from "../../helpers/Regex";
 
 class Signup extends Component {
@@ -20,23 +21,28 @@ class Signup extends Component {
     };
   }
 
+  showToast = message => {
+    let { showToast } = this.props;
+    showToast(message, constants.Colors.Red);
+  };
+
   onSignUpPress = () => {
     let { name, email, password } = this.state;
     let { role } = this.props;
     if (!name.length) {
-      return Common.Dialog("Please Enter Name");
+      return this.showToast("Please Enter Name");
     }
     if (!email.length) {
-      return Common.Dialog("Please Enter Email");
+      return this.showToast("Please Enter Email");
     }
     if (!Regex.validateEmail(email)) {
-      return Common.Dialog("Please Enter Valid Email");
+      return this.showToast("Please Enter Valid Email");
     }
     if (!password.length) {
-      return Common.Dialog("Please Enter Password");
+      return this.showToast("Please Enter Password");
     }
     if (!Regex.validatePassword(password)) {
-      return Common.Dialog(
+      return this.showToast(
         "Password must be between 8-15 characters and having minimum 1 special character, 1 upper case latter , 1 lower case latter and 1 numeric value!"
       );
     }
@@ -53,92 +59,109 @@ class Signup extends Component {
     );
   };
 
+  focusNext(next) {
+    this[next].focus();
+  }
+
   render() {
     let { email, password, name } = this.state;
+    let { loader } = this.props;
     return (
-      <SafeView title="Sign Up" componentId={this.props.componentId}>
-        <View
-          style={{
-            flex: 1,
-            flexDirection: "column",
-            justifyContent: "center",
-            marginLeft: moderateScale(70)
-          }}
+      <SafeView title="" componentId={this.props.componentId}>
+        <KeyboardAwareScrollView
+          enableAutomaticScroll
+          enableOnAndroid
+          keyboardShouldPersistTaps={"handled"}
         >
-          <TouchableOpacity
-            onPress={() =>
-              this.props.push(this.props.componentId, "Login", {
-                role: this.props.role
-              })
-            }
-            style={{
-              borderBottomColor: constants.Colors.Turquoise,
-              borderBottomWidth: 1,
-              flex: 0.1,
-              justifyContent: "flex-end",
-              paddingVertical: moderateScale(5)
-            }}
-          >
-            <Text
-              style={{
-                color: constants.Colors.Turquoise,
-                fontSize: moderateScale(30)
-              }}
-            >
-              Login
-            </Text>
-          </TouchableOpacity>
-          <View
-            style={{
-              borderBottomColor: constants.Colors.Turquoise,
-              flex: 0.1,
-              justifyContent: "flex-end",
-              paddingVertical: moderateScale(5)
-            }}
-          >
-            <Text
-              style={{
-                color: constants.Colors.White,
-                fontSize: moderateScale(30)
-              }}
-            >
-              Sign up now
-            </Text>
-          </View>
-          <View style={{ flex: 0.4 }}>
-            <FloatingInput
-              label={"Name"}
-              value={name}
-              onChangeText={name => this.setState({ name })}
+          <View style={styles.container}>
+            <ArrowButton
+              name={"Login"}
+              image={constants.Images.ArrowRightWhite}
+              onPress={() =>
+                this.props.push(this.props.componentId, "Login", {
+                  role: this.props.role
+                })
+              }
+              buttonReverse
+              buttonStyle={styles.buttonStyle}
+              textStyle={styles.textStyle}
             />
-            <FloatingInput
-              label={"Email"}
-              value={email}
-              onChangeText={email => this.setState({ email })}
-            />
-            <FloatingInput
-              label={"Password"}
-              value={password}
-              secureTextEntry={true}
-              onChangeText={password => this.setState({ password })}
-            />
+            <View style={styles.signupButtonWrapper}>
+              <Text style={styles.signupButtonText}>Sign up now</Text>
+            </View>
+            <View style={{ flex: 0.6 }}>
+              <FloatingInput
+                label={"Name"}
+                value={name}
+                onChangeText={name => this.setState({ name })}
+                autoCapitalize={"words"}
+                ref={ref => (this.name = ref)}
+                onSubmitEditing={() => {
+                  this.focusNext("email");
+                }}
+              />
+              <FloatingInput
+                label={"Email"}
+                value={email}
+                onChangeText={email => this.setState({ email })}
+                ref={ref => (this.email = ref)}
+                onSubmitEditing={() => {
+                  this.focusNext("password");
+                }}
+              />
+              <FloatingInput
+                label={"Password"}
+                value={password}
+                secureTextEntry={true}
+                onChangeText={password => this.setState({ password })}
+                ref={ref => (this.password = ref)}
+                onSubmitEditing={this.onSignUpPress}
+              />
+            </View>
+
             <ArrowButton
               name={"Submit"}
               image={constants.Images.ArrowRightWhite}
               onPress={this.onSignUpPress}
+              loading={loader.signup}
             />
           </View>
-        </View>
+        </KeyboardAwareScrollView>
       </SafeView>
     );
   }
 }
 
+const styles = StyleSheet.create({
+  container: {
+    height: constants.BaseStyle.DEVICE_HEIGHT,
+    flexDirection: "column",
+    justifyContent: "center",
+    marginLeft: moderateScale(70)
+  },
+  buttonStyle: {
+    borderBottomColor: constants.Colors.Turquoise,
+    borderBottomWidth: 1
+  },
+  textStyle: {
+    color: constants.Colors.Turquoise,
+    fontSize: moderateScale(30)
+  },
+  signupButtonWrapper: {
+    borderBottomColor: constants.Colors.Turquoise,
+    paddingVertical: moderateScale(5)
+  },
+  signupButtonText: {
+    color: constants.Colors.White,
+    fontSize: moderateScale(30)
+  }
+});
 const mapStateToProps = state => ({
-  auth: state.auth
+  auth: state.auth,
+  loader: state.loader
 });
 
 export default connect(
   mapStateToProps,
-  { push, registerUser }
+  { push, registerUser, showToast }
 )(Signup);

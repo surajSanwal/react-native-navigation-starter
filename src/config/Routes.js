@@ -13,6 +13,18 @@ import Find from "../containers/Find";
 import VerifyCustomer from "../containers/auth/VerifyCustomer";
 import Customer from "../containers/customer";
 import Operator from "../containers/operator";
+import SetupProfile from "../containers/auth/SetupProfile";
+import Payment from "../containers/Profile/Payment";
+import OperatorProfileCompliance from "../containers/operator/OperatorProfileCompliance";
+import OperatorProfileServices from "../containers/Profile/OperatorProfileServices";
+import Notification from "../containers/notification";
+import WebViewContainer from "../containers/WebViewContainer";
+import ForgotPassword from "../containers/auth/ForgotPassword";
+import ShowText from "../containers/ShowText";
+import Maps from "../components/operator/Map";
+import FileSystem from "../containers/fileSystem";
+import Jobs from "../containers/operator/Jobs";
+import PdfViewer from "../containers/fileSystem/PdfViewer";
 
 const registerRoutes = store => {
   Navigation.registerComponentWithRedux("Home", () => Home, Provider, store);
@@ -23,6 +35,12 @@ const registerRoutes = store => {
     store
   );
   Navigation.registerComponentWithRedux("Login", () => Login, Provider, store);
+  Navigation.registerComponentWithRedux(
+    "ForgotPassword",
+    () => ForgotPassword,
+    Provider,
+    store
+  );
   Navigation.registerComponentWithRedux(
     "SignUp",
     () => Signup,
@@ -73,6 +91,68 @@ const registerRoutes = store => {
     Provider,
     store
   );
+  Navigation.registerComponentWithRedux(
+    "SetupProfile",
+    () => SetupProfile,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "Profile",
+    () => Profile,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "OperatorProfileCompliance",
+    () => OperatorProfileCompliance,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "Payment",
+    () => Payment,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "OperatorProfileServices",
+    () => OperatorProfileServices,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "Notification",
+    () => Notification,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "WebView",
+    () => WebViewContainer,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux(
+    "ShowText",
+    () => ShowText,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux("Maps", () => Maps, Provider, store);
+  Navigation.registerComponentWithRedux(
+    "FileSystem",
+    () => FileSystem,
+    Provider,
+    store
+  );
+  Navigation.registerComponentWithRedux("Jobs", () => Jobs, Provider, store);
+  Navigation.registerComponentWithRedux(
+    "PDFViewer",
+    () => PdfViewer,
+    Provider,
+    store
+  );
 };
 
 export const commandListener = () =>
@@ -80,9 +160,14 @@ export const commandListener = () =>
     console.log(name, " invoked with params= ", params);
   });
 
-export const ComponentDidAppearListener = () =>
-  Navigation.events().registerComponentDidAppearListener((name, params) => {
-    console.log(name, " Appeard with params= ", params);
-  });
+export const componentDidAppearListener = store =>
+  Navigation.events().registerComponentDidAppearListener(
+    ({ componentId, componentName }) => {
+      store.dispatch({
+        type: "SCREEN_LISTENER",
+        payload: { componentId, componentName }
+      });
+    }
+  );
 
 export default registerRoutes;

@@ -11,9 +11,7 @@ const DropdownView = props => {
       selectedItemColor={constants.Colors.Turquoise}
       textColor={constants.Colors.Turquoise}
       baseColor={constants.Colors.Turquoise}
-      pickerStyle={{
-        backgroundColor: constants.Colors.Black
-      }}
+      pickerStyle={{ backgroundColor: constants.Colors.Black }}
       itemTextStyle={{ color: constants.Colors.White }}
       itemColor={constants.Colors.White}
     />

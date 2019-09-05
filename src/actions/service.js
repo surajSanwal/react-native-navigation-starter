@@ -9,16 +9,24 @@
 
 import * as Types from "../ActionTypes";
 import RestClient from "../helpers/RestClient";
-export const getServiceType = data => {
+import Common from "../helpers/Common";
+export const getServiceType = () => {
   return (dispatch, getState) => {
     let {
       user: { loginToken }
     } = getState();
-    dispatch({ type: Types.FORGOT_PASSWORD_REQUEST });
-    RestClient.restCall("user/forgot-password", data, loginToken, "PUT")
+    dispatch({ type: Types.SERVICE_TYPE_REQUEST });
+    RestClient.getCall("service-type", loginToken)
       .then(resp => {
-        dispatch({ type: Types.FORGOT_PASSWORD_SUCCESS, payload: resp });
+        resp = resp.reduce((obj, item) => {
+          obj.push({ ...item, value: item.name });
+          return obj;
+        }, []);
+        dispatch({ type: Types.SERVICE_TYPE_SUCCESS, payload: resp });
       })
-      .catch(e => dispatch({ type: Types.FORGOT_PASSWORD_FAIL, payload: e }));
+      .catch(e => {
+        Common.Dialog(e.message);
+        dispatch({ type: Types.SERVICE_TYPE_FAIL, payload: e });
+      });
   };
 };

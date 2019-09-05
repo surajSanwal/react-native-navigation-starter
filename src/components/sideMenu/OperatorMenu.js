@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, SafeAreaView } from "react-native";
+import { View, SafeAreaView, StyleSheet } from "react-native";
 import { connect } from "react-redux";
 import { logout } from "../../actions";
 import constants from "../../constants";
@@ -32,13 +32,7 @@ class OperatorMenu extends Component {
   };
   render() {
     return (
-      <View
-        style={{
-          flex: 1,
-          backgroundColor: constants.Colors.Turquoise,
-          paddingHorizontal: moderateScale(10)
-        }}
-      >
+      <View style={style.container}>
         <SafeAreaView>
           {menu.map((item, index) => (
             <MenuView {...item} key={index} menuPress={this.menuPress} />
@@ -48,8 +42,15 @@ class OperatorMenu extends Component {
     );
   }
 }
+
+const style = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: constants.Colors.Turquoise,
+    paddingHorizontal: moderateScale(10)
+  }
+});
 const mapStateToProps = state => {
-  console.log("state", state);
   return {
     auth: state.auth
   };

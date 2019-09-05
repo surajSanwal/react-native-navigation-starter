@@ -7,23 +7,6 @@ import { moderateScale } from "../helpers/ResponsiveFonts";
 import SafeView from "../components/common/SafeView";
 import ArrowButton from "../components/common/ArrowButton";
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: "space-around",
-    alignItems: "center",
-    zIndex: 99
-  },
-  buttonFont: {
-    fontSize: moderateScale(34),
-    color: constants.Colors.Black
-  },
-  buttonStyle: {
-    borderBottomColor: constants.Colors.Black,
-    borderBottomWidth: 1
-  }
-});
-
 class MyNudgits extends Component {
   constructor(props) {
     super(props);
@@ -34,38 +17,23 @@ class MyNudgits extends Component {
   }
 
   render() {
+    let { drawerEnable } = this.props;
+    console.log("drawerEnable", drawerEnable);
+
     return (
-      <View style={{ flex: 1, backgroundColor: constants.Colors.Turquoise }}>
+      <View style={styles.wrapper}>
         <SafeView
           title={""}
           componentId={this.props.componentId}
-          backStyle={{ color: constants.Colors.Black }}
+          backIconColor={constants.Colors.Black}
+          drawerEnabled={drawerEnable}
         >
           <View style={styles.container}>
-            <View
-              style={{
-                borderBottomColor: constants.Colors.Black,
-                borderBottomWidth: 1,
-                width: "80%"
-              }}
-            >
-              <Text
-                style={{
-                  color: constants.Colors.Black,
-                  fontSize: moderateScale(36),
-                  paddingVertical: moderateScale(10)
-                }}
-              >
-                My Nudgits
-              </Text>
+            <View style={styles.myNudgitsWrapper}>
+              <Text style={styles.text}>My Nudgits</Text>
             </View>
 
-            <View
-              style={{
-                flex: 0.35,
-                justifyContent: "space-around"
-              }}
-            >
+            <View style={styles.buttonWrapper}>
               <ArrowButton
                 name={"I'm a Customer"}
                 textStyle={styles.buttonFont}
@@ -87,8 +55,39 @@ class MyNudgits extends Component {
     );
   }
 }
+
+const styles = StyleSheet.create({
+  wrapper: { flex: 1, backgroundColor: constants.Colors.Turquoise },
+  container: {
+    flex: 1,
+    justifyContent: "space-around",
+    alignItems: "center",
+    zIndex: 99
+  },
+  buttonFont: {
+    fontSize: moderateScale(34),
+    color: constants.Colors.Black
+  },
+  buttonStyle: {
+    borderBottomColor: constants.Colors.Black,
+    borderBottomWidth: 1
+  },
+  buttonWrapper: {
+    flex: 0.35,
+    justifyContent: "space-around"
+  },
+  myNudgitsWrapper: {
+    borderBottomColor: constants.Colors.Black,
+    borderBottomWidth: 1,
+    width: "80%"
+  },
+  text: {
+    color: constants.Colors.Black,
+    fontSize: moderateScale(36),
+    paddingVertical: moderateScale(10)
+  }
+});
 const mapStateToProps = state => {
-  console.log("state", state);
   return {
     auth: state.auth
   };

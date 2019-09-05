@@ -10,6 +10,7 @@ let colors = {
   Primary: "#00A8CB",
   Secondary: "#a8a8a8",
   Yellow: "#F6CF65",
+  Yellowish: "#FFF200",
   DarkGray: "#393B3B",
   Transparent: "transparent",
   White: "#FFFFFF",
@@ -17,7 +18,7 @@ let colors = {
   Placeholder: "#707070",
   ListBorder: "#B4C9CC",
   Green: "#7DDE97",
-  Red: "#FF7474",
+  Red: "#FC0E05",
   orange: "#FF9B70",
   Gray: "#A9AFAF",
   menuItemTxt: "#393B3B",
@@ -34,7 +35,9 @@ let colors = {
   LightText: "#6A6D71",
   MedBlue: "#77E8FF",
   MedPink: "#FFB492",
-  MedDark: "#3C4551"
+  MedDark: "#3C4551",
+  Greyish: "#282D33",
+  DarkBlack: "#000"
 };
 
 export default colors;

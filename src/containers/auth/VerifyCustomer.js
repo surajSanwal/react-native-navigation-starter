@@ -70,8 +70,8 @@ class VerifyCustomer extends Component {
           <View
             style={{
               flex: 0.1,
-              borderBottomColor: constants.Colors.Turquoise,
-              borderBottomWidth: 1
+              borderBottomColor: constants.Colors.Turquoise
+              // borderBottomWidth: 1
             }}
           >
             <Text
@@ -87,7 +87,8 @@ class VerifyCustomer extends Component {
               style={{
                 ...constants.Fonts.ITCAvantGardeProBk,
                 fontSize: moderateScale(18),
-                color: constants.Colors.Turquoise
+                color: constants.Colors.Turquoise,
+                textDecorationLine: "underline"
               }}
             >
               Send it agin &gt;
