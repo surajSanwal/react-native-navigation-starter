@@ -2,6 +2,19 @@
   "name": "jetX",
   "version": "0.0.1",
   "private": true,
+  "repository": {
+   "type": "git",
+    "url": "git+https://github.com/blue-light-equity-pty-ltd/marketplace-mobile.git"
+  },
+  "author": {
+    "name": "Suraj Sanwal",
+    "email": "suraj.sanwal@smartdatainc.net",
+    "url": "https://github.com/surajSDM"
+  },
+  "bugs": {
+    "url": "https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/issues"
+  },
+  "homepage": "https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/#readme",
   "scripts": {
     "start:dev": "NODE_ENV=development react-native start --reset-cache",
     "start:prod": "NODE_ENV=production react-native start --reset-cache",
