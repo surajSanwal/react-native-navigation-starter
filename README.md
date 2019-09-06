@@ -37,7 +37,9 @@ If you want to install app in the device, connect your device to the system with
 ## Important Links
 
 [Repo](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile)
+
 Report an [Issue](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/issues)
+
 View [Pull](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/pulls) Request
 
 ## Developer
