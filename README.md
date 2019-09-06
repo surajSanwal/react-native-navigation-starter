@@ -7,6 +7,7 @@ _JetX app using react native for iOS & Android_
 **Step 1:** clone my repo & cd into project
 
 **Step 2:** install node modules
+
 _for installing dependency [yarn](https://yarnpkg.com/lang/en/) is highly recommended _
 
 ```
@@ -32,3 +33,13 @@ react-native run-ios
 That's all
 
 If you want to install app in the device, connect your device to the system with debugger mode on and run the above command (app will be installed automatically)
+
+##Report an Issue
+[Git hub Issue](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/issues)
+
+##Developer
+[Suraj Sanwal](https://github.com/surajSDM)
+[Piyush Dhiman](https://github.com/piyush-sdm)
+
+##Author
+[Suraj Sanwal](https://github.com/surajSDM)
