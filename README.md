@@ -45,6 +45,7 @@ View [Pull](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/pull
 ## Developer
 
 [Suraj Sanwal](https://github.com/surajSDM)
+
 [Piyush Dhiman](https://github.com/piyush-sdm)
 
 ## Author
