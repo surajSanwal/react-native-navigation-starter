@@ -34,12 +34,17 @@ That's all
 
 If you want to install app in the device, connect your device to the system with debugger mode on and run the above command (app will be installed automatically)
 
-##Report an Issue
-[Git hub Issue](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/issues)
+## Important Links
 
-##Developer
+[Repo](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile)
+Report an [Issue](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/issues)
+View [Pull](https://github.com/blue-light-equity-pty-ltd/marketplace-mobile/pulls) Request
+
+## Developer
+
 [Suraj Sanwal](https://github.com/surajSDM)
 [Piyush Dhiman](https://github.com/piyush-sdm)
 
-##Author
+## Author
+
 [Suraj Sanwal](https://github.com/surajSDM)
